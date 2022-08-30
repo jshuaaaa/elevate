@@ -12,7 +12,8 @@ const typeDefs = gql`
   type Module {
     _id: ID
     name: String
-    section: [Section]
+    lecture: [Lecture]
+    activity: [Activity]
   }
 
   type Course {
