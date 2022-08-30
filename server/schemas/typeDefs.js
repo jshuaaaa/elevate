@@ -7,6 +7,7 @@ const typeDefs = gql`
     email: String!
     password: String!
     courses: [Course]
+    reviews: [Review]
   }
 
   type Module {
@@ -28,6 +29,12 @@ const typeDefs = gql`
     name: String!
     lecture: [String]
     activities: [String]
+  }
+
+  type Review {
+    _id: ID
+    reviewText: String!
+    createdAt: String!
   }
 
   type Auth {
