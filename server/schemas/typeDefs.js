@@ -40,7 +40,6 @@ const typeDefs = gql`
   type Review {
     _id: ID
     reviewText: String!
-    createdAt: String!
   }
 
   type Auth {
@@ -56,7 +55,14 @@ const typeDefs = gql`
     courses: [Course]!
     modules: [Module]!
     lectures: [Lecture]!
-    acitivity: [Activity]!
+    activitys: [Activity]!
+    reviews: [Review]!
+
+    course(id: ID!): Course
+    module(id: ID!): Module
+    lecture(id: ID!): Lecture
+    activity(id: ID!): Activity
+    review(id: ID!): Review
   }
 
   type Mutation {
@@ -64,15 +70,8 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addCourse(name: String!, category: String!, description: String!, price: String!): Course
     addModuleToCourse(courseId: ID!, name: String!): Module
-    addSectionToModule(moduleId: ID!,name: String!, lecture: String!, activitity: String!): Section
-    removeProfile: Profile
+  
 
-    "addCourse"
-    "addReview"
-    "addSection"
-    "addModule"
-    "removeSection"
-    "removeModule"
 
 
     addSkill(profileId: ID!, skill: String!): Profile

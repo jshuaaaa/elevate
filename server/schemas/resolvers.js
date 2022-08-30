@@ -1,15 +1,47 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Profile, Module, Course, Lecture, Activity } = require('../models/index');
+const { Profile, Module, Course, Lecture, Activity, Review } = require('../models/index');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    profiles: async () => {
-      return Profile.find();
-    },
 
+    // Find by Id Routes
     profile: async (parent, { profileId }) => {
       return Profile.findOne({ _id: profileId });
+    },
+
+    course: async ({id}) => {
+      return Course.findOne({_id: id})
+    },
+
+    module: async ({id}) => {
+      return Module.find({_id: id})
+    },
+
+    lecture: async ({id}) => {
+      return Lecture.find({_id: id})
+    },
+
+    activity: async ({id}) => {
+      return Activity.find({_id: id})
+    },
+
+    review: async ({id}) => {
+      return Review.find({_id: id})
+    },
+
+
+
+
+
+    // Find all routes below
+
+    reviews: async () => {
+      return Review.find()
+    },
+
+    profiles: async () => {
+      return Profile.find();
     },
 
     courses: async () => {
@@ -24,8 +56,12 @@ const resolvers = {
       return Lecture.find()
     },
 
-    activity: async () => {
+    activitys: async () => {
       return Activity.find()
+    },
+
+    reviews: async () => {
+      return Review.find()
     },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {

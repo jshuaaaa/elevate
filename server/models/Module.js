@@ -1,6 +1,5 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const { sectionSchema } = require('./Lecture')
 
  const moduleSchema = new Schema({
   name: {
@@ -8,10 +7,14 @@ const { sectionSchema } = require('./Lecture')
     required: true,
     trim: true,
   },
-  section: [{
+  lecture: [{
     type: Schema.Types.ObjectId,
-    ref: 'section'
+    ref: 'lecture'
   }],
+  activity: [{
+    type: Schema.Types.ObjectId,
+    ref: 'activity'
+  }]
 });
 
 
