@@ -19,7 +19,12 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  skills: [
+  type: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  courses: [
     {
       type: String,
       trim: true,
