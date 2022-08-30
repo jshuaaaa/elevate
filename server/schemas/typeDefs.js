@@ -6,13 +6,13 @@ const typeDefs = gql`
     name: String
     email: String
     password: String
-    courses: [String]!
+    courses: [Course]!
   }
 
   type Module {
     _id: ID
     name: String
-    section: Section
+    section: [Section]
   }
 
   type Course {
@@ -20,14 +20,18 @@ const typeDefs = gql`
     name: String
     category: String
     description: String
-    module: Module
+    price: String
+    module: [Module]
   }
 
-  type Section {
+  type Lecture {
     _id: ID
     name: String
-    lecture: [String]
-    activities: [String]
+  }
+
+  type Activity {
+    _id: ID
+    name: String
   }
 
 
@@ -44,14 +48,16 @@ const typeDefs = gql`
     me: Profile
     courses: [Course]!
     modules: [Module]!
-    sections: [Section]!
+    lectures: [Lecture]!
+    acitivity: [Activity]!
   }
 
   type Mutation {
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-
-    addSkill(profileId: ID!, skill: String!): Profile
+    addCourse(name: String!, category: String!, description: String!, price: String!): Course
+    addModuleToCourse(courseId: ID!, name: String!): Module
+    addSectionToModule(moduleId: ID!,name: String!, lecture: String!, activitity: String!): Section
     removeProfile: Profile
     removeSkill(skill: String!): Profile
   }

@@ -18,7 +18,13 @@ const courseSchema = new Schema({
     required: true,
     trim: true
   },
-  module: [moduleSchema]
+  price: {
+    type: String
+  },
+  module: [{
+    type: Schema.Types.ObjectId,
+    ref: 'module'
+  }],
 });
 
 const Course = model('Course', courseSchema);
