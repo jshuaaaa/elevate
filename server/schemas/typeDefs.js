@@ -1,36 +1,34 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type Profile {
     _id: ID
-    name: String
-    email: String
-    password: String
-    courses: [String]!
+    name: String!
+    email: String!
+    password: String!
+    courses: [Course]
   }
 
   type Module {
     _id: ID
-    name: String
-    section: Section
+    name: String!
+    section: [Section]
   }
 
   type Course {
     _id: ID
-    name: String
-    category: String
+    name: String!
+    category: String!
     description: String
-    module: Module
+    module: [Module]
   }
 
   type Section {
     _id: ID
-    name: String
+    name: String!
     lecture: [String]
     activities: [String]
   }
-
-
 
   type Auth {
     token: ID!
@@ -51,8 +49,15 @@ const typeDefs = gql`
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
 
+    "addCourse"
+    "addReview"
+    "addSection"
+    "addModule"
+    "removeSection"
+    "removeModule"
+
+
     addSkill(profileId: ID!, skill: String!): Profile
-    removeProfile: Profile
     removeSkill(skill: String!): Profile
   }
 `;
