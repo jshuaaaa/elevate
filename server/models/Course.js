@@ -1,6 +1,6 @@
-const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
-const {moduleSchema} = require('./Module')
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
+const { moduleSchema } = require("./Module");
 
 const courseSchema = new Schema({
   name: {
@@ -16,17 +16,25 @@ const courseSchema = new Schema({
   description: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   price: {
-    type: String
+    type: String,
   },
-  module: [{
-    type: Schema.Types.ObjectId,
-    ref: 'module'
-  }],
+  module: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "module",
+    },
+  ],
+  reviews: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Review",
+    },
+  ],
 });
 
-const Course = model('Course', courseSchema);
+const Course = model("Course", courseSchema);
 
 module.exports = Course;
