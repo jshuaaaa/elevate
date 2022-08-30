@@ -27,13 +27,15 @@ const profileSchema = new Schema({
   courses: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'course'
+      ref: "course",
     },
   ],
-  reviews: [{
-    type: Schema.Types.ObjectId,
-    ref: 'review'
-  }],
+  reviews: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Review",
+    },
+  ],
 });
 
 // set up pre-save middleware to create password
