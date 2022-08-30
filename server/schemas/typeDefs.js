@@ -3,6 +3,7 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql`
   type Profile {
     _id: ID
+
     name: String!
     email: String!
     password: String!
@@ -12,8 +13,9 @@ const typeDefs = gql`
 
   type Module {
     _id: ID
-    name: String!
-    section: [Section]
+    name: String
+    lecture: [Lecture]
+    activity: [Activity]
   }
 
   type Course {
@@ -21,14 +23,18 @@ const typeDefs = gql`
     name: String!
     category: String!
     description: String
+    price: String
     module: [Module]
   }
 
-  type Section {
+  type Lecture {
     _id: ID
-    name: String!
-    lecture: [String]
-    activities: [String]
+    name: String
+  }
+
+  type Activity {
+    _id: ID
+    name: String
   }
 
   type Review {
@@ -49,12 +55,17 @@ const typeDefs = gql`
     me: Profile
     courses: [Course]!
     modules: [Module]!
-    sections: [Section]!
+    lectures: [Lecture]!
+    acitivity: [Activity]!
   }
 
   type Mutation {
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addCourse(name: String!, category: String!, description: String!, price: String!): Course
+    addModuleToCourse(courseId: ID!, name: String!): Module
+    addSectionToModule(moduleId: ID!,name: String!, lecture: String!, activitity: String!): Section
+    removeProfile: Profile
 
     "addCourse"
     "addReview"

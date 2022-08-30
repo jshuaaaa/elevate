@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const { sectionSchema } = require('./Section')
+const { sectionSchema } = require('./Lecture')
 
  const moduleSchema = new Schema({
   name: {
@@ -8,10 +8,13 @@ const { sectionSchema } = require('./Section')
     required: true,
     trim: true,
   },
-  section: [sectionSchema]
+  section: [{
+    type: Schema.Types.ObjectId,
+    ref: 'section'
+  }],
 });
 
 
 const Module = model('Module', moduleSchema);
 
-module.exports = { Module, moduleSchema }
+module.exports = Module 
