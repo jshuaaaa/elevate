@@ -1,6 +1,5 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
-const { reviewSchema } = require("./Review");
 
 const profileSchema = new Schema({
   name: {
@@ -27,11 +26,14 @@ const profileSchema = new Schema({
   },
   courses: [
     {
-      type: String,
-      trim: true,
+      type: Schema.Types.ObjectId,
+      ref: 'course'
     },
   ],
-  reviews: [reviewSchema],
+  reviews: [{
+    type: Schema.Types.ObjectId,
+    ref: 'review'
+  }],
 });
 
 // set up pre-save middleware to create password
