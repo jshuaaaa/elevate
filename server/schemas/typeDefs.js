@@ -55,8 +55,14 @@ const typeDefs = gql`
     courses: [Course]!
     modules: [Module]!
     lectures: [Lecture]!
-    activity: [Activity]!
+    activitys: [Activity]!
     reviews: [Review]!
+
+    course(id: ID!): Course
+    module(id: ID!): Module
+    lecture(id: ID!): Lecture
+    activity(id: ID!): Activity
+    review(id: ID!): Review
   }
 
   type Mutation {
