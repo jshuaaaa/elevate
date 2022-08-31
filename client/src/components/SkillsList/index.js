@@ -1,8 +1,8 @@
-import React from 'react';
-import { useMutation } from '@apollo/client';
+import React from "react";
+import { useMutation } from "@apollo/client";
 
-import { REMOVE_SKILL } from '../../utils/mutations';
-import { QUERY_ME } from '../../utils/queries';
+import { REMOVE_SKILL } from "../../utils/mutations";
+import { QUERY_ME } from "../../utils/queries";
 
 const SkillsList = ({ skills, isLoggedInUser = false }) => {
   const [removeSkill, { error }] = useMutation(REMOVE_SKILL, {
@@ -34,16 +34,16 @@ const SkillsList = ({ skills, isLoggedInUser = false }) => {
 
   return (
     <div>
-      <div className="flex-row justify-space-between my-4">
+      <div className='flex-row justify-space-between my-4'>
         {skills &&
           skills.map((skill) => (
-            <div key={skill} className="col-12 col-xl-6">
-              <div className="card mb-3">
-                <h4 className="card-header bg-dark text-light p-2 m-0 display-flex align-center">
+            <div key={skill} className='col-12 col-xl-6'>
+              <div className='card mb-3'>
+                <h4 className='card-header bg-dark text-light p-2 m-0 display-flex align-center'>
                   <span>{skill}</span>
                   {isLoggedInUser && (
                     <button
-                      className="btn btn-sm btn-danger ml-auto"
+                      className='btn btn-sm btn-danger ml-auto'
                       onClick={() => handleRemoveSkill(skill)}
                     >
                       X
@@ -55,7 +55,7 @@ const SkillsList = ({ skills, isLoggedInUser = false }) => {
           ))}
       </div>
       {error && (
-        <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
+        <div className='my-3 p-3 bg-danger text-white'>{error.message}</div>
       )}
     </div>
   );
