@@ -17,7 +17,7 @@ const Header = () => {
           </h1>
         </Link>
         <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
-          Reacher new heights
+          Reacher new heights!
         </p>
         <div>
           {Auth.loggedIn() ? (
