@@ -9,17 +9,21 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-info text-dark mb-4 py-3 display-flex align-center">
-      <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
+    <header className="bg-info text-dark mb-4 py-3  ">
+      <div className="headerC d-flex">
         <Link className="text-dark" to="/">
           <h1 className="m-0" style={{ fontSize: '3rem' }}>
             Elevate
+
+        
           </h1>
-        </Link>
-        <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
+          <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
           Reacher new heights!
         </p>
-        <div>
+        </Link>
+        
+        <div className='logAndSign d-flex align-self-end align-items-end
+        flex-column'>
           {Auth.loggedIn() ? (
             <>
               <Link className="btn btn-lg btn-primary m-2" to="/me">
@@ -31,10 +35,10 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Link className="btn btn-lg btn-primary m-2" to="/login">
+              <Link className="logAndSign align-self-end btn btn-lg btn-primary m-2" to="/login">
                 Login
               </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
+              <Link className="logAndSign align-self-end btn btn-lg btn-light m-2" to="/signup">
                 Signup
               </Link>
             </>
