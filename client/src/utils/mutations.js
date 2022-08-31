@@ -88,6 +88,10 @@ export const REMOVE_REVIEW = gql`
   }
 `;
 
+export const ADD_LECTURE = gql``;
+
+export const ADD_ACTIVITY = gql``;
+
 export const REMOVE_LECTURE = gql``;
 
 export const REMOVE_ACTIVITY = gql``;
