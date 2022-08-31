@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
@@ -10,36 +11,38 @@ import { AnimatePresence, motion, useCycle } from "framer-motion";
 
 
 
+
 const links = [
-    { name: "Course 1", to: "#", id: 1 },
-    { name: "Course 2", to: "#", id: 2 },
-    { name: "Course 3", to: "#", id: 3 },
-    { name: "Course 4", to: "#", id: 4 }
-  ];
-  
-  const itemVariants = {
-    closed: {
-      opacity: 0
+  { name: "Course 1", to: "#", id: 1 },
+  { name: "Course 2", to: "#", id: 2 },
+  { name: "Course 3", to: "#", id: 3 },
+  { name: "Course 4", to: "#", id: 4 },
+];
+
+const itemVariants = {
+  closed: {
+    opacity: 0,
+  },
+  open: { opacity: 1 },
+};
+
+const sideVariants = {
+  closed: {
+    transition: {
+      staggerChildren: 0.2,
+      staggerDirection: -1,
     },
-    open: { opacity: 1 }
-  };
-  
-  const sideVariants = {
-    closed: {
-      transition: {
-        staggerChildren: 0.2,
-        staggerDirection: -1
-      }
+  },
+  open: {
+    transition: {
+      staggerChildren: 0.2,
+      staggerDirection: 1,
     },
-    open: {
-      transition: {
-        staggerChildren: 0.2,
-        staggerDirection: 1
-      }
-    }
-  };
+  },
+};
 
 const SideNav = () => {
+
     const logout = (event) => {
       event.preventDefault();
       Auth.logout();
@@ -101,4 +104,5 @@ const SideNav = () => {
 
   
 
-      export default SideNav;
+
+export default SideNav;

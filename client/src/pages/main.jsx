@@ -1,10 +1,13 @@
 import React from 'react'
 import videoBg from '../assets/education.mp4'
 import searchbar from './searchbar'
+import { useQuery } from '@apollo/client';
+import CourseList from '../components/CourseList'
+import { QUERY_COURSES } from '../utils/queries'
 
-
-
-const video = () => {
+const Video = () => {
+  const { loading, data } = useQuery(QUERY_COURSES);
+  const courses = data?.courses || [];
   return (
     <div className='main' id='home'>
         <div className="overlay">
@@ -21,12 +24,21 @@ const video = () => {
          <hr />
          
       </div>
-      
+
    </div>
 
-        </div>
+      </div>
+      <div className="col-12 col-md-8 mb-3">
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <CourseList
+            courses={courses}
+            title="Some Featured Courses..." />
+        )}
+            </div>
     </div>
   )
 }
 
-export default video
+export default Video
