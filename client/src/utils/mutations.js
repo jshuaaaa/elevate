@@ -33,6 +33,7 @@ export const ADD_COURSE = gql`
       description
       price
   }
+}
 `;
 
 export const ADD_MODULE = gql`
@@ -59,6 +60,7 @@ export const ADD_REVIEW = gql`
       reviewText
       createdAt
   }
+}
 `;
 
 export const REMOVE_MODULE = gql`
@@ -88,10 +90,10 @@ export const REMOVE_REVIEW = gql`
   }
 `;
 
-export const ADD_LECTURE = gql``;
+// export const ADD_LECTURE = gql``;
 
-export const ADD_ACTIVITY = gql``;
+// export const ADD_ACTIVITY = gql``;
 
-export const REMOVE_LECTURE = gql``;
+// export const REMOVE_LECTURE = gql``;
 
-export const REMOVE_ACTIVITY = gql``;
+// export const REMOVE_ACTIVITY = gql``;

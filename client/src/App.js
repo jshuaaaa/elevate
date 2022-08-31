@@ -13,7 +13,7 @@ import Home from "./pages/main";
 import Search from "./pages/searchbar";
 
 // import Profile from "./pages/Profile";
-// import Signup from "./pages/Signup";
+import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 // import Course from "./pages/Course";
 // import main from "./pages/main"
@@ -55,7 +55,7 @@ function App() {
               <Route path='/login' element={<Login />} />
               {/*<Route path='/login' element={<Search />} /> */}
 
-              {/* <Route path='/signup' element={<Signup />} /> */}
+              <Route path='/signup' element={<Signup />} />
 
               {/* <Route path='/me' element={<Profile />} /> */}
               {/* <Route path='/courses/:courseId' element={<Course/>}/> */}
