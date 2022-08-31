@@ -4,7 +4,7 @@ import '../components/styles/main.css'
 
 
 
-const main = () => {
+const Home = () => {
   return (
     <div className='main' id='home'>
       
@@ -38,4 +38,4 @@ const main = () => {
   )
 }
 
-export default main
+export default Home
