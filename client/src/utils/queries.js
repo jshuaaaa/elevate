@@ -42,25 +42,25 @@ export const QUERY_COURSES = gql`
   }
 `;
 
-export const QUERY_SINGLE_COURSE = gql`
-  query singleCourse($courseId: ID!) {
-    course(courseId: $courseId) {
-      _id
-    name
-    category
-    description
-    price
-    module {
-      _id
-      name
-      lecture {
-        _id
-        name
-      }
-      activity {
-        _id
-        name
-      }
-    }
-  }
-`;
+// export const QUERY_SINGLE_COURSE = gql`
+//   query singleCourse($courseId: ID!) {
+//     course(courseId: $courseId) {
+//       _id
+//     name
+//     category
+//     description
+//     price
+//     module {
+//       _id
+//       name
+//       lecture {
+//         _id
+//         name
+//       }
+//       activity {
+//         _id
+//         name
+//       }
+//     }
+//   }
+// `;
