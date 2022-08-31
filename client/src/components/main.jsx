@@ -1,10 +1,14 @@
 import React from 'react'
 import videoBg from '../assets/education.mp4'
 import '../components/styles/main.css'
-
+import { useQuery } from '@apollo/client';
+import CourseList from '../components/CourseList'
+import { QUERY_COURSES } from '../utils/queries'
 
 
 const Home = () => {
+  const { loading, data } = useQuery(QUERY_COURSES);
+  const courses = data?.courses || [];
   return (
     <div className='main' id='home'>
       
@@ -32,7 +36,15 @@ const Home = () => {
       </div>
       
    </div>
-
+   <div className="col-12 col-md-8 mb-3">
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <CourseList
+            courses={courses}
+            title="Some Featured Courses..." />
+        )}
+            </div>
         </div>
     </div>
   )
