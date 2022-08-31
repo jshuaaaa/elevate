@@ -9,11 +9,12 @@ body {
   }
   
   aside {
-    background-color: #c4a8ff;
+    background-color: #919092;
     width: 16.75rem;
     height: 1500vh;
     position: fixed;
     margin-top: -400.5%;
+    z-index: 1;
     
   }
   
@@ -44,6 +45,18 @@ body {
 .navList{
     padding-top: 2580%;
     text-align: center;
+}
+
+.ribby{
+  width: 50%;
+}
+
+.ribButt{
+  width: 25%;
+  padding: 0%;
+  margin-bottom: 2%;
+  z-index: 0;
+
 }
 
 
