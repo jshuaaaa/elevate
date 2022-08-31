@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 
 import ProfileList from "../components/ProfileList";
 
-import { QUERY_SINGLE_PROFILE } from "../utils/queries";
+// import { QUERY_SINGLE_PROFILE } from "../utils/queries";
 import { QUERY_COURSES } from "../utils/queries";
 
 const Home = () => {
