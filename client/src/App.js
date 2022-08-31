@@ -14,7 +14,7 @@ import Search from "./pages/searchbar";
 
 // import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
-// import Login from "./pages/Login";
+import Login from "./pages/Login";
 // import Course from "./pages/Course";
 // import main from "./pages/main"
 // import searchbar from "./pages/searchbar"
@@ -52,6 +52,7 @@ function App() {
           <SideNav />
           <div className='container'>
             <Routes>
+
               <Route path='/' element={<Video />} />
               <Route path='/login' element={<Search />} />
               {/* <Route path='/login' element={<Login />} /> */}

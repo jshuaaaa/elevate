@@ -49,20 +49,25 @@ const Header = () => {
             </>
           ) : (
             <>
+              <Link to="/login">
               <motion.a
               initial={{ x: 1400}}
               animate={{x: 0}}
               transition={{ delay: 0.9 , type: 'tween'}}
-               className="logAndSign align-self-end btn btn-lg btn-primary m-2" to="/login">
+               className="logAndSign align-self-end btn btn-lg btn-primary m-2">
                 Login
               </motion.a>
+              </Link>
+
+              <Link to="/signup">
               <motion.a
               initial={{ x: 1400}}
               animate={{x: 0}}
               transition={{ delay: 1.0 , type: 'tween'}}
-                className="logAndSign align-self-end btn btn-lg btn-light m-2" to="/signup">
+                className="logAndSign align-self-end btn btn-lg btn-light m-2">
                 Signup
               </motion.a>
+              </Link>
             </>
           )}
         </div>
