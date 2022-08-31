@@ -25,6 +25,7 @@ const typeDefs = gql`
     description: String
     price: String
     module: [Module]
+    review: [Review]
   }
 
   type Lecture {
@@ -55,7 +56,7 @@ const typeDefs = gql`
     courses: [Course]!
     modules: [Module]!
     lectures: [Lecture]!
-    activitys: [Activity]!
+    activities: [Activity]!
     reviews: [Review]!
 
     course(id: ID!): Course
@@ -70,6 +71,8 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addCourse(name: String!, category: String!, description: String!, price: String!): Course
     addModuleToCourse(courseId: ID!, name: String!): Module
+    addLectureToModule(moduleId: ID!, name: String!, url: String!): Lecture
+    addActivityToModule(moduleId: ID!, name: String!): Activity
   
 
 

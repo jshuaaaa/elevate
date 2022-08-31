@@ -56,7 +56,7 @@ const resolvers = {
       return Lecture.find()
     },
 
-    activitys: async () => {
+    activities: async () => {
       return Activity.find()
     },
 
@@ -89,6 +89,20 @@ const resolvers = {
       return Course.findOneAndUpdate(
         { _id: courseId},
         { $addToSet: {module: module._id}}
+      )
+    },
+    addActivityToModule: async (parent, { moduleId, name }) => {
+      const activity= await Activity.create({name})
+      return Module.findOneAndUpdate(
+        { _id: moduleId},
+        { $addToSet: {activity: activity._id}}
+      )
+    },
+    addLectureToModule: async (parent, { moduleId, name, url }) => {
+      const lecture = await Lecture.create({name, url})
+      return Module.findOneAndUpdate(
+        { _id: moduleId},
+        { $addToSet: {lecture: module._id}}
       )
     },
     login: async (parent, { email, password }) => {

@@ -7,12 +7,10 @@ const lectureSchema = new Schema({
     required: true,
     trim: true,
   },
-  lecture: [{
-    link: String
-  }],
-  activites: [{
-    description: String
-  }]
+  url: {
+    type: String,
+    required: true
+  }
 });
 
 const Lecture = model('Lecture', lectureSchema);
