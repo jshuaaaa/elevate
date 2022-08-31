@@ -1,0 +1,16 @@
+.row.banner {
+
+    position: relative;
+
+
+}
+
+
+.banner-text {
+   position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 42vh;
+
+    
+}

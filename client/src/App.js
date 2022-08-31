@@ -9,15 +9,17 @@ import { setContext } from "@apollo/client/link/context";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Video from "./pages/main";
-import Search from "./pages/searchbar";
+
+
+import Home from "./components/main";
+
+
 
 // import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 // import Course from "./pages/Course";
 // import main from "./pages/main"
-// import searchbar from "./pages/searchbar"
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SideNav from "./components/Sidenav";
@@ -53,9 +55,15 @@ function App() {
           <div className='container'>
             <Routes>
 
-              <Route path='/' element={<Video />} />
-              <Route path='/login' element={<Search />} />
-              {/* <Route path='/login' element={<Login />} /> */}
+
+
+              <Route path='/' element={<Home />} />
+            
+               <Route path='/login' element={<Login />} />
+
+           
+
+
               <Route path='/signup' element={<Signup />} />
 
               {/* <Route path='/me' element={<Profile />} /> */}
