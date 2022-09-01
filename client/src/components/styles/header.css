@@ -7,7 +7,9 @@
 
 .headerC{
    
+   
     text-align: center;
+
    
 
  
@@ -15,10 +17,31 @@
    
 }
 
+.text-dark {
+    background-image: url("../images/headerimg.png");
+   
+   
+    background-color: #0087D2;
+
+    width: 100vw;
+    padding-bottom: 15px;
+}
+
+
+
+
 .logAndSign{
+    padding-top: 12px;
+    position: relative;
+    right: 20px;
     flex: 1 1 20%;
     max-width: fit-content;
     margin-right: 1.5%;
     transform: scale(1.1);
    
+}
+a.logAndSign:hover {
+    background-color: #0087D2;
+    
+
 }

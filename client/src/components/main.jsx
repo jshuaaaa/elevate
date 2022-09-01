@@ -21,13 +21,13 @@ const Home = () => {
         <label htmlFor="header-search">
             <span className="visually-hidden">Search Courses</span>
         </label>
-        <input
+        <input class="form-control-lg"
             type="text"
             id="header-search"
-            placeholder="Search blog posts"
+            placeholder="Search Courses"
             name="s" 
         />
-        <button type="submit">Search</button>
+        <button type="submit" className="btn btn-primary btn-lg" >Search</button>
     </form>
      
          

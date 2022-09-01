@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 import '../styles/sidenav.css'
 import '../styles/header.css'
-import ribbon from '../images/FINALRIBBON.png'
+import ribbon from '../images/bookmark.png'
 
 import { AnimatePresence, motion, useCycle } from "framer-motion";
 
