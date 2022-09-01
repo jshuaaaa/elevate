@@ -95,7 +95,8 @@ const SideNav = () => {
 </AnimatePresence>
 
  <motion.img
- animate={{scale: 1.2}}
+ 
+ whileHover={{ scale: 1.05 }}
  onClick={cycleOpen}className='ribby ribButt' src= {ribbon}  alt='ribbon'></motion.img>
 
 </main>
