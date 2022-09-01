@@ -29,7 +29,7 @@ const itemVariants = {
 const sideVariants = {
   closed: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0,
       staggerDirection: -1,
     },
   },
@@ -72,7 +72,7 @@ const SideNav = () => {
     }}
   >
     <motion.div
-      className="container navList"
+      className="navList container"
       initial="closed"
       animate="open"
       exit="closed"
