@@ -103,12 +103,12 @@ const ReviewForm = () => {
       ) : (
         <p>
           You need to be logged in to share your reviews. Please{" "}
-          <Link className='btn btn-warning' to='/login'>
-            login
+          <Link type='button' className='btn btn-warning btn-sm' to='/login'>
+            Login
           </Link>{" "}
           <p>or </p>
-          <Link className='btn btn-warning' to='/signup'>
-            signup.
+          <Link type='button' className='btn btn-warning btn-sm' to='/signup'>
+            Signup
           </Link>
         </p>
       )}
