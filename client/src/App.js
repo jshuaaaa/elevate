@@ -45,7 +45,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className='min-100-vh'>
+        <div className='min-100-vh bg-white'>
           <Header />
           <SideNav />
           <div className='container'>

@@ -71,3 +71,14 @@ export const QUERY_SINGLE_COURSE = gql`
     }
   }
 `;
+
+export const QUERY_REVIEWS = gql`
+  query reviews {
+    reviews {
+      _id
+      reviewText
+      reviewAuthor
+      createdAt
+    }
+  }
+`;
