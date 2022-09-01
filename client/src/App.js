@@ -14,7 +14,7 @@ import Home from "./components/main";
 // import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-// import Course from "./pages/Course";
+import Course from "./pages/Course";
 // import main from "./pages/main"
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -54,7 +54,7 @@ function App() {
               <Route path='/login' element={<Login />} />
               <Route path='/signup' element={<Signup />} />
               {/* <Route path='/me' element={<Profile />} /> */}
-              {/* <Route path='/courses/:courseId' element={<Course/>}/> */}
+              <Route path='/courses/:courseId' element={<Course />} />
             </Routes>
           </div>
           <Footer />
