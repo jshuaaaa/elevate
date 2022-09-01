@@ -45,10 +45,10 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className='min-100-vh bg-white'>
+        <div className='min-100-vh'>
           <Header />
           <SideNav />
-          <div className='container'>
+          <div className='videWS'>
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/login' element={<Login />} />

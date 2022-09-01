@@ -12,8 +12,8 @@ const Home = () => {
   return (
     <div className='main flex' id='home'>
       
-        <video src={videoBg} autoPlay loop muted />
-        <div className="content">
+        <video className='video2' src={videoBg} autoPlay loop muted />
+        <div className=" sizeM">
         <div className="row banner">
       
       <div className="banner-text">
@@ -31,12 +31,14 @@ const Home = () => {
     </form>
      
          
-         <hr />
+        
          
       </div>
       
    </div>
-   <div className="row flex">
+   
+        </div>
+        <div className="courseMain">
         {loading ? (
           <div>Loading...</div>
         ) : (
@@ -45,8 +47,9 @@ const Home = () => {
             title="Featured Courses" />
         )}
             </div>
-        </div>
+       
     </div>
+    
   )
 }
 
