@@ -24,7 +24,7 @@ const Header = () => {
                 <motion.a
                   initial={{ x: -1400 }}
                   animate={{ x: 0 }}
-                  transition={{ delay: 1.0, type: "tween" }}
+                  transition={{ delay: 1.0, type: "tween" ,duration: 0.5 }}
                   className='btn btn-lg btn-primary m-2'
                 >
                   View My Profile
@@ -33,7 +33,7 @@ const Header = () => {
               <motion.button
                 initial={{ x: 1400 }}
                 animate={{ x: 0 }}
-                transition={{ delay: 1.0, type: "tween" }}
+                transition={{ delay: 0.5, type: "tween", duration: 0.5 }}
                 className='btn btn-lg btn-light m-2'
                 onClick={logout}
               >
@@ -46,7 +46,7 @@ const Header = () => {
                 <motion.a
                   initial={{ x: 1400 }}
                   animate={{ x: 0 }}
-                  transition={{ delay: 0.9, type: "tween" }}
+                  transition={{ delay: 0.1, type: "tween", duration: 0.5 }}
                   className='logAndSign align-self-end btn btn-lg btn-light m-2'
                 >
                   Login
@@ -57,7 +57,7 @@ const Header = () => {
                 <motion.a
                   initial={{ x: 1400 }}
                   animate={{ x: 0 }}
-                  transition={{ delay: 1.0, type: "tween" }}
+                  transition={{ delay: 0.2, type: "tween", duration: 0.5 }}
                   className='logAndSign align-self-end btn btn-lg btn-light m-2'
                 >
                   Signup

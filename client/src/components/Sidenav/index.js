@@ -75,7 +75,7 @@ const SideNav = () => {
       className="navList container"
       initial="closed"
       animate="open"
-      exit="closed"
+       exit="closed"
       variants={sideVariants}
     >
       {links.map(({ name, to, id }) => (
@@ -95,8 +95,12 @@ const SideNav = () => {
 </AnimatePresence>
 
  <motion.img
- animate={{scale: 1.2}}
- onClick={cycleOpen}className='ribby ribButt' src= {ribbon}  alt='ribbon'></motion.img>
+ whileHover={{ scale: 1.05 }}
+ initial={{ x: -500 }}
+ animate={{ x: 0 }}
+ transition={{  type: "tween", duration: 0.7 }}
+ 
+ onClick={cycleOpen} className='ribby ribButt' src= {ribbon}  alt='ribbon'></motion.img>
 
 </main>
     );
