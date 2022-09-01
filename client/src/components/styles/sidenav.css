@@ -11,10 +11,11 @@ body {
   aside {
     background-color: #919092;
     width: 16.75rem;
-    height: 1500vh;
     position: fixed;
-    margin-top: -400.5%;
     z-index: 1;
+    height: 110%;
+    margin-top: -10%;
+    
     
   }
   
@@ -43,8 +44,10 @@ body {
   }
 
 .navList{
-    padding-top: 2580%;
+    padding-top: 150%;
     text-align: center;
+    
+    z-index: 5;
 }
 
 .ribby{
@@ -59,11 +62,8 @@ body {
   position: fixed;
 
 }
+ 
 
-div.container.navList {
-  
-  position: fixed;
-}
 
 
   /* .aVid{
