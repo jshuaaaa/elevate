@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./components/main";
 
-// import Profile from "./pages/Profile";
+import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Course from "./pages/Course";
@@ -53,7 +53,7 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path='/login' element={<Login />} />
               <Route path='/signup' element={<Signup />} />
-              {/* <Route path='/me' element={<Profile />} /> */}
+              <Route path='/me' element={<Profile />} />
               <Route path='/courses/:courseId' element={<Course />} />
             </Routes>
           </div>
