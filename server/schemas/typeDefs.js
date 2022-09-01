@@ -81,8 +81,7 @@ const typeDefs = gql`
     addLectureToModule(moduleId: ID!, name: String!, url: String!): Lecture
     addActivityToModule(moduleId: ID!, name: String!): Activity
 
-    addSkill(profileId: ID!, skill: String!): Profile
-    removeSkill(skill: String!): Profile
+    addReview(reviewText: String!): Review
   }
 `;
 

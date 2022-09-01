@@ -25,15 +25,25 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_COURSE = gql`
-  mutation addCourse($name: String!, $category: String!, $description: String!, $price: String!) {
-    addCourse(name: $name, category: $category, description: $description, price: $price) {
+  mutation addCourse(
+    $name: String!
+    $category: String!
+    $description: String!
+    $price: String!
+  ) {
+    addCourse(
+      name: $name
+      category: $category
+      description: $description
+      price: $price
+    ) {
       _id
       name
       category
       description
       price
+    }
   }
-}
 `;
 
 export const ADD_MODULE = gql`
@@ -54,13 +64,14 @@ export const ADD_MODULE = gql`
 `;
 
 export const ADD_REVIEW = gql`
-  mutation addReview($reviewText: String!, $createdAt: String!) {
-    addReview(reviewText: $reviewText, createdAt: $createdAt) {
+  mutation addReview($reviewText: String!) {
+    addReview(reviewText: $reviewText) {
       _id
       reviewText
+      reviewAuthor
       createdAt
+    }
   }
-}
 `;
 
 export const REMOVE_MODULE = gql`
