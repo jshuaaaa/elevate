@@ -42,7 +42,7 @@ const Header = () => {
               initial={{ x: 1400}}
               animate={{x: 0}}
               transition={{ delay: 0.9 , type: 'tween'}}
-               className="logAndSign align-self-end btn btn-lg btn-primary m-2">
+               className="logAndSign align-self-end btn btn-lg btn-light m-2">
                 Login
               </motion.a>
               </Link>

@@ -10,7 +10,7 @@ const Home = () => {
   const { loading, data } = useQuery(QUERY_COURSES);
   const courses = data?.courses || [];
   return (
-    <div className='main' id='home'>
+    <div className='main flex' id='home'>
       
         <video src={videoBg} autoPlay loop muted />
         <div className="content">
@@ -21,13 +21,13 @@ const Home = () => {
         <label htmlFor="header-search">
             <span className="visually-hidden">Search Courses</span>
         </label>
-        <input
+        <input class="form-control-lg"
             type="text"
             id="header-search"
-            placeholder="Search blog posts"
+            placeholder="Search Courses"
             name="s" 
         />
-        <button type="submit">Search</button>
+        <button type="submit" className="btn btn-primary btn-lg" >Search</button>
     </form>
      
          
@@ -36,13 +36,13 @@ const Home = () => {
       </div>
       
    </div>
-   <div className="col-12 col-md-8 mb-3">
+   <div className="row flex">
         {loading ? (
           <div>Loading...</div>
         ) : (
           <CourseList
             courses={courses}
-            title="Some Featured Courses..." />
+            title="Featured Courses" />
         )}
             </div>
         </div>
