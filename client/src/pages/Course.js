@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { QUERY_SINGLE_COURSE } from "../utils/queries";
 // import { ADD_COURSE, ADD_MODULE, ADD_REVIEW } from "../utils/mutations";
 import ReviewList from "../components/ReviewList";
-
+import ReviewForm from "../components/ReviewForm";
 function Course() {
   const { courseId } = useParams();
 
@@ -30,6 +30,9 @@ function Course() {
       <div className='my-5 bg-dark p-2 text-white'>
         <h2>Reviews</h2>
         <ReviewList reviews={course.reviews} />
+      </div>
+      <div className='m-3 p-4' style={{ border: "1px dotted #1a1a1a" }}>
+        <ReviewForm reviewId={course._id} />
       </div>
     </div>
   );
