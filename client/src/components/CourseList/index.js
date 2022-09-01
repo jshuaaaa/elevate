@@ -12,11 +12,11 @@ const CourseList = ({ courses, title, showTitle = true }) => {
       {showTitle && <h3>{title}</h3>}
       {courses &&
         courses.map((course) => (
-          <div className='col-sm-6'>
+          <div className='cardCont'>
             <div
               key={course._id}
-              className='card mb-3'
-              style={{ width: "18rem" }}
+              className='card mb-3 cardo'
+               style={{ width: "25rem", height: "20rem" }}
             >
               <h4 className='card-header bg-primary text-light p-2 m-0'>
                 <Link className='text-light' to={`/courses/${course.name}`}>
