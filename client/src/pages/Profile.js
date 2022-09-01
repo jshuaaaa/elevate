@@ -1,14 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { Navigate, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { Navigate, useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 
-import SkillsList from '../components/SkillsList';
-import SkillForm from '../components/SkillForm';
-
-import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
-
-import Auth from '../utils/auth';
+import { QUERY_SINGLE_PROFILE, QUERY_ME } from "../utils/queries";
+import CourseList from "../components/CourseList";
+import Auth from "../utils/auth";
 
 const Profile = () => {
   const { profileId } = useParams();
@@ -26,7 +23,7 @@ const Profile = () => {
 
   // Use React Router's `<Redirect />` component to redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data._id === profileId) {
-    return <Navigate to="/me" />;
+    return <Navigate to='/me' />;
   }
 
   if (loading) {
@@ -43,22 +40,22 @@ const Profile = () => {
   }
 
   return (
-    <div>
-      <h2 className="card-header">
-        {profileId ? `${profile.name}'s` : 'Your'} friends have endorsed these
-        skills...
+    <div className='p-5'>
+      <h1>Welcome, {profile.name}</h1>
+      <h2 className='card-header'>
+        {profileId ? `${profile.name}'s` : "These"} are your courses
       </h2>
 
-      {profile.skills?.length > 0 && (
-        <SkillsList
-          skills={profile.skills}
+      {profile.courses?.length > 0 && (
+        <CourseList
+          courses={profile.courses}
           isLoggedInUser={!profileId && true}
         />
       )}
 
-      <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+      {/* <div className='my-4 p-4' style={{ border: "1px dotted #1a1a1a" }}>
         <SkillForm profileId={profile._id} />
-      </div>
+      </div> */}
     </div>
   );
 };
