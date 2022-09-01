@@ -46,18 +46,19 @@
 .cardCont{
   display: flex;
   justify-content: center;
+  
 }
 
  .courseMain >  div {
  flex: 0 1 30%;
  height: 40vh;
-  
+  text-align: center;
 } 
-/* .cardo{
+ .cardo{
   text-align: center;
   line-height: 5;
   padding: 0%;
-} */
+} 
 
 
 
