@@ -52,11 +52,17 @@ body {
 }
 
 .ribButt{
-  width: 25%;
+  width: 14%;
   padding: 0%;
   margin-bottom: 2%;
-  z-index: 0;
+  z-index: 2;
+  position: fixed;
 
+}
+
+div.container.navList {
+  
+  position: fixed;
 }
 
 
