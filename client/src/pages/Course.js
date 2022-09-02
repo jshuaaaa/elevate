@@ -15,16 +15,16 @@ function Course() {
   const { courseId } = useParams();
 
 
-  const { loading, data } = useQuery(QUERY_SINGLE_COURSE_PAGE, {
+  const {loading, data} = useQuery(QUERY_SINGLE_COURSE_PAGE, {
+    variables: {courseId: courseId}
+  });
 
   //for modal
   const [openAddModule, setOpenAddModule] = useState(false);
   const [openAddActivity, setOpenAddActivity] = useState(false);
-  const { loading, data } = useQuery(QUERY_SINGLE_COURSE, {
 
     // pass URL parameter
-    variables: { courseId: courseId },
-  });
+
 
   console.log(data)
   const course = data?.coursePage || {};
@@ -32,7 +32,7 @@ function Course() {
   if (loading) {
     return <div>Loading...</div>;
   }
-  return (
+  return(
     <div className='my-3'>
       <h3 className='card-header bg-dark text-light p-2 m-0'>{course.name}</h3>
       <div className='card-body bg-light p-4'>
@@ -68,5 +68,6 @@ function Course() {
     </div>
   );
 }
+
 
 export default Course;
