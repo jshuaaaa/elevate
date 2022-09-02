@@ -1,0 +1,145 @@
+.p-2 {
+  text-align: center;
+}
+
+body {
+  background-color: #2da1dc !important;
+}
+
+.logC {
+  position: relative;
+  align-items: center;
+  /* background-color: #2da1dc; */
+  margin-top: 15%;
+
+  margin: 6%;
+  padding: 0%;
+}
+
+.logC > h4 {
+  text-align: center;
+  font-size: 2em;
+}
+
+.logBt {
+  background-color: #2da1dc;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #0090f8;
+  color: #0d0d0d;
+  border: 1px solid #808080;
+  font-weight: 300px;
+}
+
+.containerr {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 80px 80px;
+  border-radius: 5px;
+  transform: scale(1.2);
+}
+
+.form-control {
+  position: relative;
+  margin: 50px 0 50px;
+  width: auto;
+}
+
+.formBG {
+  position: relative;
+  margin: 50px 0 50px;
+  width: auto;
+}
+
+.card-text {
+  color: #ffffff;
+}
+
+/* .logFoot{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+
+} */
+
+/*.my-card {
+  /* width: 100vw; */
+/* height: auto; */
+/* box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  position: relative;
+  border-radius: 20px; */
+/* margin: auto; */
+/* border-top-left-radius: 20px;
+  border-top-right-radius: 20px; */
+
+/* 
+.img-place {
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#card-img {
+  width: 100%;
+  height: 280px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-image: url(https://i.pinimg.com/736x/5a/b1/2a/5ab12ae40f4d28572704b7e4d4fadb41.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.5s;
+} */
+
+/* #card-img:hover {
+  width: 300px;
+} */
+
+/* .card-2-space {
+padding: 0 40px 20px 40px;
+} */
+
+/* .card-btn {
+  width: 100%;
+  margin-top: 10px;
+} */
+
+/* .my-btn {
+  width: 100%;
+  background-color: #000000;
+  border: 0px;
+  padding: 8px;
+  color: #ffffff;
+  transition: 0.3s;
+} */
+
+/* .my-btn:hover {
+  background-color: #666699;
+} */
+
+/* .btn {
+  background-color:  #0d0d0d;
+  color: #ffffff;
+  padding: 10px;
+  border: 1px solid  #1a1a1a;
+  border-radius: 8px;
+  transition: 0.3s;
+} */
+
+/* .form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 18px;
+    color: #fff;
+} */
+
+/* .form-control input:focus,
+.form-control input:valid {
+    outline: none;
+    border-bottom-color: lightblue;
+
+} */
