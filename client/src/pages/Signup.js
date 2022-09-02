@@ -41,7 +41,7 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
+    <main className="flex-row justify-center mb-4 logBack">
       <div class="card-text d-flex justify-content-center">
         <div className="logC containerr">
           <h4 className="">Sign Up</h4>
