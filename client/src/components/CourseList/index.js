@@ -16,10 +16,10 @@ const CourseList = ({ courses, title, showTitle = true }) => {
             <div
               key={course._id}
               className='card mb-3 cardo'
-               style={{ width: "25rem", height: "20rem" }}
+              style={{ width: "25rem", height: "20rem" }}
             >
               <h4 className='card-header bg-primary text-light p-2 m-0'>
-                <Link className='text-light' to={`/courses/${course.name}`}>
+                <Link className='text-light' to={`/courses/${course.id}`}>
                   {course.name}
                 </Link>
               </h4>
