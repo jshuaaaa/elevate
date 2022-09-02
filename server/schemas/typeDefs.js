@@ -24,6 +24,7 @@ const typeDefs = gql`
     category: String!
     description: String
     price: String
+    courseAuthor: String
     module: [Module]
     review: [Review]
   }
@@ -79,7 +80,7 @@ const typeDefs = gql`
   type Mutation {
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addCourse(input: newCourse): Course
+    addCourse(input: newCourse): User
     addModuleToCourse(courseId: ID!, name: String!): Module
     addLectureToModule(moduleId: ID!, name: String!, url: String!): Lecture
     addActivityToModule(moduleId: ID!, name: String!): Activity

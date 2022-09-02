@@ -47,10 +47,9 @@ const CourseForm = () => {
   const [validated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
-
   const [addCourse, { error }] = useMutation(
     ADD_COURSE
-    // {
+    // , {
     // update(cache, { data: { addCourse } }) {
     //   try {
     //     const { courses } = cache.readQuery({ query: QUERY_COURSES });
@@ -70,7 +69,6 @@ const CourseForm = () => {
     //     data: { me: { ...me, courses: [...me.courses, addCourse] } },
     //   });
     // },
-    // }
   );
 
   const handleInputChange = (event) => {
@@ -88,17 +86,17 @@ const CourseForm = () => {
 
     try {
       const { data } = await addCourse({
-        variables: { ...course },
+        variables: { ...course, courseAuthor: Auth.getProfile().data.name },
       });
       // const { token, user } = await response.json();
-      Auth.login(data.addCourse.token);
+      // Auth.login(data.addCourse.token);
+      //navigate("/me");
+      console.log(data);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
     }
     // might change to course/id
-    navigate("/me");
-
     setCourseFormData({
       name: "",
       description: "",
@@ -187,6 +185,7 @@ const CourseForm = () => {
               as='select'
               onChange={handleInputChange}
               defaultValue='...'
+              value={course.category}
               required
               // value={course.category}
               // requiredcomponentClass='select'

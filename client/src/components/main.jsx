@@ -6,7 +6,7 @@ import '../components/styles/main.css'
 import searchicon from '../assets/searchicon.png'
 
 import SearchBar from './SearchBar';
-
+import CourseSection from './CourseSection';
 
 
 const Home = () => {
@@ -28,14 +28,10 @@ const Home = () => {
         
          
       </div>
-      
    </div>
-   
-        </div>
-    
-       
+      </div>
+      <CourseSection/>
     </div>
-    
   )
 }
 

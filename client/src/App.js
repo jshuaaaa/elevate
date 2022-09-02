@@ -19,13 +19,11 @@ import Course from "./pages/Course";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SideNav from "./components/Sidenav";
-import CourseSection from "./components/CourseSection";
 import SearchedCourse from "./components/SearchedCourse";
 import AddCourse from "./pages/AddCourse";
-import { Helmet } from 'react-helmet'
+import { Helmet } from "react-helmet";
 
-
-const TITLE = 'Elevate'
+const TITLE = "Elevate";
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -51,14 +49,13 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-      
         <div className='min-100-vh'>
-        <Helmet>
-          <title>{ TITLE }</title>
-        </Helmet>
+          <Helmet>
+            <title>{TITLE}</title>
+          </Helmet>
           <Header />
           <SideNav />
-          
+
           <div className='videWS'>
             <Routes>
               <Route path='/' element={<Home />} />
@@ -67,13 +64,11 @@ function App() {
               <Route path='/me' element={<Profile />} />
               <Route path='/courses/:courseId' element={<Course />} />
 
-              <Route path='/course/search/:name' element={<SearchedCourse/>} />
+              <Route path='/course/search/:name' element={<SearchedCourse />} />
 
               <Route path='/courses/add' element={<AddCourse />} />
-
             </Routes>
           </div>
-          <CourseSection />
           <Footer />
         </div>
       </Router>

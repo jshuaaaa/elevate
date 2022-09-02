@@ -21,6 +21,11 @@ const courseSchema = new Schema({
   price: {
     type: String,
   },
+  courseAuthor: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   module: [
     {
       type: Schema.Types.ObjectId,

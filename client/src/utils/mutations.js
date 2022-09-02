@@ -25,23 +25,14 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_COURSE = gql`
-  mutation addCourse(
-    $name: String!
-    $category: String!
-    $description: String!
-    $price: String!
-  ) {
-    addCourse(
-      name: $name
-      category: $category
-      description: $description
-      price: $price
-    ) {
+  mutation addCourse($input: newCourse) {
+    addCourse(input: $input) {
       _id
       name
       category
       description
       price
+      courseAuthor
     }
   }
 `;

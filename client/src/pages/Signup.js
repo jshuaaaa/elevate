@@ -41,46 +41,46 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4 logBack">
-      <div class="card-text d-flex justify-content-center">
-        <div className="logC containerr">
-          <h4 className="">Sign Up</h4>
-          <div className="formBG">
+    <main className='flex-row justify-center mb-4 logBack'>
+      <div className='card-text d-flex justify-content-center'>
+        <div className='logC container'>
+          <h4 className=''>Sign Up</h4>
+          <div className='formBG'>
             {data ? (
               <p>
                 Success! You may now head{" "}
-                <Link to="/">back to the homepage.</Link>
+                <Link to='/'>back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input form-control"
-                  placeholder="Your username"
-                  name="name"
-                  type="text"
+                  className='form-input form-control'
+                  placeholder='Your username'
+                  name='name'
+                  type='text'
                   value={formState.name}
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input form-control"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
+                  className='form-input form-control'
+                  placeholder='Your email'
+                  name='email'
+                  type='email'
                   value={formState.email}
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input form-control"
-                  placeholder="******"
-                  name="password"
-                  type="password"
+                  className='form-input form-control'
+                  placeholder='******'
+                  name='password'
+                  type='password'
                   value={formState.password}
                   onChange={handleChange}
                 />
                 <button
-                  className="btn logBt"
+                  className='btn logBt'
                   style={{ cursor: "pointer" }}
-                  type="submit"
+                  type='submit'
                 >
                   Submit
                 </button>
@@ -88,7 +88,7 @@ const Signup = () => {
             )}
 
             {error && (
-              <div className="my-3 p-3 bg-danger text-white">
+              <div className='my-3 p-3 bg-danger text-white'>
                 {error.message}
               </div>
             )}
