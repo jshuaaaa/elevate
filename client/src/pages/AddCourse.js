@@ -50,7 +50,7 @@ const CourseForm = () => {
 
   const [addCourse, { error }] = useMutation(
     ADD_COURSE
-    // {
+    // , {
     // update(cache, { data: { addCourse } }) {
     //   try {
     //     const { courses } = cache.readQuery({ query: QUERY_COURSES });
@@ -70,7 +70,6 @@ const CourseForm = () => {
     //     data: { me: { ...me, courses: [...me.courses, addCourse] } },
     //   });
     // },
-    // }
   );
 
   const handleInputChange = (event) => {
@@ -90,6 +89,7 @@ const CourseForm = () => {
       const { data } = await addCourse({
         variables: { ...course },
       });
+      console.log(data);
       // const { token, user } = await response.json();
       // Auth.login(data.addCourse.token);
     } catch (err) {
@@ -97,8 +97,7 @@ const CourseForm = () => {
       setShowAlert(true);
     }
     // might change to course/id
-    navigate("/me");
-
+    // navigate("/me");
     setCourseFormData({
       name: "",
       description: "",
@@ -167,7 +166,7 @@ const CourseForm = () => {
             <InputGroup>
               <InputGroup.Text>$</InputGroup.Text>
               <Form.Control
-                type='number'
+                type='text'
                 placeholder='Set a price'
                 name='price'
                 onChange={handleInputChange}

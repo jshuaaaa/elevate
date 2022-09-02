@@ -2,7 +2,7 @@ import React from 'react'
 import videoBg from '../assets/education.mp4'
 import '../components/styles/main.css'
 
-
+import CourseSection from '../components/CourseSection'
 import searchicon from '../assets/searchicon.png'
 
 import SearchBar from './SearchBar';
@@ -33,7 +33,7 @@ const Home = () => {
    
         </div>
     
-       
+       <CourseSection/>
     </div>
     
   )

@@ -52,9 +52,8 @@ const typeDefs = gql`
   }
 
   input newCourse {
-    _id: ID
-    name: String!
-    category: String!
+    name: String
+    category: String
     description: String
     price: String
     courseAuthor: String

@@ -80,10 +80,14 @@ const resolvers = {
 
   Mutation: {
     addProfile: async (parent, { name, email, password }) => {
-      const profile = await Profile.create({ name, email, password });
-      const token = signToken(profile);
+      try {
+        const profile = await Profile.create({ name, email, password });
+        const token = signToken(profile);
 
-      return { token, profile };
+        return { token, profile };
+      } catch (err) {
+        console.log(err);
+      }
     },
     addCourse: async (
       parent,
@@ -98,18 +102,18 @@ const resolvers = {
           price,
           courseAuthor: context.profile.name,
         });
-        const userData = await Profile.findOneAndUpdate(
-          {
-            _id: context.profile._id,
-          },
+        await Profile.findOneAndUpdate(
+          { _id: context.profile._id },
           {
             $addToSet: { courses: course._id },
+          },
+          {
+            new: true,
           }
         );
 
         return course;
       }
-      throw new AuthenticationError("You need to be logged in!");
     },
     addModuleToCourse: async (parent, { courseId, name }) => {
       const module = await Module.create({ name });
