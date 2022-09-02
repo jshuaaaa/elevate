@@ -46,6 +46,9 @@ aside {
 
 .ribby {
   width: 50%;
+
+  cursor: pointer;
+
 }
 
 .ribButt {
