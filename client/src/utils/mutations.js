@@ -42,6 +42,7 @@ export const ADD_COURSE = gql`
       category
       description
       price
+      courseAuthor
     }
   }
 `;

@@ -38,6 +38,7 @@ export const QUERY_COURSES = gql`
       category
       description
       price
+      courseAuthor
     }
   }
 `;
@@ -50,6 +51,7 @@ export const QUERY_SINGLE_COURSE = gql`
       category
       description
       price
+      courseAuthor
       module {
         _id
         name

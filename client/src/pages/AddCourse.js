@@ -91,7 +91,7 @@ const CourseForm = () => {
         variables: { ...course },
       });
       // const { token, user } = await response.json();
-      Auth.login(data.addCourse.token);
+      // Auth.login(data.addCourse.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
@@ -188,7 +188,7 @@ const CourseForm = () => {
               onChange={handleInputChange}
               defaultValue='...'
               required
-              // value={course.category}
+              value={course.category}
               // requiredcomponentClass='select'
               placeholder='Category'
             >
