@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import "../styles/footer.css";
 const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -17,7 +17,9 @@ const Footer = () => {
             &larr; Go Back
           </button>
         )}
-        <h4>&copy; {new Date().getFullYear()} - Tech Friends</h4>
+        <div className="pwalogo">
+        <img src={require('../images/pwa.png')} />
+        </div>
       </div>
     </footer>
   );
