@@ -20,7 +20,9 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SideNav from "./components/Sidenav";
 import AddCourse from "./pages/AddCourse";
+import { Helmet } from 'react-helmet'
 
+const TITLE = 'Elevate'
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -46,7 +48,11 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+      
         <div className='min-100-vh'>
+        <Helmet>
+          <title>{ TITLE }</title>
+        </Helmet>
           <Header />
           <SideNav />
           <div className='videWS'>
