@@ -10,6 +10,9 @@
 .logBack{
   background-color: #0091f800;
   background-image: url("../images/blueLearn.jpg") ;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
 
 }
 
@@ -17,9 +20,9 @@
   position: relative;
   align-items: center;
   /* background-color: #2da1dc; */
-  margin-top: 15%;
+  /* margin-top: 15%; */
 
-  margin: 6%;
+  /* margin: 6%; */
   padding: 0%;
 }
 

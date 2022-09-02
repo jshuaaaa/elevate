@@ -65,12 +65,14 @@ const Login = (props) => {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form>
+              <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-control form-input"
                   placeholder="Your email"
                   name="email"
                   type="email"
+                  onChange={handleChange}
+                  value={formState.email}
                 />
                 <div className="">
                   <input
@@ -78,6 +80,8 @@ const Login = (props) => {
                     placeholder="******"
                     name="password"
                     type="password"
+                    onChange={handleChange}
+                    value={formState.password}
                   />
                 </div>
                 <div className="d-flex justify-content-center">

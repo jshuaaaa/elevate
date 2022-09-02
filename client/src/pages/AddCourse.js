@@ -108,12 +108,15 @@ const CourseForm = () => {
   };
 
   return (
-    <div className='my-5 p-5'>
+    <main className="logBack">
+       <div class="card-text d-flex justify-content-center">
+       <div className="logC ">
+    <div className=''>
       <h1>Add a new course below</h1>
-
+      <div className="formBG">
       {Auth.loggedIn() ? (
         <Form
-          className='flex-row justify-center justify-space-between-md align-center'
+          className='form-control form-input '
           noValidate
           validated={validated}
           onSubmit={handleFormSubmit}
@@ -133,6 +136,7 @@ const CourseForm = () => {
           <Form.Group>
             <Form.Label htmlFor='name'>Course Name</Form.Label>
             <Form.Control
+           
               type='text'
               placeholder='Name'
               name='name'
@@ -225,6 +229,12 @@ const CourseForm = () => {
         </p>
       )}
     </div>
+    </div>
+    </div>
+    </div>
+    </main>
+  
+    
   );
 };
 
