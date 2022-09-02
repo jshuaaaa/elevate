@@ -19,7 +19,7 @@ import Course from "./pages/Course";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SideNav from "./components/Sidenav";
-
+import CourseSection from "./components/CourseSection";
 import SearchedCourse from "./components/SearchedCourse";
 import AddCourse from "./pages/AddCourse";
 import { Helmet } from 'react-helmet'
@@ -58,6 +58,7 @@ function App() {
         </Helmet>
           <Header />
           <SideNav />
+          
           <div className='videWS'>
             <Routes>
               <Route path='/' element={<Home />} />
@@ -72,6 +73,7 @@ function App() {
 
             </Routes>
           </div>
+          <CourseSection />
           <Footer />
         </div>
       </Router>
