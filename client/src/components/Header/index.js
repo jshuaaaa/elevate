@@ -35,11 +35,24 @@ render(){
         >
           {Auth.loggedIn() ? (
             <>
+              <Link className='btn btn-lg btn-info m-2' to='/me'>
+                {Auth.getProfile().data.name}'s profile
+              </Link>
+              <Link to='/courses/add'>
+                <motion.a
+                  initial={{ x: -1400 }}
+                  animate={{ x: 0 }}
+                  transition={{ delay: 1.0, type: "tween" }}
+                  className='btn btn-lg btn-primary m-2'
+                >
+                  Create course
+                </motion.a>
+              </Link>
               <Link to='/me'>
                 <motion.a
                   initial={{ x: -1400 }}
                   animate={{ x: 0 }}
-                  transition={{ delay: 1.0, type: "tween" ,duration: 0.5 }}
+                  transition={{ delay: 1.0, type: "tween", duration: 0.5 }}
                   className='btn btn-lg btn-primary m-2'
                 >
                   View My Profile
