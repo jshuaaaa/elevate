@@ -1,0 +1,14 @@
+.pwalogo {
+    position: relative;
+  
+    margin: 0px;
+    padding: 0px;
+}
+
+.pwalogo img{
+   
+    position: relative;
+    justify-content: center;
+    width: 10vw;
+    
+}
