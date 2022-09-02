@@ -6,6 +6,7 @@ import '../styles/sidenav.css'
 import '../styles/header.css'
 import ribbon from '../images/bookmark.png'
 
+
 import { AnimatePresence, motion, useCycle } from "framer-motion";
 
 
@@ -29,7 +30,7 @@ const itemVariants = {
 const sideVariants = {
   closed: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0,
       staggerDirection: -1,
     },
   },
@@ -48,6 +49,7 @@ const SideNav = () => {
       Auth.logout();
     };
     const [open, cycleOpen] = useCycle(false, true);
+   
 
   //   useEffect(() => {
   //    cycleOpen(true)
@@ -57,6 +59,7 @@ const SideNav = () => {
     return (
 
 <main className='sideNavCont'>
+
 <AnimatePresence>
 {open && (
   <motion.aside
@@ -72,12 +75,13 @@ const SideNav = () => {
     }}
   >
     <motion.div
-      className="container navList"
+      className="navList container"
       initial="closed"
       animate="open"
-      exit="closed"
+       exit="closed"
       variants={sideVariants}
     >
+      
       {links.map(({ name, to, id }) => (
         <motion.a
           key={id}
@@ -89,14 +93,19 @@ const SideNav = () => {
           {name}
         </motion.a>
       ))}
-    </motion.div>
+       </motion.div>
   </motion.aside>
 )}
 </AnimatePresence>
+   
 
  <motion.img
- animate={{scale: 1.2}}
- onClick={cycleOpen}className='ribby ribButt' src= {ribbon}  alt='ribbon'></motion.img>
+ whileHover={{ scale: 1.05 }}
+ initial={{ x: -500 }}
+ animate={{ x: 0 }}
+ transition={{  type: "tween", duration: 0.7 }}
+ 
+ onClick={cycleOpen}  className='ribby ribButt' src= {ribbon}  alt='ribbon'></motion.img>
 
 </main>
     );

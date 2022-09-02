@@ -1,83 +1,98 @@
 .row.banner {
-
-    position: relative;
-    width: 100vw;
-
+  position: relative;
+  width: 100vw;
 }
 
+.videWS {
+  margin: 0%;
+  margin-right: 0% !important;
+}
 
-
+.video2 {
+  width: 115%;
+}
 
 .banner-text {
-   
-   position: absolute;
- 
- 
+  margin-left: 40%;
+  margin-top: -30%;
+  width: 100%;
+  border: 0%;
 }
-.banner-text form {
-    position: relative;
+.courseMain {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
 
-    left: 30vw;
-    
-    
-    bottom: 120vh;
+.courseMain > h3 {
+  text-align: center;
+  flex: 1 1 100%;
+  margin: 0%;
+  margin-bottom: 5%;
 }
-    
+
+.cardCont {
+  display: flex;
+  justify-content: center;
+}
+
+.courseMain > div {
+  flex: 0 1 30%;
+  height: 40vh;
+  text-align: center;
+}
+.cardo {
+  text-align: center;
+  line-height: 5;
+  padding: 0%;
+}
+
+.sizeM {
+  width: 100vw;
+}
 
 body {
-    display: flex;
-    position: relative;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  video {
-    margin-left: -10vw !important;
-    /* padding: -5px  !important;  */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-  }
-  
- 
-  video {
-    width: 100vw;
-    height: 70%;
-    object-fit: cover;
-  }
-  
-  .content {
-    position: flex;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    display: flex;
-  
-    justify-content: center;
-    align-items: center;
-    color: white;
-    
-  }
-  
-  
- .banner-text form  {
-    top: -110vh;
+  display: flex;
+  position: relative;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
- }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+video {
+  margin-left: -10vw !important;
+  /* padding: -5px  !important;  */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 120vw;
+}
 
- 
- .banner-text  button {
-    bottom: 10vh;
+.content {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
 
- }
- body {
-    overflow-x:hidden;
+  justify-content: center;
 
- }
- 
+  color: white;
+}
+
+/* .banner-text form {
+  top: -110vh;
+} */
+
+.banner-text button {
+  bottom: 10vh;
+}
+body {
+  overflow-x: hidden;
+}
