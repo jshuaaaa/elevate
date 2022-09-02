@@ -6,6 +6,7 @@ import '../styles/sidenav.css'
 import '../styles/header.css'
 import ribbon from '../images/bookmark.png'
 
+
 import { AnimatePresence, motion, useCycle } from "framer-motion";
 
 
@@ -48,6 +49,7 @@ const SideNav = () => {
       Auth.logout();
     };
     const [open, cycleOpen] = useCycle(false, true);
+   
 
   //   useEffect(() => {
   //    cycleOpen(true)
@@ -57,6 +59,7 @@ const SideNav = () => {
     return (
 
 <main className='sideNavCont'>
+
 <AnimatePresence>
 {open && (
   <motion.aside
@@ -78,6 +81,7 @@ const SideNav = () => {
        exit="closed"
       variants={sideVariants}
     >
+      
       {links.map(({ name, to, id }) => (
         <motion.a
           key={id}
@@ -89,10 +93,11 @@ const SideNav = () => {
           {name}
         </motion.a>
       ))}
-    </motion.div>
+       </motion.div>
   </motion.aside>
 )}
 </AnimatePresence>
+   
 
  <motion.img
  whileHover={{ scale: 1.05 }}
@@ -100,7 +105,7 @@ const SideNav = () => {
  animate={{ x: 0 }}
  transition={{  type: "tween", duration: 0.7 }}
  
- onClick={cycleOpen} className='ribby ribButt' src= {ribbon}  alt='ribbon'></motion.img>
+ onClick={cycleOpen}  className='ribby ribButt' src= {ribbon}  alt='ribbon'></motion.img>
 
 </main>
     );
