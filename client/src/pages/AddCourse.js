@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import { Form, Button, Alert, Col } from "react-bootstrap";
+import { Form, Button, Alert, Col, InputGroup } from "react-bootstrap";
 import { ADD_COURSE } from "../utils/mutations";
 import { QUERY_COURSES, QUERY_ME } from "../utils/queries";
 import Auth from "../utils/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const categories = [
   {
@@ -33,7 +34,9 @@ const categories = [
   },
 ];
 
-const CourseForm = ({ profileId }) => {
+const CourseForm = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [course, setCourseFormData] = useState({
     name: "",
     description: "",
@@ -87,13 +90,14 @@ const CourseForm = ({ profileId }) => {
       const { data } = await addCourse({
         variables: { ...course },
       });
-
       // const { token, user } = await response.json();
-      // Auth.login(data.createUser.token);
+      Auth.login(data.addCourse.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
     }
+    // might change to course/id
+    navigate("/me");
 
     setCourseFormData({
       name: "",
@@ -101,21 +105,10 @@ const CourseForm = ({ profileId }) => {
       category: "",
       price: "",
     });
-
-    // try {
-    //   const { data } = await addCourse({
-    //     variables: { course },
-    //   });
-    //   console.log(data);
-
-    //   setCourse("");
-    // } catch (err) {
-    //   console.error(err);
-    // }
   };
 
   return (
-    <div className='p-5'>
+    <div className='my-5 p-5'>
       <h1>Add a new course below</h1>
 
       {Auth.loggedIn() ? (
@@ -125,13 +118,16 @@ const CourseForm = ({ profileId }) => {
           validated={validated}
           onSubmit={handleFormSubmit}
         >
+          {/* show alert if server response is bad */}
           <Alert
             dismissible
             onClose={() => setShowAlert(false)}
             show={showAlert}
             variant='danger'
           >
-            Something went wrong with your course creation!
+            <Alert.Heading>
+              Something went wrong with your course creation!
+            </Alert.Heading>
           </Alert>
 
           <Form.Group>
@@ -168,17 +164,20 @@ const CourseForm = ({ profileId }) => {
 
           <Form.Group>
             <Form.Label htmlFor='Price'>Price</Form.Label>
-            <Form.Control
-              type='text'
-              placeholder='Set a price'
-              name='price'
-              onChange={handleInputChange}
-              value={course.price}
-              required
-            />
-            <Form.Control.Feedback type='invalid'>
-              Price can be 0. A price is required!
-            </Form.Control.Feedback>
+            <InputGroup>
+              <InputGroup.Text>$</InputGroup.Text>
+              <Form.Control
+                type='number'
+                placeholder='Set a price'
+                name='price'
+                onChange={handleInputChange}
+                value={course.price}
+                required
+              />
+              <Form.Control.Feedback type='invalid'>
+                Price can be 0. A price is required!
+              </Form.Control.Feedback>
+            </InputGroup>
           </Form.Group>
 
           <Form.Group>
@@ -187,19 +186,24 @@ const CourseForm = ({ profileId }) => {
               name='category'
               as='select'
               onChange={handleInputChange}
-              defaultValue={course.category}
+              defaultValue='...'
+              required
               // value={course.category}
               // requiredcomponentClass='select'
               placeholder='Category'
             >
-              <option value='other'>...</option>
-              <option value='Music'>Music</option>
-              <option value='Business'>Business</option>
+              <option>...</option>
+              {categories.map((category) => {
+                return <option key={category.name}>{category.name}</option>;
+              })}
             </Form.Control>
+            <Form.Control.Feedback type='invalid'>
+              Please select a category for the course.
+            </Form.Control.Feedback>
           </Form.Group>
-
+          <br />
           <Button
-            className='btn btn-info btn-block py-1'
+            className='btn btn-warning'
             disabled={
               !(
                 course.name &&
@@ -225,17 +229,3 @@ const CourseForm = ({ profileId }) => {
 };
 
 export default CourseForm;
-
-{
-  /* <select
-              onChange={(e) => setCategory(e.target.value)}
-              value={category}
-            >
-              <option>Choose major...</option>
-              {categories.map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </select> */
-}
