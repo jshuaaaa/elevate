@@ -4,6 +4,7 @@ import '../components/styles/main.css'
 import { useQuery } from '@apollo/client';
 import CourseList from '../components/CourseList'
 import { QUERY_COURSES } from '../utils/queries'
+import SearchBar from './SearchBar';
 
 
 const Home = () => {
@@ -17,18 +18,7 @@ const Home = () => {
         <div className="row banner">
       
       <div className="banner-text">
-      <form action="/" method="get">
-        <label htmlFor="header-search">
-            <span className="visually-hidden">Search Courses</span>
-        </label>
-        <input class="form-control-lg"
-            type="text"
-            id="header-search"
-            placeholder="Search Courses"
-            name="s" 
-        />
-        <button type="submit" className="btn btn-primary btn-lg" >Search</button>
-    </form>
+<SearchBar />
      
          
         

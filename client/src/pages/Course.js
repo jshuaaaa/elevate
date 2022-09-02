@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { useParams } from "react-router-dom";
-import { QUERY_SINGLE_COURSE } from "../utils/queries";
+import { QUERY_SINGLE_COURSE_PAGE } from "../utils/queries";
 // import { ADD_COURSE, ADD_MODULE, ADD_REVIEW } from "../utils/mutations";
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
@@ -14,16 +14,21 @@ function Course() {
   // need to add code for if user is logged in to show if they are registered for course or added course
   const { courseId } = useParams();
 
+
+  const { loading, data } = useQuery(QUERY_SINGLE_COURSE_PAGE, {
+
   //for modal
   const [openAddModule, setOpenAddModule] = useState(false);
   const [openAddActivity, setOpenAddActivity] = useState(false);
   const { loading, data } = useQuery(QUERY_SINGLE_COURSE, {
+
     // pass URL parameter
     variables: { courseId: courseId },
   });
 
-  const course = data?.course || {};
-
+  console.log(data)
+  const course = data?.coursePage || {};
+  console.log(course)
   if (loading) {
     return <div>Loading...</div>;
   }
