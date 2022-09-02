@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { } from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 import '../styles/sidenav.css'
@@ -55,63 +55,73 @@ const SideNav = () => {
   //    cycleOpen(true)
   //  },
   //  {})
-   
-    return (
 
-<main className='sideNavCont'>
-
-<AnimatePresence>
-{open && (
-  <motion.aside
-  
-  id='sideN'
-    initial={{ width: 10 }}
-    animate={{
-      width: 300
-    }}
-    exit={{
-      width: 0,
-      transition: { delay: 0.2, duration: 0.2 }
-    }}
-  >
-    <motion.div
-      className="navList container"
-      initial="closed"
-      animate="open"
-       exit="closed"
-      variants={sideVariants}
-    >
-      
-      {links.map(({ name, to, id }) => (
-        <motion.a
-          key={id}
-          href={to}
-          whileHover={{ scale: 1.1 }}
-          variants={itemVariants}
-         
-        >
-          {name}
-        </motion.a>
-      ))}
-       </motion.div>
-  </motion.aside>
-)}
-</AnimatePresence>
-   
-
- <motion.img
- whileHover={{ scale: 1.05 }}
- initial={{ x: -500 }}
- animate={{ x: 0 }}
- transition={{  type: "tween", duration: 0.7 }}
+  var login = true;
  
- onClick={cycleOpen}  className='ribby ribButt' src= {ribbon}  alt='ribbon'></motion.img>
-
-</main>
-    );
-      }
-
+    if (login) {
+      return (
+        <main className='sideNavCont'>
+        <AnimatePresence>
+        {open && (
+          <motion.aside
+          
+          id='sideN'
+            initial={{ width: 10 }}
+            animate={{
+              width: 300
+            }}
+            exit={{
+              width: 0,
+              transition: { delay: 0.2, duration: 0.2 }
+            }}
+          >
+            <motion.div
+              className="navList container"
+              initial="closed"
+              animate="open"
+               exit="closed"
+              variants={sideVariants}
+            >
+              {links.map(({ name, to, id }) => (
+                <motion.a
+                  key={id}
+                  href={to}
+                  whileHover={{ scale: 1.1 }}
+                  variants={itemVariants}
+                 
+                >
+                  {name}
+                </motion.a>
+              ))}
+            </motion.div>
+          </motion.aside>
+        )}
+        </AnimatePresence>
+        
+         <motion.img
+         whileHover={{ scale: 1.05 }}
+         initial={{ x: -500 }}
+         animate={{ x: 0 }}
+         transition={{  type: "tween", duration: 0.7 }}
+         
+         onClick={cycleOpen} className='ribby ribButt' src= {ribbon}  alt='ribbon'></motion.img>
+        
+        </main>
+            );
+              }
+        
+    
   
+  else {
+      return (
+       <div></div>
 
+    );
+  }
+  };
+  
+      
+    
+  
 
 export default SideNav;

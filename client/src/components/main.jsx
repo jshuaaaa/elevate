@@ -4,7 +4,11 @@ import '../components/styles/main.css'
 import { useQuery } from '@apollo/client';
 import CourseList from '../components/CourseList'
 import { QUERY_COURSES } from '../utils/queries'
+
+import searchicon from '../assets/searchicon.png'
+
 import SearchBar from './SearchBar';
+
 
 
 const Home = () => {
@@ -18,7 +22,10 @@ const Home = () => {
         <div className="row banner">
       
       <div className="banner-text">
+
+
 <SearchBar />
+
      
          
         
