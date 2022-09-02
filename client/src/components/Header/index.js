@@ -10,12 +10,9 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className='bg-info text-dark mb-4 py-3  '>
+    <header className='bg-info text-dark  '>
       <div className='headerC d-flex'>
-        <div
-          className='logAndSign d-flex align-self-end align-items-end
-        '
-        >
+       
           {Auth.loggedIn() ? (
             <>
               <div>
@@ -24,9 +21,9 @@ const Header = () => {
               <div>
                 <Link to='/courses/add'>
                   <motion.a
-                    initial={{ x: -1400 }}
+                    initial={{ x: 1400 }}
                     animate={{ x: 0 }}
-                    transition={{ delay: 1.0, type: "tween" }}
+                    transition={{ delay: 0.5, type: "tween" }}
                     className='btn btn-lg btn-primary m-2'
                   >
                     Create course
@@ -34,18 +31,18 @@ const Header = () => {
                 </Link>
                 <Link to='/me'>
                   <motion.a
-                    initial={{ x: -1400 }}
+                    initial={{ x: 1400 }}
                     animate={{ x: 0 }}
-                    transition={{ delay: 1.0, type: "tween" }}
+                    transition={{ delay: 0.7, type: "tween" }}
                     className='btn btn-lg btn-primary m-2'
                   >
                     View My Profile
                   </motion.a>
                 </Link>
                 <motion.button
-                  initial={{ x: 1400 }}
-                  animate={{ x: 0 }}
-                  transition={{ delay: 1.0, type: "tween" }}
+                   initial={{ x: 1400 }}
+                   animate={{ x: 0 }}
+                   transition={{ delay: 1.0, type: "tween" }}
                   className='btn btn-lg btn-light m-2'
                   onClick={logout}
                 >
@@ -53,6 +50,7 @@ const Header = () => {
                 </motion.button>
               </div>
             </>
+           
           ) : (
             <>
               <div>
@@ -84,7 +82,7 @@ const Header = () => {
             </>
           )}
         </div>
-      </div>
+      
     </header>
   );
 };
