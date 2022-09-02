@@ -55,6 +55,7 @@ const typeDefs = gql`
     description: String
     category: String
     price: String
+  }
 
   type Query {
     profiles: [Profile]!
