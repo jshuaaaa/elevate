@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import "../components/styles/login.css";
 import Auth from "../utils/auth";
+import "../assets/blueLearn.jpg"
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -53,7 +54,7 @@ const Login = (props) => {
   });
 
   return (
-    <main className="flex-row justify-center mb-4">
+    <main className="flex-row justify-center  logBack">
       <div class="card-text d-flex justify-content-center">
         <div className="logC containerr">
           <h4 className="">Login</h4>
@@ -88,9 +89,9 @@ const Login = (props) => {
                     Submit
                   </button>
                 </div>
-                <p class="text">
-                  Don't have an account? <a href="signup">Sign Up</a>
-                </p>
+                <h4>
+                  Don't have an account? <a className="upSign" href="signup">Sign Up</a>
+                </h4>
               </form>
             )}
           </div>
