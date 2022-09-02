@@ -16,7 +16,7 @@ class Header extends Component {
     super(props)
     
 this.state = {
-  isLoggedIn: true
+  isLoggedIn: false
 }
 
 }
@@ -90,7 +90,7 @@ else {
       <header className='text-dark '>
       <div className='headerC d-flex'>
         <Link className='text-dark' to='/'></Link>
-        <div>Welcome Guest!</div>
+        <div className='welcome'>Welcome Guest!</div>
         <div
           className='logAndSign d-flex align-self-end align-items-end
         '
