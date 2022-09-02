@@ -19,7 +19,7 @@ const CourseList = ({ courses, title, showTitle = true }) => {
               style={{ width: "18rem" }}
             >
               <h4 className='card-header bg-primary text-light p-2 m-0'>
-                <Link className='text-light' to={`/courses/${course.name}`}>
+                <Link className='text-light' to={`/courses/${course._id}`}>
                   {course.name}
                 </Link>
               </h4>

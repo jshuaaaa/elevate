@@ -19,6 +19,7 @@ import Course from "./pages/Course";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SideNav from "./components/Sidenav";
+import SearchedCourse from "./components/SearchedCourse";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -55,6 +56,7 @@ function App() {
               <Route path='/signup' element={<Signup />} />
               {/* <Route path='/me' element={<Profile />} /> */}
               <Route path='/courses/:courseId' element={<Course />} />
+              <Route path='/course/search/:name' element={<SearchedCourse/>} />
             </Routes>
           </div>
           <Footer />

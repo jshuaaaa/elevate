@@ -1,20 +1,21 @@
 import React from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { useParams } from "react-router-dom";
-import { QUERY_SINGLE_COURSE } from "../utils/queries";
+import { QUERY_SINGLE_COURSE_PAGE } from "../utils/queries";
 // import { ADD_COURSE, ADD_MODULE, ADD_REVIEW } from "../utils/mutations";
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
 function Course() {
   const { courseId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_SINGLE_COURSE, {
+  const { loading, data } = useQuery(QUERY_SINGLE_COURSE_PAGE, {
     // pass URL parameter
     variables: { courseId: courseId },
   });
 
-  const course = data?.course || {};
-
+  console.log(data)
+  const course = data?.coursePage || {};
+  console.log(course)
   if (loading) {
     return <div>Loading...</div>;
   }
