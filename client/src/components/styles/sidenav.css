@@ -8,7 +8,11 @@ body {
 }
 
 aside {
-  background-color: rgba(131, 199, 255, 0.702);
+  background: rgba(55, 166, 222, 0.718);
+  box-shadow: 0 10px 15px rgb(0, 0, 0);
+backdrop-filter: blur(4.4px);
+-webkit-backdrop-filter: blur(4.4px);
+border: 1px solid rgba(55, 165, 222, 1);
   width: 16.75rem;
   position: fixed;
   z-index: 1;

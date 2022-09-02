@@ -6,6 +6,7 @@ import '../styles/sidenav.css'
 import '../styles/header.css'
 import ribbon from '../images/bookmark.png'
 
+
 import { AnimatePresence, motion, useCycle } from "framer-motion";
 
 
@@ -48,11 +49,13 @@ const SideNav = () => {
       Auth.logout();
     };
     const [open, cycleOpen] = useCycle(false, true);
+   
 
   //   useEffect(() => {
   //    cycleOpen(true)
   //  },
   //  {})
+
   var login = true;
  
     if (login) {
@@ -112,6 +115,7 @@ const SideNav = () => {
   else {
       return (
        <div></div>
+
     );
   }
   };
