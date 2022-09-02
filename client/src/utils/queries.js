@@ -43,8 +43,38 @@ export const QUERY_COURSES = gql`
 `;
 
 export const QUERY_SINGLE_COURSE = gql`
+  query singleCourse($name: String!) {
+    course(name: $name) {
+      _id
+      name
+      category
+      description
+      price
+      module {
+        _id
+        name
+        lecture {
+          _id
+          name
+        }
+        activity {
+          _id
+          name
+        }
+      }
+      review {
+        _id
+        reviewText
+        reviewAuthor
+        createdAt
+      }
+    }
+  }
+`;
+
+export const QUERY_SINGLE_COURSE_PAGE = gql`
   query singleCourse($courseId: ID!) {
-    course(id: $courseId) {
+    coursePage(courseId: $courseId) {
       _id
       name
       category

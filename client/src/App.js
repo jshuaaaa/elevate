@@ -19,8 +19,11 @@ import Course from "./pages/Course";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SideNav from "./components/Sidenav";
+
+import SearchedCourse from "./components/SearchedCourse";
 import AddCourse from "./pages/AddCourse";
 import { Helmet } from 'react-helmet'
+
 
 const TITLE = 'Elevate'
 const httpLink = createHttpLink({
@@ -62,7 +65,11 @@ function App() {
               <Route path='/signup' element={<Signup />} />
               <Route path='/me' element={<Profile />} />
               <Route path='/courses/:courseId' element={<Course />} />
+
+              <Route path='/course/search/:name' element={<SearchedCourse/>} />
+
               <Route path='/courses/add' element={<AddCourse />} />
+
             </Routes>
           </div>
           <Footer />

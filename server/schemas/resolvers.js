@@ -11,6 +11,10 @@ const resolvers = {
     },
 
     course: async ({id}) => {
+      return Course.findAll({name: id})
+    },
+
+    coursePage: async ({id}) => {
       return Course.findOne({_id: id})
     },
 
