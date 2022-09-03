@@ -4,6 +4,13 @@ import "../styles/header.css";
 import Auth from "../../utils/auth";
 import { motion } from "framer-motion";
 
+Object.defineProperty(String.prototype, 'capitalize', {
+  value: function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+  },
+  enumerable: false
+});
+
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
@@ -16,7 +23,7 @@ const Header = () => {
           {Auth.loggedIn() ? (
             <>
               <div>
-                <h2>Welcome back, {Auth.getProfile().data.name}!</h2>
+                <h2>Welcome Back, {Auth.getProfile().data.name.capitalize()}!</h2>
               </div>
               <div>
                 <Link to='/courses/add'>
