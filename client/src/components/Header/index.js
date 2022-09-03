@@ -17,9 +17,7 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
-  const handleClick = () => {
-    window.open("http://twitter.com/saigowthamr");
-  };
+
   return (
     <header className='bg-info text-dark  '>
       <div className='headerC d-flex'>
