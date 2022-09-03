@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { QUERY_SINGLE_COURSE_PAGE } from "../utils/queries";
-// import { ADD_COURSE, ADD_MODULE, ADD_REVIEW } from "../utils/mutations";
+// import { ADD_COURSE, ADD_MODULE_TO_COURSE, ADD_REVIEW } from "../utils/mutations";
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
-import ModuleForm from "../components/ModuleForm";
+import ModuleModal from "../components/ModuleModal";
 import ActivityForm from "../components/ActivityForm";
 import Auth from "../utils/auth";
 import { Button } from "react-bootstrap";
@@ -13,26 +13,25 @@ import { Button } from "react-bootstrap";
 function Course() {
   // need to add code for if user is logged in to show if they are registered for course or added course
   const { courseId } = useParams();
-
-
-  const {loading, data} = useQuery(QUERY_SINGLE_COURSE_PAGE, {
-    variables: {courseId: courseId}
+  const { loading, data } = useQuery(QUERY_SINGLE_COURSE_PAGE, {
+    variables: { courseId: courseId },
   });
 
   //for modal
-  const [openAddModule, setOpenAddModule] = useState(false);
+  const [showModule, setShowModule] = useState(false);
+  const handleModuleClose = () => setShowModule(false);
+  const handleModuleShow = () => setShowModule(true);
+
   const [openAddActivity, setOpenAddActivity] = useState(false);
 
-    // pass URL parameter
-
-
-  console.log(data)
+  // pass URL parameter
   const course = data?.coursePage || {};
-  console.log(course)
+  console.log(courseId);
+
   if (loading) {
     return <div>Loading...</div>;
   }
-  return(
+  return (
     <div className='my-3'>
       <h3 className='card-header bg-dark text-light p-2 m-0'>{course.name}</h3>
       <div className='card-body bg-light p-4'>
@@ -42,12 +41,15 @@ function Course() {
       </div>
 
       {/* {Auth.loggedIn() && ( */}
-      <Button variant='primary' onClick={() => setOpenAddModule(true)}>
+      <Button variant='primary' onClick={handleModuleShow}>
         Add Module
       </Button>
-      <ModuleForm
-        show={openAddModule}
-        onClick={() => setOpenAddModule(false)}
+      <ModuleModal
+        course={courseId}
+        show={showModule}
+        onHide={handleModuleClose}
+        backdrop='static'
+        keyboard={false}
       />
       <Button variant='primary' onClick={() => setOpenAddActivity(true)}>
         Add Activity
@@ -68,6 +70,5 @@ function Course() {
     </div>
   );
 }
-
 
 export default Course;

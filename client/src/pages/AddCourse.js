@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { Form, Button, Alert, Col, InputGroup } from "react-bootstrap";
 import { ADD_COURSE } from "../utils/mutations";
 import { QUERY_COURSES, QUERY_ME } from "../utils/queries";
 import Auth from "../utils/auth";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 
 const categories = [
   {
@@ -71,15 +70,21 @@ const CourseForm = () => {
       console.error(err);
       setShowAlert(true);
     }
-
-    //navigate("/me");
     console.log(input);
+
     setCourseFormData({
       name: "",
       description: "",
       category: "",
       price: "",
     });
+
+    //navigate(`/course/${data[0]._id}`);
+    // return (
+    //   <>
+    //     <Course course={input} />
+    //   </>
+    // );
   };
 
   return (
@@ -117,6 +122,7 @@ const CourseForm = () => {
                       onChange={handleInputChange}
                       value={input.name}
                       required
+                      autofocus
                     />
                     <Form.Control.Feedback type='invalid'>
                       Course name is required!
@@ -134,6 +140,7 @@ const CourseForm = () => {
                       onChange={handleInputChange}
                       value={input.description}
                       required
+                      autofocus
                     />
                     <Form.Control.Feedback type='invalid'>
                       A description is required!
@@ -151,6 +158,7 @@ const CourseForm = () => {
                         onChange={handleInputChange}
                         value={input.price}
                         required
+                        autofocus
                       />
                       <Form.Control.Feedback type='invalid'>
                         Price can be 0. A price is required!
@@ -167,6 +175,7 @@ const CourseForm = () => {
                       defaultValue='...'
                       required
                       value={input.category}
+                      autofocus
                       // requiredcomponentClass='select'
                       placeholder='Category'
                     >

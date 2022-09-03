@@ -36,19 +36,10 @@ export const ADD_COURSE = gql`
   }
 `;
 
-export const ADD_MODULE = gql`
-  mutation addModule($courseId: ID!, $name: String!) {
-    addModule(courseId: $courseId, name: $name) {
-      _id
+export const ADD_MODULE_TO_COURSE = gql`
+  mutation addModuleToCourse($courseId: ID!, $name: String!) {
+    addModuleToCourse(courseId: $courseId, name: $name) {
       name
-      lecture {
-        _id
-        name
-      }
-      activity {
-        _id
-        name
-      }
     }
   }
 `;
