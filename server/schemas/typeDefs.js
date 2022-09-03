@@ -24,6 +24,7 @@ const typeDefs = gql`
     category: String
     description: String
     price: String
+    courseAuthor: String
     module: [Module]
     review: [Review]
   }
@@ -55,7 +56,6 @@ const typeDefs = gql`
     description: String
     category: String
     price: String
-
   }
 
   type Query {

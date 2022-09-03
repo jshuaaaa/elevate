@@ -37,7 +37,7 @@ const categories = [
 const CourseForm = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [course, setCourseFormData] = useState({
+  const [input, setCourseFormData] = useState({
     name: "",
     description: "",
     category: "",
@@ -48,34 +48,11 @@ const CourseForm = () => {
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
-  const [addCourse, { error }] = useMutation(
-    ADD_COURSE
-    // {
-    // update(cache, { data: { addCourse } }) {
-    //   try {
-    //     const { courses } = cache.readQuery({ query: QUERY_COURSES });
-
-    //     cache.writeQuery({
-    //       query: QUERY_COURSES,
-    //       data: { courses: [addCourse, ...courses] },
-    //     });
-    //   } catch (e) {
-    //     console.error(e);
-    //   }
-
-    //   // update me object's cache
-    //   const { me } = cache.readQuery({ query: QUERY_ME });
-    //   cache.writeQuery({
-    //     query: QUERY_ME,
-    //     data: { me: { ...me, courses: [...me.courses, addCourse] } },
-    //   });
-    // },
-    // }
-  );
+  const [addCourse, { error }] = useMutation(ADD_COURSE);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setCourseFormData({ ...course, [name]: value });
+    setCourseFormData({ ...input, [name]: value });
   };
 
   const handleFormSubmit = async (event) => {
@@ -88,17 +65,15 @@ const CourseForm = () => {
 
     try {
       const { data } = addCourse({
-        variables: { ...course },
+        variables: { input },
       });
-      // const { token, user } = await response.json();
-      Auth.login(data.addCourse.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
     }
-    // might change to course/id
-    navigate("/me");
 
+    //navigate("/me");
+    console.log(input);
     setCourseFormData({
       name: "",
       description: "",
@@ -140,7 +115,7 @@ const CourseForm = () => {
                       placeholder='Name'
                       name='name'
                       onChange={handleInputChange}
-                      value={course.name}
+                      value={input.name}
                       required
                     />
                     <Form.Control.Feedback type='invalid'>
@@ -157,7 +132,7 @@ const CourseForm = () => {
                       name='description'
                       as='textarea'
                       onChange={handleInputChange}
-                      value={course.description}
+                      value={input.description}
                       required
                     />
                     <Form.Control.Feedback type='invalid'>
@@ -174,7 +149,7 @@ const CourseForm = () => {
                         placeholder='Set a price'
                         name='price'
                         onChange={handleInputChange}
-                        value={course.price}
+                        value={input.price}
                         required
                       />
                       <Form.Control.Feedback type='invalid'>
@@ -191,7 +166,7 @@ const CourseForm = () => {
                       onChange={handleInputChange}
                       defaultValue='...'
                       required
-                      // value={course.category}
+                      value={input.category}
                       // requiredcomponentClass='select'
                       placeholder='Category'
                     >
@@ -203,7 +178,7 @@ const CourseForm = () => {
                       })}
                     </Form.Control>
                     <Form.Control.Feedback type='invalid'>
-                      Please select a category for the course.
+                      Please select a category for the input.
                     </Form.Control.Feedback>
                   </Form.Group>
                   <br />
@@ -211,10 +186,10 @@ const CourseForm = () => {
                     className='btn btn-warning'
                     disabled={
                       !(
-                        course.name &&
-                        course.description &&
-                        course.price &&
-                        course.category
+                        input.name &&
+                        input.description &&
+                        input.price &&
+                        input.category
                       )
                     }
                     type='submit'
