@@ -70,25 +70,25 @@ const SearchBar = () => {
               </div> 
               <div className="col-md-2"> 
                 <div className="card-inner p-3 d-flex flex-column align-items-center"> 
-                  <img src="https://i.imgur.com/D0Sm15i.png" width={50} /> 
+                  <img src="https://icones.pro/wp-content/uploads/2021/04/icone-de-nourriture-noire-symbole-png.png" width={50} /> 
                   <div className="text-center mg-text"> 
-                    <span className="mg-text">Product</span> 
+                    <span className="mg-text">Food Courses</span> 
                   </div> 
                 </div> 
               </div> 
               <div className="col-md-2"> 
                 <div className="card-inner p-3 d-flex flex-column align-items-center"> 
-                  <img src="https://i.imgur.com/Z7BJ8Po.png" width={50} /> 
+                  <img src="https://cdn-icons-png.flaticon.com/512/2234/2234665.png" width={50} /> 
                   <div className="text-center mg-text"> 
-                    <span className="mg-text">Return</span> 
+                    <span className="mg-text">History Courses</span> 
                   </div> 
                 </div> 
               </div> 
               <div className="col-md-2"> 
                 <div className="card-inner p-3 d-flex flex-column align-items-center"> 
-                  <img src="https://i.imgur.com/YLsQrn3.png" width={50} /> 
+                  <img src="https://static.thenounproject.com/png/1051526-200.png" width={50} /> 
                   <div className="text-center mg-text"> 
-                    <span className="mg-text">Guarantee</span> 
+                    <span className="mg-text">Math Courses</span> 
                   </div> 
                 </div> 
               </div> 
