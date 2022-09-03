@@ -5,8 +5,9 @@ import { ADD_MODULE_TO_COURSE } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import ModuleForm from "../ModuleForm";
 
-function ActivityForm(props) {
+function ModuleModal(props) {
   return (
     <Modal
       {...props}
@@ -15,14 +16,14 @@ function ActivityForm(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title>Add an activity</Modal.Title>
+        <Modal.Title>Add a module to your course</Modal.Title>
       </Modal.Header>
-      <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+
+      {/* Form for adding module */}
+      <ModuleForm course={props.course} />
+
       <Modal.Footer>
-        <Button variant='secondary' onClick={props.onClose}>
-          Close
-        </Button>
-        <Button variant='primary' onClick={props.onClose}>
+        <Button variant='primary' onClick={props.onHide}>
           Save Changes
         </Button>
       </Modal.Footer>
@@ -30,4 +31,4 @@ function ActivityForm(props) {
   );
 }
 
-export default ActivityForm;
+export default ModuleModal;
