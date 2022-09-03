@@ -26,8 +26,11 @@ const Header = () => {
               <div>
                 <h2>Welcome Back, {Auth.getProfile().data.name.capitalize()}!</h2>
               </div>
-              <div className="homeicon"><img src={homeicon} width={50} /></div>
-              <div>
+              <a href="/" target="_blank">
+                <div className="homeicon"><img src={homeicon} width={70} />
+                </div>
+                </a>
+                <div className="loginbtn">
                 <Link to='/courses/add'>
                   <motion.a
                     initial={{ x: 1400 }}
@@ -62,12 +65,15 @@ const Header = () => {
            
           ) : (
             <>
-              <div>
+              <div className="headertext">
                 <h2>Welcome Guest!</h2>
                 
               </div>
-              <div className="homeicon"><img src={homeicon} width={50}/> </div>
-              <div>
+              <a href="/" target="_blank">
+                <div className="homeicon"><img src={homeicon} width={70} />
+                </div>
+                </a>
+              <div className="loginbtn">
                 <Link to='/login'>
                   <motion.a
                     initial={{ x: 1400 }}

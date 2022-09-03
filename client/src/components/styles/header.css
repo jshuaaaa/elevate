@@ -21,9 +21,25 @@
  display: flex;
   flex: 1 1 50%;
  
-  justify-content: end;
+  
   padding-right: 2%;
 }
+.homeicon {
+  position: relative;
+  justify-content: center;
+ top: 15px;
+ 
+ 
+}
+
+.loginbtn {
+  justify-content: end;
+  position: relative;
+  right: 15px;
+  
+}
+
+
 
 .text-dark {
   background-image: url("../images/headerimg.png");
@@ -49,12 +65,17 @@ a.logAndSign:hover {
     
 
 }
+ 
 
 .headerC h2 {
  
     color: white;
     font-size: 32px;
     background-color: #2FA2DC;
+    position: relative;
+    top: 7px;
+    text-shadow: 1px 1px 4px #000000;
+
   
     
 }
