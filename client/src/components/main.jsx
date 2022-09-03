@@ -3,7 +3,7 @@ import videoBg from '../assets/education.mp4'
 import '../components/styles/main.css'
 
 
-import searchicon from '../assets/searchicon.png'
+
 
 import SearchBar from './SearchBar';
 
