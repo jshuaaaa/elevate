@@ -8,6 +8,7 @@ section .logodiv {
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
+   
 }
 
 .logodiv p{

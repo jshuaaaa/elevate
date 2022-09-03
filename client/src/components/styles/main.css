@@ -225,3 +225,10 @@ a:link {
 
   line-height: 14px;
 }
+
+.courseMain {
+  position: relative;
+  padding: 10px;
+  box-shadow: 1px 1px 4px #000000;
+border-top: solid 3px #fff;
+}
