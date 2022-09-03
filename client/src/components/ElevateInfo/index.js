@@ -10,7 +10,7 @@ const ElevateInfo = () => {
           
       <div class="git-icons">
         <a href="https://github.com/rheangocle" target="_blank">
-          <i class="fab fa-github"></i>
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width={50} /> 
         </a>
        
         <a href="https://github.com/alxsaunders" target="_blank">
