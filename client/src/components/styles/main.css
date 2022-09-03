@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Elevate';
+  src: url(fonts/AquireBold-8Ma60.otf);
+}
+
+@font-face {
+  font-family: 'DefaultFont';
+  src: url(fonts/Primaryschool-E60r.ttf);
+}
+
+* {
+  font-family:'DefaultFont' ;
+  font-weight: lighter;
+}
 
 .row.banner {
   position: relative;
