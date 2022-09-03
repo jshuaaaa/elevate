@@ -17,6 +17,7 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
+
   return (
     <header className='bg-info text-dark  '>
       <div className='headerC d-flex'>
@@ -26,10 +27,10 @@ const Header = () => {
               <div>
                 <h2>Welcome Back, {Auth.getProfile().data.name.capitalize()}!</h2>
               </div>
-              <a href="/" target="_blank">
+              <Link to="/" >
                 <div className="homeicon"><img src={homeicon} width={70} />
                 </div>
-                </a>
+                </Link>
                 <div className="loginbtn">
                 <Link to='/courses/add'>
                   <motion.a
@@ -69,10 +70,10 @@ const Header = () => {
                 <h2>Welcome Guest!</h2>
                 
               </div>
-              <a href="/" target="_blank">
+              <Link to="/" >
                 <div className="homeicon"><img src={homeicon} width={70} />
                 </div>
-                </a>
+                </Link>
               <div className="loginbtn">
                 <Link to='/login'>
                   <motion.a
