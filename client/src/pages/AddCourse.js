@@ -108,10 +108,10 @@ const CourseForm = () => {
   };
 
   return (
-    <main className="logBack">
+    <main className="flex-row justify-center logBack">
        <div class="card-text d-flex justify-content-center">
        <div className="logC ">
-    <div className=''>
+    <div className='logE containerr'>
       <h1>Add a new course below</h1>
       <div className="formBG">
       {Auth.loggedIn() ? (
@@ -207,7 +207,7 @@ const CourseForm = () => {
           </Form.Group>
           <br />
           <Button
-            className='btn btn-warning'
+            className='btn btn-info'
             disabled={
               !(
                 course.name &&
