@@ -15,11 +15,14 @@ const Home = () => {
     <div className='main flex' id='home'>
       
         <video className='video2' src={videoBg} autoPlay loop muted />
+       
+
+
         <div className=" sizeM">
         <div className="row banner">
-      
+        
       <div className="banner-text">
-
+      
 
 <SearchBar />
 

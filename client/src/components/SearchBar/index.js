@@ -25,10 +25,12 @@ const SearchBar = () => {
       }
 
     return(
+      
       <div className="container mt-4"> 
       <div className="row d-flex justify-content-center"> 
         <div className="col-md-9"> 
           <div className="card p-4 mt-3"> 
+          
             <h3 className="heading mt-5 text-center">Search Courses Here!</h3> 
             <div className="d-flex justify-content-center px-5"> 
               <div className="search"> 
