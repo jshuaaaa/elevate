@@ -15,12 +15,10 @@ import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Course from "./pages/Course";
-// import main from "./pages/main"
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SideNav from "./components/Sidenav";
 import ElevateInfo from "./components/ElevateInfo";
-import CourseSection from "./components/CourseSection";
 import SearchedCourse from "./components/SearchedCourse";
 import AddCourse from "./pages/AddCourse";
 import { Helmet } from "react-helmet";
@@ -51,28 +49,25 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="min-100-vh">
+        <div className='min-100-vh'>
           <Helmet>
             <title>{TITLE}</title>
           </Helmet>
           <Header />
           <SideNav />
 
-          <div className="videWS">
+          <div className='videWS'>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/me" element={<Profile />} />
-              <Route path="/courses/:courseId" element={<Course />} />
-
-              <Route path="/course/search/:name" element={<SearchedCourse />} />
-
-              <Route path="/courses/add" element={<AddCourse />} />
+              <Route path='/' element={<Home />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/signup' element={<Signup />} />
+              <Route path='/me' element={<Profile />} />
+              <Route path='/courses/:courseId' element={<Course />} />
+              <Route path='/course/search/:name' element={<SearchedCourse />} />
+              <Route path='/courses/add' element={<AddCourse />} />
             </Routes>
           </div>
-          <CourseSection />
-          <ElevateInfo/>
+          <ElevateInfo />
           <Footer />
         </div>
       </Router>
