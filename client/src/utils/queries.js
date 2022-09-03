@@ -38,6 +38,7 @@ export const QUERY_COURSES = gql`
       category
       description
       price
+      courseAuthor
     }
   }
 `;
