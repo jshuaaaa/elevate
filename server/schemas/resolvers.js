@@ -10,28 +10,28 @@ const resolvers = {
       return Profile.findOne({ _id: profileId });
     },
 
-    course: async ({id}) => {
-      return Course.findAll({name: id})
+    course: async (parent, {courseId}) => {
+      return Course.findOne({_id: courseId})
     },
 
-    coursePage: async ({id}) => {
+    coursePage: async (parent, {id}) => {
       return Course.findOne({_id: id})
     },
 
-    module: async ({id}) => {
-      return Module.find({_id: id})
+    module: async (parent, {moduleId}) => {
+      return Module.findOne({_id: moduleId})
     },
 
-    lecture: async ({id}) => {
-      return Lecture.find({_id: id})
+    lecture: async (parent, {id}) => {
+      return Lecture.findOne({_id: id})
     },
 
-    activity: async ({id}) => {
-      return Activity.find({_id: id})
+    activity: async (parent, {id}) => {
+      return Activity.findOne({_id: id})
     },
 
-    review: async ({id}) => {
-      return Review.find({_id: id})
+    review: async (parent, {id}) => {
+      return Review.findOne({_id: id})
     },
 
 
@@ -83,30 +83,54 @@ const resolvers = {
 
       return { token, profile };
     },
-    addCourse: async (parent, { name, category, description, price }) => {
-      const course = await Course.create({ name, category, description, price });
+    addCourse: async (
+      parent,
+      {input:{ name, category, description, price }},
+      context
+    ) => {
+      if (context.user) {
+        const course = await Course.create({
+          name,
+          category,
+          description,
+          price,
+          courseAuthor: context.user.name,
+        });
+        
+        console.log(context.user)
 
-      return { course };
+        await Profile.findOneAndUpdate(
+          { _id: context.user._id },
+          {
+            $addToSet: { courses:{ _id: course._id }},
+          },
+          {
+            new: true,
+          }
+        );
+
+        return course;
+      }
     },
     addModuleToCourse: async (parent, { courseId, name }) => {
       const module = await Module.create({name})
       return Course.findOneAndUpdate(
         { _id: courseId},
-        { $addToSet: {module: module._id}}
+        { $addToSet: {module:{_id: module._id}}}
       )
     },
     addActivityToModule: async (parent, { moduleId, name }) => {
-      const activity= await Activity.create({name})
+      const activity = await Activity.create({name})
       return Module.findOneAndUpdate(
         { _id: moduleId},
-        { $addToSet: {activity: activity._id}}
+        { $addToSet: {activity:{_id: activity._id}}}
       )
     },
     addLectureToModule: async (parent, { moduleId, name, url }) => {
       const lecture = await Lecture.create({name, url})
       return Module.findOneAndUpdate(
         { _id: moduleId},
-        { $addToSet: {lecture: module._id}}
+        { $addToSet: {lecture:{lecture: module._id}}}
       )
     },
     login: async (parent, { email, password }) => {
