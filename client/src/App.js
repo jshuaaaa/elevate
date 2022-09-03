@@ -19,6 +19,7 @@ import Course from "./pages/Course";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SideNav from "./components/Sidenav";
+import ElevateInfo from "./components/ElevateInfo";
 import CourseSection from "./components/CourseSection";
 import SearchedCourse from "./components/SearchedCourse";
 import AddCourse from "./pages/AddCourse";
@@ -71,6 +72,7 @@ function App() {
             </Routes>
           </div>
           <CourseSection />
+          <ElevateInfo/>
           <Footer />
         </div>
       </Router>
