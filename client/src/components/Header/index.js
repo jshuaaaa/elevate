@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../styles/header.css";
 import Auth from "../../utils/auth";
 import { motion } from "framer-motion";
+import homeicon from "../images/homeicon.png";
 
 Object.defineProperty(String.prototype, 'capitalize', {
   value: function() {
@@ -25,6 +26,7 @@ const Header = () => {
               <div>
                 <h2>Welcome Back, {Auth.getProfile().data.name.capitalize()}!</h2>
               </div>
+              <div className="homeicon"><img src={homeicon} width={50} /></div>
               <div>
                 <Link to='/courses/add'>
                   <motion.a
@@ -62,7 +64,9 @@ const Header = () => {
             <>
               <div>
                 <h2>Welcome Guest!</h2>
+                
               </div>
+              <div className="homeicon"><img src={homeicon} width={50}/> </div>
               <div>
                 <Link to='/login'>
                   <motion.a
