@@ -69,9 +69,9 @@ const typeDefs = gql`
     activities: [Activity]
     reviews: [Review]
 
-    course(name: String!): Course
+    course(courseId: ID!): Course
     coursePage(courseId: ID!): Course
-    module(id: ID!): Module
+    module(moduleId: ID!): Module
     lecture(id: ID!): Lecture
     activity(id: ID!): Activity
     review(id: ID!): Review
