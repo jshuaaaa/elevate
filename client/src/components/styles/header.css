@@ -27,7 +27,7 @@
 
 .text-dark {
   background-image: url("../images/headerimg.png");
-
+  border-bottom: solid 3px white;
   background-color: #0087d2;
 
   width: 100vw;
