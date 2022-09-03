@@ -83,10 +83,34 @@ const resolvers = {
 
       return { token, profile };
     },
-    addCourse: async (parent, { name, category, description, price }) => {
-      const course = await Course.create({ name, category, description, price });
+    addCourse: async (
+      parent,
+      {input:{ name, category, description, price }},
+      context
+    ) => {
+      if (context.user) {
+        const course = await Course.create({
+          name,
+          category,
+          description,
+          price,
+          courseAuthor: context.user.name,
+        });
+        const findCourse = await Course.find({name: course.name})
+        console.log(context.user)
+        console.log(findCourse)
+        await Profile.findOneAndUpdate(
+          { _id: context.user._id },
+          {
+            $addToSet: { courses:{ _id: course._id }},
+          },
+          {
+            new: true,
+          }
+        );
 
-      return { course };
+        return course;
+      }
     },
     addModuleToCourse: async (parent, { courseId, name }) => {
       const module = await Module.create({name})

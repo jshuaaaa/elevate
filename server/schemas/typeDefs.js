@@ -4,9 +4,9 @@ const typeDefs = gql`
   type Profile {
     _id: ID
 
-    name: String!
-    email: String!
-    password: String!
+    name: String
+    email: String
+    password: String
     courses: [Course]
     reviews: [Review]
   }
@@ -20,8 +20,8 @@ const typeDefs = gql`
 
   type Course {
     _id: ID
-    name: String!
-    category: String!
+    name: String
+    category: String
     description: String
     price: String
     module: [Module]
@@ -40,7 +40,7 @@ const typeDefs = gql`
 
   type Review {
     _id: ID
-    reviewText: String!
+    reviewText: String
     reviewAuthor: String
     createdAt: String
   }
@@ -55,18 +55,19 @@ const typeDefs = gql`
     description: String
     category: String
     price: String
+
   }
 
   type Query {
-    profiles: [Profile]!
+    profiles: [Profile]
     profile(profileId: ID!): Profile
     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
     me: Profile
-    courses: [Course]!
-    modules: [Module]!
-    lectures: [Lecture]!
-    activities: [Activity]!
-    reviews: [Review]!
+    courses: [Course]
+    modules: [Module]
+    lectures: [Lecture]
+    activities: [Activity]
+    reviews: [Review]
 
     course(name: String!): Course
     coursePage(courseId: ID!): Course
