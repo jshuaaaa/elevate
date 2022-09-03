@@ -20,13 +20,23 @@
 
 
 .videWS {
-  margin: 0%;
-  margin-right: 0% !important;
-  max-width: fit-content;
+  /* margin: 0%; */
+  /* margin-right: 0% !important; */
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
 }
 
+.videWS h1{
+  /* margin: 0%; */
+  /* margin-right: 0% !important; */
+  display: flex;
+  justify-content: center;
+}
 .video2 {
   width: 115%;
+
 }
 
 .banner-text {
@@ -233,5 +243,4 @@ a:link {
   box-shadow: 1px 1px 4px #000000;
 border-top: solid 3px #fff;
 }
-
 

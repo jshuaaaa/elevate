@@ -7,6 +7,9 @@ import { QUERY_SINGLE_PROFILE, QUERY_ME } from "../utils/queries";
 import CourseList from "../components/CourseList";
 import Auth from "../utils/auth";
 
+
+
+
 const Profile = () => {
   const { profileId } = useParams();
 
@@ -41,7 +44,7 @@ const Profile = () => {
 
   return (
     <div className='p-5'>
-      <h1>Welcome, {profile.name}</h1>
+      <h1>Hello, {profile.name.capitalize()}</h1>
       <h2 className='card-header'>
         {profileId ? `${profile.name}'s` : "These"} are your courses
       </h2>
