@@ -1,0 +1,17 @@
+.logodiv h1 {
+    font-family: 'Elevate';
+    color: white;
+}
+section .logodiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-top: 20px;
+   
+}
+
+.logodiv p{
+    margin: 30px;
+}

@@ -1,7 +1,23 @@
+@font-face {
+  font-family: 'Elevate';
+  src: url(fonts/AquireBold-8Ma60.otf);
+}
+
+@font-face {
+  font-family: 'DefaultFont';
+  src: url(fonts/Primaryschool-E60r.ttf);
+}
+
+* {
+  font-family:'DefaultFont' ;
+  font-weight: lighter;
+}
+
 .row.banner {
   position: relative;
   width: 100vw;
 }
+
 
 .videWS {
   margin: 0%;
@@ -105,7 +121,7 @@ body {
   background-color: #0089d294;
   display: flex;
   right: 39.2vw;
-  bottom: 9vh;
+  bottom: 32vh;
   
 
 
@@ -210,3 +226,12 @@ a:link {
 
   line-height: 14px;
 }
+
+.courseMain {
+  position: relative;
+  padding: 10px;
+  box-shadow: 1px 1px 4px #000000;
+border-top: solid 3px #fff;
+}
+
+

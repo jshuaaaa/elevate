@@ -25,10 +25,12 @@ const SearchBar = () => {
       }
 
     return(
+      
       <div className="container mt-4"> 
       <div className="row d-flex justify-content-center"> 
         <div className="col-md-9"> 
           <div className="card p-4 mt-3"> 
+          
             <h3 className="heading mt-5 text-center">Search Courses Here!</h3> 
             <div className="d-flex justify-content-center px-5"> 
               <div className="search"> 
@@ -46,49 +48,49 @@ const SearchBar = () => {
             <div className="row mt-4 g-1 px-4 mb-5"> 
               <div className="col-md-2"> 
                 <div className="card-inner p-3 d-flex flex-column align-items-center"> 
-                  <img src="https://i.imgur.com/Mb8kaPV.png" width={50} /> 
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Simple_Music.svg/600px-Simple_Music.svg.png?20110615130507" width={50} /> 
                   <div className="text-center mg-text"> 
-                    <span className="mg-text">Account</span> 
+                    <span className="mg-text">Music Courses</span> 
                   </div> 
                 </div> 
               </div> 
               <div className="col-md-2">
                 <div className="card-inner p-3 d-flex flex-column align-items-center"> 
-                  <img src="https://i.imgur.com/ueLEPGq.png" width={50} /> 
+                  <img src="https://cdn-icons-png.flaticon.com/512/268/268998.png" width={50} /> 
                   <div className="text-center mg-text"> 
-                    <span className="mg-text">Payments</span> 
+                    <span className="mg-text">Coding Courses</span> 
                   </div> 
                 </div> 
               </div> 
               <div className="col-md-2"> 
                 <div className="card-inner p-3 d-flex flex-column align-items-center"> 
-                  <img src="https://i.imgur.com/tmqv0Eq.png" width={50} /> 
+                  <img src="https://cdn-icons-png.flaticon.com/512/3159/3159310.png" width={50} /> 
                   <div className="text-center mg-text"> 
-                    <span className="mg-text">Delivery</span> 
+                    <span className="mg-text">Design Courses</span> 
                   </div> 
                 </div> 
               </div> 
               <div className="col-md-2"> 
                 <div className="card-inner p-3 d-flex flex-column align-items-center"> 
-                  <img src="https://i.imgur.com/D0Sm15i.png" width={50} /> 
+                  <img src="https://icones.pro/wp-content/uploads/2021/04/icone-de-nourriture-noire-symbole-png.png" width={50} /> 
                   <div className="text-center mg-text"> 
-                    <span className="mg-text">Product</span> 
+                    <span className="mg-text">Food Courses</span> 
                   </div> 
                 </div> 
               </div> 
               <div className="col-md-2"> 
                 <div className="card-inner p-3 d-flex flex-column align-items-center"> 
-                  <img src="https://i.imgur.com/Z7BJ8Po.png" width={50} /> 
+                  <img src="https://cdn-icons-png.flaticon.com/512/2234/2234665.png" width={50} /> 
                   <div className="text-center mg-text"> 
-                    <span className="mg-text">Return</span> 
+                    <span className="mg-text">History Courses</span> 
                   </div> 
                 </div> 
               </div> 
               <div className="col-md-2"> 
                 <div className="card-inner p-3 d-flex flex-column align-items-center"> 
-                  <img src="https://i.imgur.com/YLsQrn3.png" width={50} /> 
+                  <img src="https://static.thenounproject.com/png/1051526-200.png" width={50} /> 
                   <div className="text-center mg-text"> 
-                    <span className="mg-text">Guarantee</span> 
+                    <span className="mg-text">Math Courses</span> 
                   </div> 
                 </div> 
               </div> 
