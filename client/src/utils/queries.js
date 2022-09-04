@@ -134,3 +134,20 @@ export const QUERY_COURSE_MODULES = gql`
     }
   }
 `;
+
+export const QUERY_SINGLE_MODULE = gql`
+  query singleModule($moduleId: ID!) {
+    module(moduleId: $moduleId) {
+      _id
+      name
+      lecture {
+        _id
+        name
+      }
+      activity {
+        _id
+        name
+      }
+    }
+  }
+`;

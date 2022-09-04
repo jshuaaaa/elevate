@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { ADD_MODULE_TO_COURSE } from "../../utils/mutations";
+import { ADD_LECTURE_TO_MODULE } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import Button from "react-bootstrap/Button";
 import { Form, Modal, Alert } from "react-bootstrap";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 
-function ModuleForm(props) {
+function LectureForm(props) {
   const navigate = useNavigate();
-  const [module, setModule] = useState({
-    courseId: props.course,
+  const [lecture, setLecture] = useState({
+    moduleId: props.module,
   });
 
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
-  const [addModuleToCourse, { error }] = useMutation(ADD_MODULE_TO_COURSE);
+  const [addLectureToModule, { error }] = useMutation(ADD_LECTURE_TO_MODULE);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setModule({ ...module, [name]: value });
+    setLecture({ ...lecture, [name]: value });
   };
 
   const handleFormSubmit = async (event) => {
@@ -31,15 +31,15 @@ function ModuleForm(props) {
     }
 
     try {
-      const { data } = addModuleToCourse({
-        variables: { ...module },
+      const { data } = addLectureToModule({
+        variables: { ...lecture },
       });
     } catch (err) {
       console.error(err);
       setShowAlert(true);
     }
-    console.log(module);
-    setModule({ name: "" });
+    console.log(lecture);
+    setLecture({ name: "" });
     window.location.reload();
   };
 
@@ -61,46 +61,46 @@ function ModuleForm(props) {
               variant='danger'
             >
               <Alert.Heading>
-                Something went wrong with your module creation!
+                Something went wrong with your lecture creation!
               </Alert.Heading>
             </Alert>
 
-            {/* <Form.Group>
-            <Form.Label htmlFor='courseId'>Course ID:</Form.Label>
-            <Form.Control
-              type='text'
-              placeholder={props.course}
-              name='courseId'
-              onChange={handleInputChange}
-              value={props.course}
-              required
-            />
-            <Form.Control.Feedback type='invalid'>
-              Course ID is required!
-            </Form.Control.Feedback>
-          </Form.Group> */}
-
             <Form.Group className='m-0'>
               <Form.Label htmlFor='name'>
-                Enter a name for the module
+                Enter a name for the lecture
               </Form.Label>
               <Form.Control
                 type='text'
                 placeholder='Name'
                 name='name'
                 onChange={handleInputChange}
-                value={module.name}
+                value={lecture.name}
                 required
               />
               <Form.Control.Feedback type='invalid'>
-                Course name is required!
+                Lecture name is required!
+              </Form.Control.Feedback>
+            </Form.Group>
+
+            <Form.Group className='m-0'>
+              <Form.Label htmlFor='url'>URL for the lecture</Form.Label>
+              <Form.Control
+                type='url'
+                placeholder='https://'
+                name='url'
+                onChange={handleInputChange}
+                value={lecture.url}
+                required
+              />
+              <Form.Control.Feedback type='invalid'>
+                Lecture url is required!
               </Form.Control.Feedback>
             </Form.Group>
 
             <Button
-              disabled={!module.name}
+              disabled={!(lecture.name && lecture.url)}
               type='submit'
-              variant='primary'
+              variant='warning'
               onSubmit={props.onSubmit}
             >
               Save Changes
@@ -109,7 +109,7 @@ function ModuleForm(props) {
         </Modal.Body>
       ) : (
         <Modal.Body>
-          You need to be logged in to create a module. Please{" "}
+          You need to be logged in to create a lecture. Please{" "}
           <span>
             <Link to='/login'>login</Link> or <Link to='/signup'>signup.</Link>
           </span>
@@ -119,4 +119,4 @@ function ModuleForm(props) {
   );
 }
 
-export default ModuleForm;
+export default LectureForm;

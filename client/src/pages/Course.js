@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { QUERY_SINGLE_COURSE_PAGE } from "../utils/queries";
-// import { ADD_COURSE, ADD_MODULE_TO_COURSE, ADD_REVIEW } from "../utils/mutations";
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
 import ModuleModal from "../components/ModuleModal";
-import ActivityForm from "../components/ActivityForm";
 import Auth from "../utils/auth";
 import { Button } from "react-bootstrap";
 import ModuleSection from "../components/ModuleSection";
@@ -23,8 +21,6 @@ function Course() {
   const handleModuleClose = () => setShowModule(false);
   const handleModuleShow = () => setShowModule(true);
 
-  const [openAddActivity, setOpenAddActivity] = useState(false);
-
   // pass URL parameter
   const course = data?.coursePage || {};
   // console.log(courseId);
@@ -33,7 +29,7 @@ function Course() {
     return <div>Loading...</div>;
   }
   return (
-    <div className='my-3'>
+    <div className='my-5'>
       <h2 className='card-header bg-dark text-light p-2 m-0'>
         Title: {course.name}
       </h2>
@@ -43,26 +39,21 @@ function Course() {
         <p>Category: {course.category}</p>
       </div>
 
-      {/* {Auth.loggedIn() && ( */}
-      <Button variant='primary' onClick={handleModuleShow}>
-        Add Module
-      </Button>
-      <ModuleModal
-        course={courseId}
-        show={showModule}
-        onHide={handleModuleClose}
-        onSubmit={handleModuleClose}
-        backdrop='static'
-        keyboard={false}
-      />
-      <Button variant='primary' onClick={() => setOpenAddActivity(true)}>
-        Add Activity
-      </Button>
-      <ActivityForm
-        show={openAddActivity}
-        onClick={() => setOpenAddActivity(false)}
-      />
-      {/* )} */}
+      {Auth.loggedIn() && (
+        <>
+          <Button variant='primary' onClick={handleModuleShow}>
+            Add Module
+          </Button>
+          <ModuleModal
+            course={courseId}
+            show={showModule}
+            onHide={handleModuleClose}
+            onSubmit={handleModuleClose}
+            backdrop='static'
+            keyboard={false}
+          />
+        </>
+      )}
 
       <h2 className='card-header bg-dark text-light p-2 m-0'>Modules</h2>
       <div className='bg-light p-4 mb-5'>
