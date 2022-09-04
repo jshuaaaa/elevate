@@ -11,9 +11,7 @@ const LectureList = ({ lectures }) => {
     <>
       {lectures.map((lecture) => (
         <div key={lecture._id} className='container'>
-          <h4 className='card-header bg-primary text-light p-2 m-0'>
-            View {lecture.name}
-          </h4>
+          <h4 className='card-header bg-info p-1'>View {lecture.name}</h4>
           <div className='bg-light p-2'>
             <p className=''>Lecture: {lecture.description}</p>
           </div>

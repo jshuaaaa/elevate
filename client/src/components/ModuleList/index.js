@@ -12,9 +12,9 @@ const ModuleList = ({ modules }) => {
     <>
       {modules.map((module) => (
         <div key={module._id} className='container'>
-          <h4 className='card-header bg-primary text-light p-2 m-0'>
-            <Link className='text-light' to={`/module/${module._id}`}>
-              View {module.name}
+          <h4 className='card-header bg-info'>
+            <Link className='text-primary' to={`/module/${module._id}`}>
+              Click to view {module.name}
             </Link>
           </h4>
           <div className='bg-light p-2'>

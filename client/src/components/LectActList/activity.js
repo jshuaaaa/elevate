@@ -11,7 +11,7 @@ const ActivityList = ({ activities }) => {
     <>
       {activities.map((activity) => (
         <div key={activity._id} className='container'>
-          <h4 className='card-header bg-primary text-light p-2 m-0'>
+          <h4 className='card-header bg-info p-1'>
             Activity name: {activity.name}
           </h4>
           <div className='bg-light p-2'>
