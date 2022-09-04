@@ -54,11 +54,11 @@ const Login = (props) => {
   });
 
   return (
-    <main className="flex-row justify-center  logBack">
-      <div class="card-text d-flex justify-content-center">
-        <div className="logC containerr">
+    <main className="flex-row justify-content-center  logBack">
+      <div class="logE containerr card-text">
+        <div className="logC logE ">
           <h4 className="">Login</h4>
-          <div className="formBG">
+          <div className="formBG aone ">
             {data ? (
               <p>
                 Success! You may now head{" "}
@@ -93,7 +93,7 @@ const Login = (props) => {
                     Submit
                   </button>
                 </div>
-                <h4>
+                <h4 className="noAc">
                   Don't have an account? <a className="upSign" href="signup">Sign Up</a>
                 </h4>
               </form>

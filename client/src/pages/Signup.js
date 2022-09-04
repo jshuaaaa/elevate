@@ -41,11 +41,11 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4 logBack">
-      <div class="card-text d-flex justify-content-center">
-        <div className="logC containerr">
+    <main className="flex-row justify-center  logBack">
+      <div class="logE containerr card-text">
+        <div className="logC logE">
           <h4 className="">Sign Up</h4>
-          <div className="formBG">
+          <div className="formBG aone ">
             {data ? (
               <p>
                 Success! You may now head{" "}
