@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-// need to query for module name
+import ModuleName from "../ModuleName";
 
 const ModuleList = ({ modules }) => {
   if (!modules.length) {
@@ -9,21 +8,21 @@ const ModuleList = ({ modules }) => {
   }
 
   return (
-    <>
+    <ol>
       {modules.map((module) => (
-        <div key={module._id} className='container'>
-          <h4 className='card-header bg-info'>
-            <Link className='text-primary' to={`/module/${module._id}`}>
-              Click to view {module.name}
-            </Link>
-          </h4>
-          <div className='bg-light p-2'>
-            <p className=''>Lecture: {module.lecture}</p>
-            <p className=''>Activity: {module.activity}</p>
+        <li>
+          <div key={module._id} className='container'>
+            {/* Query for module name */}
+            <ModuleName moduleName={module.name} moduleId={module._id} />
+
+            <div className='bg-light p-2'>
+              <p className=''>Lecture: {module.lecture}</p>
+              <p className=''>Activity: {module.activity}</p>
+            </div>
           </div>
-        </div>
+        </li>
       ))}
-    </>
+    </ol>
   );
 };
 
