@@ -130,7 +130,14 @@ const resolvers = {
       const lecture = await Lecture.create({name, url})
       return Module.findOneAndUpdate(
         { _id: moduleId},
-        { $addToSet: {lecture:{lecture: module._id}}}
+        { $addToSet: {lecture:{lecture: lecture._id}}}
+      )
+    },
+    addReviewToCourse: async (parent, {courseId, reviewText, reviewAuthor}) => {
+      const review = await Review.create({reviewText, reviewAuthor})
+      return Course.findOneAndUpdate(
+        {_id: courseId},
+        {$addToSet: {reviews:{review: review._id}}}
       )
     },
     login: async (parent, { email, password }) => {
