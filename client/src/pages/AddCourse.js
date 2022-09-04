@@ -152,7 +152,7 @@ const CourseForm = () => {
                   <Form.Group>
                     <Form.Label htmlFor='Price'>Price</Form.Label>
                     <InputGroup>
-                      <InputGroup.Text>$</InputGroup.Text>
+                      <InputGroup.Text className="bling">$</InputGroup.Text>
                       <Form.Control
                         type='number'
                         placeholder='Set a price'

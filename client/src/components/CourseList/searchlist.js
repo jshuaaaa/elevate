@@ -21,7 +21,7 @@ const SearchList = ({courses}) => {
               </h4>
               <div className='card-body bg-light p-2'>
                 <p className='card-text'>{courses.category}</p>
-                <p className='card-text'>${courses.price}</p>
+                <p className='card-text '>${courses.price}</p>
                 <Link className='btn btn-primary' to={`/courses/${courses._id}`}>
                   View course
                 </Link>
