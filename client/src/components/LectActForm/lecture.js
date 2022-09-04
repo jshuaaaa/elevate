@@ -47,12 +47,7 @@ function LectureForm(props) {
     <>
       {Auth.loggedIn() ? (
         <Modal.Body {...props}>
-          <Form
-            className='form-control form-input '
-            noValidate
-            validated={validated}
-            onSubmit={handleFormSubmit}
-          >
+          <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
             {/* show alert if server response is bad */}
             <Alert
               dismissible

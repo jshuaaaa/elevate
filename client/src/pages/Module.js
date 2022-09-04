@@ -6,6 +6,8 @@ import Auth from "../utils/auth";
 import { Button } from "react-bootstrap";
 import ActivityModal from "../components/LectActModal/activity";
 import LectureModal from "../components/LectActModal/lecture";
+import LectureSection from "../components/LectActSection/lecture";
+import ActivitySection from "../components/LectActSection/activity";
 
 function Module() {
   // need to add code for if user is logged in to show if they are registered for module or added module
@@ -65,10 +67,14 @@ function Module() {
         </>
       )}
 
-      {/* <h2 className='card-header bg-dark text-light p-2 m-0'>Modules</h2>
+      <h2 className='card-header bg-dark text-light p-2 m-0'>Lectures</h2>
       <div className='bg-light p-4 mb-5'>
-        <ModuleSection modules={module.module} />
-      </div> */}
+        <LectureSection lectures={module.lecture} />
+      </div>
+      <h2 className='card-header bg-dark text-light p-2 m-0'>Activities</h2>
+      <div className='bg-light p-4 mb-5'>
+        <ActivitySection activities={module.activity} />
+      </div>
     </div>
   );
 }

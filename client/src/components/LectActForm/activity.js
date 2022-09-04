@@ -17,6 +17,8 @@ function ActivityForm(props) {
 
   const [addActivityToModule, { error }] = useMutation(ADD_ACTIVITY_TO_MODULE);
 
+  if (error) return `Error: ${error}`;
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setActivity({ ...activity, [name]: value });
@@ -47,12 +49,7 @@ function ActivityForm(props) {
     <>
       {Auth.loggedIn() ? (
         <Modal.Body {...props}>
-          <Form
-            className='form-control form-input '
-            noValidate
-            validated={validated}
-            onSubmit={handleFormSubmit}
-          >
+          <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
             {/* show alert if server response is bad */}
             <Alert
               dismissible

@@ -10,7 +10,7 @@ function ModuleModal(props) {
       aria-labelledby='contained-modal-title-vcenter'
       centered
     >
-      <Modal.Header closeButton>
+      <Modal.Header closeButton className='border-bottom-1'>
         <Modal.Title>Add a module to your course</Modal.Title>
       </Modal.Header>
 
