@@ -13,7 +13,7 @@ const ModuleList = ({ modules }) => {
         <li>
           <div key={module._id} className='container'>
             {/* Query for module name */}
-            <ModuleName moduleName={module.name} moduleId={module._id} />
+            <ModuleName moduleId={module._id} />
 
             <div className='bg-light p-2'>
               <p className=''>Lecture: {module.lecture}</p>
