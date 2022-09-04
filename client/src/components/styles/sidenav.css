@@ -36,9 +36,9 @@ border: 1px solid rgba(55, 165, 222, 1);
 .text-dark button {
   cursor: pointer;
   margin: 1.25rem;
-  border: none;
+  
   padding: 0.5rem 1rem;
-  background-color: #f9fafb;
+  /* background-color: #f9fafb; */
 }
 
 .navList {
