@@ -81,6 +81,7 @@ export const QUERY_SINGLE_COURSE_PAGE = gql`
       category
       description
       price
+      courseAuthor
       module {
         _id
         name
@@ -110,6 +111,26 @@ export const QUERY_REVIEWS = gql`
       reviewText
       reviewAuthor
       createdAt
+    }
+  }
+`;
+
+export const QUERY_MODULES = gql`
+  query modules {
+    modules {
+      _id
+      name
+    }
+  }
+`;
+
+export const QUERY_COURSE_MODULES = gql`
+  query courseModules($courseId: ID!) {
+    course(courseId: $courseId) {
+      module {
+        _id
+        name
+      }
     }
   }
 `;

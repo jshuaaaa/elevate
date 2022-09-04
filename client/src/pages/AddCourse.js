@@ -62,11 +62,11 @@ const CourseForm = () => {
     }
 
     try {
-      const { data } = await addCourse({
-        variables: { ...input },
+      const { data } = addCourse({
+        variables: { input },
       });
       // const { token, user } = await response.json();
-      Auth.login(data.addCourse.token);
+      // Auth.login(data.addCourse.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
@@ -90,30 +90,30 @@ const CourseForm = () => {
   };
 
   return (
-    <main className="flex-row justify-center logBack">
-       <div class="card-text d-flex justify-content-center">
-       <div className="logC ">
-    <div className='logE containerr'>
-      <h1>Add a new course below</h1>
-      <div className="formBG">
-      {Auth.loggedIn() ? (
-        <Form
-          className='form-control form-input '
-          noValidate
-          validated={validated}
-          onSubmit={handleFormSubmit}
-        >
-          {/* show alert if server response is bad */}
-          <Alert
-            dismissible
-            onClose={() => setShowAlert(false)}
-            show={showAlert}
-            variant='danger'
-          >
-            <Alert.Heading>
-              Something went wrong with your course creation!
-            </Alert.Heading>
-          </Alert>
+    <main className='flex-row justify-center logBack'>
+      <div class='card-text d-flex justify-content-center'>
+        <div className='logC '>
+          <div className='logE containerr'>
+            <h1>Add a new course below</h1>
+            <div className='formBG'>
+              {Auth.loggedIn() ? (
+                <Form
+                  className='form-control form-input '
+                  noValidate
+                  validated={validated}
+                  onSubmit={handleFormSubmit}
+                >
+                  {/* show alert if server response is bad */}
+                  <Alert
+                    dismissible
+                    onClose={() => setShowAlert(false)}
+                    show={showAlert}
+                    variant='danger'
+                  >
+                    <Alert.Heading>
+                      Something went wrong with your course creation!
+                    </Alert.Heading>
+                  </Alert>
 
                   <Form.Group>
                     <Form.Label htmlFor='name'>Course Name</Form.Label>
@@ -221,8 +221,6 @@ const CourseForm = () => {
         </div>
       </div>
     </main>
-  
-    
   );
 };
 

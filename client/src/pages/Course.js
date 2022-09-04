@@ -9,6 +9,7 @@ import ModuleModal from "../components/ModuleModal";
 import ActivityForm from "../components/ActivityForm";
 import Auth from "../utils/auth";
 import { Button } from "react-bootstrap";
+import ModuleSection from "../components/ModuleSection";
 
 function Course() {
   // need to add code for if user is logged in to show if they are registered for course or added course
@@ -26,14 +27,16 @@ function Course() {
 
   // pass URL parameter
   const course = data?.coursePage || {};
-  console.log(courseId);
+  // console.log(courseId);
 
   if (loading) {
     return <div>Loading...</div>;
   }
   return (
     <div className='my-3'>
-      <h3 className='card-header bg-dark text-light p-2 m-0'>{course.name}</h3>
+      <h2 className='card-header bg-dark text-light p-2 m-0'>
+        Title: {course.name}
+      </h2>
       <div className='card-body bg-light p-4'>
         <p>Course Summary: {course.description}</p>
         <p>${course.price}</p>
@@ -48,6 +51,7 @@ function Course() {
         course={courseId}
         show={showModule}
         onHide={handleModuleClose}
+        onSubmit={handleModuleClose}
         backdrop='static'
         keyboard={false}
       />
@@ -59,6 +63,11 @@ function Course() {
         onClick={() => setOpenAddActivity(false)}
       />
       {/* )} */}
+
+      <h2 className='card-header bg-dark text-light p-2 m-0'>Modules</h2>
+      <div className='bg-light p-4 mb-5'>
+        <ModuleSection modules={course.module} />
+      </div>
 
       <h2 className='card-header bg-dark text-light p-2 m-0'>Reviews</h2>
       <div className='bg-light p-4'>
