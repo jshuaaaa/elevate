@@ -1,20 +1,47 @@
+@font-face {
+  font-family: 'Elevate';
+  src: url(fonts/AquireBold-8Ma60.otf);
+}
+
+@font-face {
+  font-family: 'DefaultFont';
+  src: url(fonts/Primaryschool-E60r.ttf);
+}
+
+* {
+  font-family:'DefaultFont' ;
+  font-weight: lighter;
+}
+
 .row.banner {
   position: relative;
   width: 100vw;
 }
 
+
 .videWS {
-  margin: 0%;
-  margin-right: 0% !important;
+  /* margin: 0%; */
+  /* margin-right: 0% !important; */
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
 }
 
+.videWS h1{
+  /* margin: 0%; */
+  /* margin-right: 0% !important; */
+  display: flex;
+  justify-content: center;
+}
 .video2 {
   width: 115%;
+
 }
 
 .banner-text {
-  margin-left: 40%;
-  margin-top: -30%;
+  /* margin-left: 40%;
+  margin-top: -30%; */
   width: 100%;
   border: 0%;
 }
@@ -49,7 +76,10 @@
 }
 
 .sizeM {
-  width: 100vw;
+   
+  display: flex;
+  justify-content: center; 
+ 
 }
 
 body {
@@ -103,11 +133,17 @@ body {
   background-image: linear-gradient(#0089d294, rgb(95, 183, 255));
   background-color: #0089d294;
   display: flex;
-  right: 39.2vw;
-  bottom: 17vh;
+  /* right: 39.2vw;
+  bottom: 32vh; */
   
 
 
+}
+
+.sBox{
+  position: absolute;
+  margin-top: -41.5%;
+  transform:scale(1.1)
 }
 
 .card h3{
@@ -136,6 +172,7 @@ color: #fff;
 }
 
 .search .search-input {
+  text-align: center;
     padding: 0 10px;
     width: 100%;
     caret-color: #536bf6;
@@ -147,22 +184,23 @@ color: #fff;
 
 
 .search-icon {
-  
+ 
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-size: 10px;
-        bottom: 50px;
-        position: relative;
+      margin-top: -8.4%;
+      margin-left: 95%;
         border-radius: 5px;
         
 }
 
 .search-icon img {
-  height: 36px;
+   height: 36px;
     width: 48px;
-    float: right;
+    
+    /*float: right; */
     
 }
 
@@ -209,3 +247,11 @@ a:link {
 
   line-height: 14px;
 }
+
+.courseMain {
+  position: relative;
+  padding: 10px;
+  box-shadow: 1px 1px 4px #000000;
+border-top: solid 3px #fff;
+}
+

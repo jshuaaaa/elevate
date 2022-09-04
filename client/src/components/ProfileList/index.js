@@ -7,7 +7,7 @@ const ProfileList = ({ courses, title }) => {
   }
 
   return (
-    <div>
+    <div className="profilediv">
       <h3 className='text-primary'>{title}</h3>
       <div className='flex-row justify-space-between my-4'>
         {courses &&

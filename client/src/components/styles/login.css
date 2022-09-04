@@ -7,40 +7,68 @@
   background-image: none !important;
 } */
 
-.logBack{
+.logBack {
   background-color: #0091f800;
-  background-image: url("../images/blueLearn.jpg") ;
-
+  background-image: url("../images/blueLearn.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  /* height: 140vh; */
 }
+
 
 .logC {
   position: relative;
+
   align-items: center;
   /* background-color: #2da1dc; */
-  margin-top: 15%;
+  /* margin-top: 15%; */
 
-  margin: 6%;
-  padding: 0%;
+  /* margin: 10%; */
+  padding: 5%;
+}
+
+
+
+.logE{
+  transform: scale(1.0) !important;
+  margin-top: 8% !important;
+  margin-bottom: 8% !important;
+  max-width: 35vw !important;
+  
+}
+
+.cCe{
+ 
+  margin-top: 0% !important;
+  margin-bottom: 0% !important;
+}
+
+
+
+.noAc{
+  text-align: center;
 }
 
 .logC > h4 {
   text-align: center;
   font-size: 2.5em;
-  text-shadow:  0 10px 5px rgb(0, 0, 0);
+  text-shadow: 0 10px 5px rgb(0, 0, 0);
 }
 
-.d-flex + h4{
-  text-shadow:  0 10px 5px rgb(0, 0, 0);
+.d-flex + h4 {
+  text-shadow: 0 10px 5px rgb(0, 0, 0);
 }
 
-.upSign{
+.upSign {
   color: rgba(5, 40, 105, 0.74);
-  text-shadow:  0 10px 12px rgb(0, 0, 0);
+  text-shadow: 0 10px 12px rgb(0, 0, 0);
 }
 
 .logBt {
   background-color: #2da1dc;
   width: 100%;
+  font-size: 1.5em;
   border: 1px solid rgba(0, 0, 0, 0.386);
   box-shadow: 0 4px 50px rgba(0, 0, 0, 0.591);
 }
@@ -52,34 +80,82 @@
   font-weight: 300px;
 }
 
+.card-text {
+  position: relative;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+ margin: auto;
+ 
+}
 .containerr {
-  
-background: rgba(55, 165, 222, 0.65);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(4.4px);
--webkit-backdrop-filter: blur(4.4px);
-border: 1px solid rgba(55, 165, 222, 1);
-  padding: 80px 80px;
+  max-width: 50vw;
+  max-height: fit-content;
+
+  background: rgba(55, 165, 222, 0.65);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.4px);
+  -webkit-backdrop-filter: blur(4.4px);
+  border: 1px solid rgba(55, 165, 222, 1);
+  padding: 30px 30px;
   border-radius: 5px;
   transform: scale(1.2);
 }
 
 .form-control {
   position: relative;
-  margin: 50px 0 50px;
+  /* margin: 0px 0 0px; */
+  /* margin-bottom: 15%; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.825);
+  height: -20vh;
+
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.504);
 }
+
+.aone > form > input{
+ 
+  height: 5vh !important;
+  text-align: center;
+font-size: 1.5em;
+  margin-bottom: 10% !important;
+
+ 
+}
+
+.form-control > div{
+font-size: 1.5em;
+  margin-bottom: 12%;
+}
+.bling{
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.362);
+  z-index: 1;
+  margin-right: .2%;
+  padding-bottom: 0%;
+}
+
 
 .formBG {
   position: relative;
-  margin: 50px 0 50px;
+  margin: 80px 0 50px;
   width: auto;
+}
+
+.formBG > form > input , input {
+  margin-bottom: 5%;
 }
 
 .card-text {
   color: #ffffff;
+}
+
+.btn {
+  color: rgba(55, 165, 222);
 }
 
 /* .logFoot{

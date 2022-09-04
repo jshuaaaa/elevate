@@ -54,23 +54,25 @@ const Login = (props) => {
   });
 
   return (
-    <main className="flex-row justify-center  logBack">
-      <div class="card-text d-flex justify-content-center">
-        <div className="logC containerr">
+    <main className="flex-row justify-content-center  logBack">
+      <div class="logE containerr card-text">
+        <div className="logC logE ">
           <h4 className="">Login</h4>
-          <div className="formBG">
+          <div className="formBG aone ">
             {data ? (
               <p>
                 Success! You may now head{" "}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form>
+              <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-control form-input"
                   placeholder="Your email"
                   name="email"
                   type="email"
+                  onChange={handleChange}
+                  value={formState.email}
                 />
                 <div className="">
                   <input
@@ -78,6 +80,8 @@ const Login = (props) => {
                     placeholder="******"
                     name="password"
                     type="password"
+                    onChange={handleChange}
+                    value={formState.password}
                   />
                 </div>
                 <div className="d-flex justify-content-center">
@@ -89,7 +93,7 @@ const Login = (props) => {
                     Submit
                   </button>
                 </div>
-                <h4>
+                <h4 className="noAc">
                   Don't have an account? <a className="upSign" href="signup">Sign Up</a>
                 </h4>
               </form>

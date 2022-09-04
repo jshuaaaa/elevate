@@ -25,40 +25,21 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_COURSE = gql`
-  mutation addCourse(
-    $name: String!
-    $category: String!
-    $description: String!
-    $price: String!
-  ) {
-    addCourse(
-      name: $name
-      category: $category
-      description: $description
-      price: $price
-    ) {
-      _id
+  mutation addCourse($input: newCourse) {
+    addCourse(input: $input) {
       name
       category
       description
       price
+      courseAuthor
     }
   }
 `;
 
-export const ADD_MODULE = gql`
-  mutation addModule($courseId: ID!, $name: String!) {
-    addModule(courseId: $courseId, name: $name) {
-      _id
+export const ADD_MODULE_TO_COURSE = gql`
+  mutation addModuleToCourse($courseId: ID!, $name: String!) {
+    addModuleToCourse(courseId: $courseId, name: $name) {
       name
-      lecture {
-        _id
-        name
-      }
-      activity {
-        _id
-        name
-      }
     }
   }
 `;
@@ -100,9 +81,23 @@ export const REMOVE_REVIEW = gql`
   }
 `;
 
-// export const ADD_LECTURE = gql``;
+export const ADD_LECTURE_TO_MODULE = gql`
+  mutation addLectureToModule($moduleId: ID!, $name: String!, $url: String!) {
+    addLectureToModule(moduleId: $moduleId, name: $name, url: $url) {
+      _id
+      name
+    }
+  }
+`;
 
-// export const ADD_ACTIVITY = gql``;
+export const ADD_ACTIVITY_TO_MODULE = gql`
+  mutation addActivityToModule($moduleId: ID!, $name: String!) {
+    addActivityToModule(moduleId: $moduleId, name: $name) {
+      _id
+      name
+    }
+  }
+`;
 
 // export const REMOVE_LECTURE = gql``;
 
