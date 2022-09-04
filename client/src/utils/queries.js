@@ -124,13 +124,13 @@ export const QUERY_MODULES = gql`
   }
 `;
 
-// export const QUERY_COURSE_MODULES = gql`
-//   query courseModules($courseId: ID!) {
-//     coursePage(courseId: $courseId) {
-//       module {
-//         _id
-//         name
-//       }
-//     }
-//   }
-// `;
+export const QUERY_COURSE_MODULES = gql`
+  query courseModules($courseId: ID!) {
+    course(courseId: $courseId) {
+      module {
+        _id
+        name
+      }
+    }
+  }
+`;

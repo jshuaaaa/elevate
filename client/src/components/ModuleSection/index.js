@@ -1,17 +1,20 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import CourseList from "../CourseList";
-// import { QUERY_COURSE_MODULES } from "../../utils/queries";
-import { QUERY_MODULES } from "../../utils/queries";
+import { QUERY_COURSE_MODULES } from "../../utils/queries";
+// import { QUERY_MODULES } from "../../utils/queries";
 import ModuleList from "../ModuleList";
+import { useParams } from "react-router-dom";
 
-const ModuleSection = () => {
+const ModuleSection = (props) => {
   const { courseId } = useParams();
-  const { loading, data } = useQuery(QUERY_COURSE_MODULES, {
+  // console.log(courseId);
+  const { loading, error, data } = useQuery(QUERY_COURSE_MODULES, {
     variables: { courseId: courseId },
   });
-  // const { loading, data } = useQuery(QUERY_MODULES);
-  const modules = data?.coursePage || [];
+
+  if (error) return `Error! ${error.message}`;
+  // console.log(data);
+  const modules = data?.course.module || [];
   return (
     <section>
       {" "}

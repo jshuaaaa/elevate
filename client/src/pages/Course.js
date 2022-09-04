@@ -27,7 +27,7 @@ function Course() {
 
   // pass URL parameter
   const course = data?.coursePage || {};
-  console.log(courseId);
+  // console.log(courseId);
 
   if (loading) {
     return <div>Loading...</div>;

@@ -10,7 +10,6 @@ function ModuleForm(props) {
   const navigate = useNavigate();
   const [module, setModule] = useState({
     courseId: props.course,
-    name: "",
   });
 
   const [validated] = useState(false);
@@ -39,7 +38,7 @@ function ModuleForm(props) {
       console.error(err);
       setShowAlert(true);
     }
-    //console.log(module);
+    console.log(module);
     setModule({ name: "" });
     // navigate(`/courses/${props.course}`);
   };
