@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_MODULE_TO_COURSE } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import Button from "react-bootstrap/Button";
-import { Form, Modal, Alert, Col, InputGroup } from "react-bootstrap";
+import { Form, Modal, Alert } from "react-bootstrap";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 
 function ModuleForm(props) {
+  const navigate = useNavigate();
   const [module, setModule] = useState({
-    courseId: "",
+    courseId: props.course,
     name: "",
   });
 
@@ -32,39 +33,40 @@ function ModuleForm(props) {
 
     try {
       const { data } = addModuleToCourse({
-        variables: { module },
+        variables: { ...module },
       });
     } catch (err) {
       console.error(err);
       setShowAlert(true);
     }
-    console.log(module);
-
-    setModule({ courseId: "", name: "" });
+    //console.log(module);
+    setModule({ name: "" });
+    // navigate(`/courses/${props.course}`);
   };
 
   return (
-    <Modal.Body {...props}>
+    <>
       {Auth.loggedIn() ? (
-        <Form
-          className='form-control form-input '
-          noValidate
-          validated={validated}
-          onSubmit={handleFormSubmit}
-        >
-          {/* show alert if server response is bad */}
-          <Alert
-            dismissible
-            onClose={() => setShowAlert(false)}
-            show={showAlert}
-            variant='danger'
+        <Modal.Body {...props}>
+          <Form
+            className='form-control form-input '
+            noValidate
+            validated={validated}
+            onSubmit={handleFormSubmit}
           >
-            <Alert.Heading>
-              Something went wrong with your module creation!
-            </Alert.Heading>
-          </Alert>
+            {/* show alert if server response is bad */}
+            <Alert
+              dismissible
+              onClose={() => setShowAlert(false)}
+              show={showAlert}
+              variant='danger'
+            >
+              <Alert.Heading>
+                Something went wrong with your module creation!
+              </Alert.Heading>
+            </Alert>
 
-          <Form.Group>
+            {/* <Form.Group>
             <Form.Label htmlFor='courseId'>Course ID:</Form.Label>
             <Form.Control
               type='text'
@@ -75,41 +77,46 @@ function ModuleForm(props) {
               required
             />
             <Form.Control.Feedback type='invalid'>
-              Course name is required!
+              Course ID is required!
             </Form.Control.Feedback>
-          </Form.Group>
+          </Form.Group> */}
 
-          <Form.Group>
-            <Form.Label htmlFor='name'>Module Name</Form.Label>
-            <Form.Control
-              type='text'
-              placeholder='Name'
-              name='name'
-              onChange={handleInputChange}
-              value={module.name}
-              required
-            />
-            <Form.Control.Feedback type='invalid'>
-              Course name is required!
-            </Form.Control.Feedback>
-          </Form.Group>
-          <br />
-          <Button
-            className='btn btn-warning'
-            disabled={!(module.name && module.courseId)}
-            type='submit'
-            variant='success'
-          >
-            Submit
-          </Button>
-        </Form>
+            <Form.Group>
+              <Form.Label htmlFor='name'>
+                Enter a name for the module
+              </Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Name'
+                name='name'
+                onChange={handleInputChange}
+                value={module.name}
+                required
+              />
+              <Form.Control.Feedback type='invalid'>
+                Course name is required!
+              </Form.Control.Feedback>
+            </Form.Group>
+
+            <Button
+              disabled={!module.name}
+              type='submit'
+              variant='primary'
+              onSubmit={props.onSubmit}
+            >
+              Save Changes
+            </Button>
+          </Form>
+        </Modal.Body>
       ) : (
-        <p>
+        <Modal.Body>
           You need to be logged in to create a module. Please{" "}
-          <Link to='/login'>login</Link> or <Link to='/signup'>signup.</Link>
-        </p>
+          <span>
+            <Link to='/login'>login</Link> or <Link to='/signup'>signup.</Link>
+          </span>
+        </Modal.Body>
       )}
-    </Modal.Body>
+    </>
   );
 }
 

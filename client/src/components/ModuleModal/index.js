@@ -19,14 +19,14 @@ function ModuleModal(props) {
         <Modal.Title>Add a module to your course</Modal.Title>
       </Modal.Header>
 
-      {/* Form for adding module */}
+      {/* Adding a module form component */}
       <ModuleForm course={props.course} />
 
-      <Modal.Footer>
+      {/* <Modal.Footer>
         <Button variant='primary' onClick={props.onHide}>
           Save Changes
         </Button>
-      </Modal.Footer>
+      </Modal.Footer> */}
     </Modal>
   );
 }
