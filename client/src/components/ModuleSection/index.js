@@ -15,6 +15,7 @@ const ModuleSection = (props) => {
   if (error) return `Error! ${error.message}`;
   // console.log(data);
   const modules = data?.course.module || [];
+  console.log(modules);
   return (
     <section>
       {" "}

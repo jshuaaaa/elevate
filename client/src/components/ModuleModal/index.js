@@ -1,9 +1,4 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useMutation } from "@apollo/client";
-import { ADD_MODULE_TO_COURSE } from "../../utils/mutations";
-import Auth from "../../utils/auth";
-import Button from "react-bootstrap/Button";
+import React from "react";
 import Modal from "react-bootstrap/Modal";
 import ModuleForm from "../ModuleForm";
 
@@ -15,7 +10,7 @@ function ModuleModal(props) {
       aria-labelledby='contained-modal-title-vcenter'
       centered
     >
-      <Modal.Header closeButton>
+      <Modal.Header closeButton className='border-bottom-1'>
         <Modal.Title>Add a module to your course</Modal.Title>
       </Modal.Header>
 

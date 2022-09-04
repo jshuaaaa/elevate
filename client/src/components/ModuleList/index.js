@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ModuleName from "../ModuleName";
 
 const ModuleList = ({ modules }) => {
   if (!modules.length) {
@@ -7,17 +8,21 @@ const ModuleList = ({ modules }) => {
   }
 
   return (
-    <>
+    <ol>
       {modules.map((module) => (
-        <div key={module._id} className='container'>
-          <h4 className='bg-primary text-light p-2'>{module.name}</h4>
-          <div className='bg-light p-2'>
-            <p className=''>Lecture: {module.lecture}</p>
-            <p className=''>Activity: {module.activity}</p>
+        <li>
+          <div key={module._id} className='container'>
+            {/* Query for module name */}
+            <ModuleName moduleName={module.name} moduleId={module._id} />
+
+            <div className='bg-light p-2'>
+              <p className=''>Lecture: {module.lecture}</p>
+              <p className=''>Activity: {module.activity}</p>
+            </div>
           </div>
-        </div>
+        </li>
       ))}
-    </>
+    </ol>
   );
 };
 

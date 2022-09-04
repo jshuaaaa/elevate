@@ -22,6 +22,7 @@ import ElevateInfo from "./components/ElevateInfo";
 import SearchedCourse from "./components/SearchedCourse";
 import AddCourse from "./pages/AddCourse";
 import { Helmet } from "react-helmet";
+import Module from "./pages/Module";
 
 const TITLE = "Elevate";
 const httpLink = createHttpLink({
@@ -65,6 +66,7 @@ function App() {
               <Route path='/courses/:courseId' element={<Course />} />
               <Route path='/course/search/:name' element={<SearchedCourse />} />
               <Route path='/courses/add' element={<AddCourse />} />
+              <Route path='module/:moduleId' element={<Module />} />
             </Routes>
           </div>
           <ElevateInfo />
