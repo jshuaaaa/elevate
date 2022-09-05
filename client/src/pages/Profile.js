@@ -43,9 +43,9 @@ const Profile = () => {
   }
 
   return (
-    <div className='p-5'>
+    <div className='p-5 logBack text-white '>
       <h1>Hello, {profile.name.capitalize()}</h1>
-      <h2 className='card-header'>
+      <h2 className='card-header '>
         {profileId ? `${profile.name}'s` : "These"} are your courses
       </h2>
 

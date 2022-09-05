@@ -64,7 +64,7 @@ function Course() {
       </div>
 
       <h2 className='card-header bg-dark text-light p-2 m-0'>Reviews</h2>
-      <div className='bg-light p-4'>
+      <div className=' text-black bg-light p-4'>
         <ReviewList reviews={course.reviews} />
       </div>
       <div className='m-3 p-4' style={{ border: "1px dotted #1a1a1a" }}>

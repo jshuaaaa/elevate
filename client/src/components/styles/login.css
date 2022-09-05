@@ -11,7 +11,10 @@
   height: fit-content;
   background-color: #0091f800;
   background-image: url("../images/blueLearn.jpg");
-  background-repeat:round;
+  background-repeat:initial;
+  background-size: cover;
+  background-position: center;
+
   
   
   
