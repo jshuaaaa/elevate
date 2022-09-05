@@ -75,7 +75,7 @@ export const QUERY_SINGLE_COURSE = gql`
 
 export const QUERY_SINGLE_COURSE_PAGE = gql`
   query singleCourse($courseId: ID!) {
-    coursePage(courseId: $courseId) {
+    course(courseId: $courseId) {
       _id
       name
       category
@@ -87,18 +87,13 @@ export const QUERY_SINGLE_COURSE_PAGE = gql`
         name
         lecture {
           _id
-          name
         }
         activity {
           _id
-          name
         }
       }
       review {
         _id
-        reviewText
-        reviewAuthor
-        createdAt
       }
     }
   }
@@ -152,6 +147,19 @@ export const QUERY_SINGLE_MODULE = gql`
   }
 `;
 
+
+export const QUERY_SINGLE_REVIEW = gql`
+query Query($reviewId: ID!) {
+  review(reviewId: $reviewId) {
+    _id
+    reviewText
+    reviewAuthor
+    createdAt
+  }
+}
+
+`
+
 export const QUERY_SINGLE_LECTURE = gql`
   query singleLecture($lectureId: ID!) {
     lecture(id: $lectureId) {
@@ -169,3 +177,4 @@ export const QUERY_SINGLE_ACTIVITY = gql`
     }
   }
 `;
+

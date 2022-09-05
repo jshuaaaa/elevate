@@ -1,10 +1,13 @@
 import React from "react";
+import { QUERY_REVIEWS } from "../../utils/queries";
+import QueryReview from "./queryReview";
 
-const ReviewList = ({ reviews = [] }) => {
-  if (!reviews.length) {
+const ReviewList = ({reviews}) => {
+  console.log(reviews)
+  if (!reviews) {
     return <h3>No reviews Yet</h3>;
   }
-
+  console.log(reviews)
   return (
     <>
       <h3
@@ -14,17 +17,10 @@ const ReviewList = ({ reviews = [] }) => {
         reviews
       </h3>
       <div className='flex-row my-4'>
-        {reviews &&
-          reviews.map((review) => (
+          {reviews.map((review) => (
             <div key={review._id} className='col-12 mb-3 pb-3'>
               <div className='p-3 bg-dark text-light'>
-                <h5 className='card-header'>
-                  {review.reviewAuthor} reviewed{" "}
-                  <span style={{ fontSize: "0.825rem" }}>
-                    on {review.createdAt}
-                  </span>
-                </h5>
-                <p className='card-body'>{review.reviewText}</p>
+                <QueryReview reviewId={review._id}/>
               </div>
             </div>
           ))}
