@@ -15,7 +15,7 @@ const ModuleList = ({ modules }) => {
             {/* Query for module name */}
             <ModuleName moduleId={module._id} />
 
-            <div className='bg-light p-2'>
+            <div className=' p-2 CModSec'>
               <p className=''>Lecture: {module.lecture}</p>
               <p className=''>Activity: {module.activity}</p>
             </div>

@@ -17,7 +17,7 @@ const ModuleName = (props) => {
 
   return (
     <>
-      <h4 {...props} className='card-header bg-info'>
+      <h4 {...props} className='card-header courseH'>
         <Link className='text-primary' to={`/module/${module._id}`}>
           {module.name}
         </Link>

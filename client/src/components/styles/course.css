@@ -3,10 +3,75 @@
   justify-content: center;
   
   margin-top: 2% !important;
+  
 }
 
 .corCard {
-  background-color: rgba(123, 177, 231, 0.795);
-  font-size: 1.9em;
-  color: blue;
+  /* background-color: rgba(123, 177, 231, 0.795); */
+
+  background: rgba(5, 46, 68, 0.849);
+
+  border-radius:  0px 0px 16px 16px !important;
+box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.897);
+
+
+  font-size: 1.6em;
+  background-repeat:repeat;
+  color: rgb(255, 255, 255);
+  
+}
+
+.aCBut{
+  margin-top: 5%;
+  transform: scale(1.2);
+}
+
+
+.CModSec > p{
+  background-color: rgba(238, 238, 238, 0.671);
+  text-align: left;
+}
+
+.cHed{
+  border-radius: 16px 16px 0px 0px !important;
+}
+
+.reviewBG{
+ 
+background: rgba(255, 255, 255, 0.24);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.493);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+margin-top: 10%;
+text-align: center;
+/* display: flex; */
+justify-content: center;
+}
+
+.reviewBG > div > div > p + form > div {
+  width: 100% ;
+}
+
+/* .bCor > *{
+
+  color: rgb(14, 0, 0);
+
+
+} */
+
+.courseH > *{
+  font-size: 1.2em !important;
+}
+
+.cBack{
+  
+
+background: rgba(15, 172, 235, 0.692);
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
