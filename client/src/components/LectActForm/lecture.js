@@ -39,7 +39,7 @@ function LectureForm(props) {
       setShowAlert(true);
     }
     console.log(lecture);
-    setLecture({ name: "" });
+    setLecture({ name: "", url: "" });
     window.location.reload();
   };
 

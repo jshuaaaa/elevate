@@ -5,6 +5,7 @@ import { QUERY_SINGLE_COURSE_PAGE } from "../utils/queries";
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
 import ModuleModal from "../components/ModuleModal";
+import "../components/styles/course.css";
 import Auth from "../utils/auth";
 import { Button } from "react-bootstrap";
 import ModuleSection from "../components/ModuleSection";
@@ -30,13 +31,15 @@ function Course() {
     return <div>Loading...</div>;
   }
   return (
-    <div className='my-5'>
+    <main className="d-flex-row justify-center logBack bCor ">
+    <div className="dCourse logE containerr card-text courseEm" >
+    <div className="logC LogE createC d-flex-column"> 
       <h2 className='card-header bg-dark text-light p-2 m-0'>
-        Title: {course.name}
+        Course title: {course.name}
       </h2>
-      <div className='card-body bg-light p-4'>
+      <div className='card-body p-5 corCard'>
         <p>Course Summary: {course.description}</p>
-        <p>${course.price}</p>
+        {/* <p>${course.price}</p> */}
         <p>Category: {course.category}</p>
       </div>
 
@@ -62,13 +65,15 @@ function Course() {
       </div>
 
       <h2 className='card-header bg-dark text-light p-2 m-0'>Reviews</h2>
-      <div className='bg-light p-4'>
-        <ReviewList reviews={course.review} />
+      <div className=' text-black bg-light p-4'>
+        <ReviewList reviews={course.reviews} />
       </div>
       <div className='m-3 p-4' style={{ border: "1px dotted #1a1a1a" }}>
         <ReviewForm courseId={courseId} />
       </div>
     </div>
+    </div>
+    </main>
   );
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LectureName from "../LectActName/lecture";
 // need to query for lecture name
 
 const LectureList = ({ lectures }) => {
@@ -11,9 +12,10 @@ const LectureList = ({ lectures }) => {
     <>
       {lectures.map((lecture) => (
         <div key={lecture._id} className='container'>
-          <h4 className='card-header bg-info p-1'>View {lecture.name}</h4>
+          {/* <h4 className='card-header bg-info p-1'>View {lecture.name}</h4> */}
+          <LectureName lectureId={lecture._id} />
           <div className='bg-light p-2'>
-            <p className=''>Lecture: {lecture.description}</p>
+            <p className=''>Description: {lecture.description}</p>
           </div>
         </div>
       ))}

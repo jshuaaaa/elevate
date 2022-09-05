@@ -41,7 +41,7 @@ const SearchBar = () => {
                   placeholder="Search Courses"
                   name="s"  /> 
                 
-                <Link to={`course/search/${name}`}><a href="#" className="search-icon">   <img src={searchicon}/> </a> </Link>
+                <Link className="iconS" to={`course/search/${name}`}><a href="#" className="search-icon">   <img src={searchicon}/> </a> </Link>
                 
               </div> 
             </div> 

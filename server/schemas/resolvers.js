@@ -131,18 +131,21 @@ const resolvers = {
     addLectureToModule: async (parent, { moduleId, name, url }) => {
       const lecture = await Lecture.create({ name, url });
       return Module.findOneAndUpdate(
-        { _id: moduleId},
-        { $addToSet: {lecture:{lecture: lecture._id}}}
-      )
+        { _id: moduleId },
+        { $addToSet: { lecture: lecture._id } }
+      );
     },
-    addReviewToCourse: async (parent, {courseId, reviewText, reviewAuthor}) => {
-      const review = await Review.create({reviewText, reviewAuthor})
-      console.log(review._id)
+    addReviewToCourse: async (
+      parent,
+      { courseId, reviewText, reviewAuthor }
+    ) => {
+      const review = await Review.create({ reviewText, reviewAuthor });
+      console.log(review._id);
 
       return Course.findOneAndUpdate(
-        {_id: courseId},
-        {$addToSet: { review: review._id } }
-      )
+        { _id: courseId },
+        { $addToSet: { review: review._id } }
+      );
     },
     login: async (parent, { email, password }) => {
       const profile = await Profile.findOne({ email });

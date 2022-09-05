@@ -69,7 +69,7 @@ const SideNav = () => {
                 }}
               >
                 <motion.div
-                  className='navList container'
+                  className='navList container ca'
                   initial='closed'
                   animate='open'
                   exit='closed'

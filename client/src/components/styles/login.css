@@ -8,12 +8,19 @@
 } */
 
 .logBack {
+  height: fit-content;
   background-color: #0091f800;
   background-image: url("../images/blueLearn.jpg");
-  background-repeat: no-repeat;
+  background-repeat:initial;
+  background-size: cover;
   background-position: center;
+
+  
+  
+  
   width: 100vw;
   /* height: 140vh; */
+  
 }
 
 
@@ -25,7 +32,9 @@
   /* margin-top: 15%; */
 
   /* margin: 10%; */
-  padding: 5%;
+  padding: 0% 15% 0% 15%;
+  
+ 
 }
 
 
@@ -34,7 +43,8 @@
   transform: scale(1.0) !important;
   margin-top: 8% !important;
   margin-bottom: 8% !important;
-  max-width: 35vw !important;
+  max-width: 50vw !important;
+  
   
 }
 
@@ -48,11 +58,12 @@
 
 .noAc{
   text-align: center;
+  margin-top: 8%;
 }
 
 .logC > h4 {
   text-align: center;
-  font-size: 2.5em;
+  font-size: 3em;
   text-shadow: 0 10px 5px rgb(0, 0, 0);
 }
 
@@ -61,8 +72,10 @@
 }
 
 .upSign {
-  color: rgba(5, 40, 105, 0.74);
-  text-shadow: 0 10px 12px rgb(0, 0, 0);
+ 
+  color: rgba(0, 0, 0, 0.584);
+  text-shadow: 0 10px 12px rgba(0, 0, 0, 0);
+  text-decoration: underline !important;
 }
 
 .logBt {
@@ -113,6 +126,7 @@
   flex-direction: column;
   width: 100%;
   height: -20vh;
+  font-size: 1em !important;
 
 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.504);
@@ -122,7 +136,7 @@
  
   height: 5vh !important;
   text-align: center;
-font-size: 1.5em;
+font-size: 1.8em;
   margin-bottom: 10% !important;
 
  
@@ -130,7 +144,7 @@ font-size: 1.5em;
 
 .form-control > div{
 font-size: 1.5em;
-  margin-bottom: 12%;
+  margin-bottom: 3%;
 }
 .bling{
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.362);
@@ -146,9 +160,7 @@ font-size: 1.5em;
   width: auto;
 }
 
-.formBG > form > input , input {
-  margin-bottom: 5%;
-}
+
 
 .card-text {
   color: #ffffff;
@@ -156,6 +168,28 @@ font-size: 1.5em;
 
 .btn {
   color: rgba(55, 165, 222);
+}
+
+
+.logP{
+  margin-top: 8.5% !important;
+  font-size: 1.2em;
+  
+}
+
+.courseEm{
+  margin-top: 3% !important;
+}
+
+.cR{
+  max-height: 70vh;
+  display: flex;
+}
+
+.createC{
+  margin-top: 5%;
+  padding: 0%;
+  max-height: fit-content;
 }
 
 /* .logFoot{
