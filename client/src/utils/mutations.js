@@ -45,13 +45,14 @@ export const ADD_MODULE_TO_COURSE = gql`
 `;
 
 export const ADD_REVIEW = gql`
-  mutation addReview($reviewText: String!, $createdAt: String!) {
-    addReview(reviewText: $reviewText, createdAt: $createdAt) {
-      _id
-      reviewText
-      createdAt
-    }
+mutation Mutation($courseId: ID!, $reviewText: String!, $reviewAuthor: String!) {
+  addReviewToCourse(courseId: $courseId, reviewText: $reviewText, reviewAuthor: $reviewAuthor) {
+    _id
+    reviewText
+    reviewAuthor
+    createdAt
   }
+}
 `;
 
 export const REMOVE_MODULE = gql`
