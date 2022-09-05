@@ -1,22 +1,12 @@
-.dCourse{
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap !important;
-    flex-direction: row !important;
-    margin-top: 2% !important;
-    max-height: 80vh;
-    margin: 0% ;
-    
-    
+.dCourse {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 2% !important;
 }
 
-.corCard{
-    background-color: rgba(123, 177, 231, 0.795);
-    font-size: 1.9em ;
-    color: blue;
-    /* border-radius: 8px; */
+.corCard {
+  background-color: rgba(123, 177, 231, 0.795);
+  font-size: 1.9em;
+  color: blue;
 }
-
-/* .bCor{
-    height: 2000px !important;
-} */

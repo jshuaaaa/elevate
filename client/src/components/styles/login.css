@@ -8,11 +8,11 @@
 } */
 
 .logBack {
-  height: 100vh;
+  height: fit-content;
   background-color: #0091f800;
   background-image: url("../images/blueLearn.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
+  background-repeat:round;
+  
   
   
   width: 100vw;
