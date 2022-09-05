@@ -21,11 +21,12 @@ function Course() {
   const [showModule, setShowModule] = useState(false);
   const handleModuleClose = () => setShowModule(false);
   const handleModuleShow = () => setShowModule(true);
-
+  console.log(data)
   // pass URL parameter
-  const course = data?.coursePage || {};
+  const course = data?.course || {};
   // console.log(courseId);
 
+  console.log(course)
   if (loading) {
     return <div>Loading...</div>;
   }

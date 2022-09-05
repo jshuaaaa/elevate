@@ -36,8 +36,8 @@ const resolvers = {
       return Activity.findOne({ _id: id });
     },
 
-    review: async (parent, { id }) => {
-      return Review.findOne({ _id: id });
+    review: async (parent, { reviewId }) => {
+      return Review.findOne({ _id: reviewId });
     },
 
     // Find all routes below
