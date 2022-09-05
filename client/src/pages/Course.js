@@ -44,6 +44,7 @@ function Course() {
 
       {Auth.loggedIn() && (
         <>
+        <div className="d-flex justify-content-center">
           <Button variant='primary' onClick={handleModuleShow}>
             Add Module
           </Button>
@@ -55,7 +56,9 @@ function Course() {
             backdrop='static'
             keyboard={false}
           />
+          </div>
         </>
+        
       )}
       <div className="logC LogE createC d-flex-column">
       <h2 className='card-header bg-dark text-light p-2 m-0'>Modules</h2>
@@ -64,15 +67,15 @@ function Course() {
       </div>
       </div>
 
-      <div>
+      <div className="logC LogE createC d-flex-column">
       <h2 className='card-header bg-dark text-light p-2 m-0'>Reviews</h2>
-      <div className=' text-black bg-light p-4'>
+      <div className=' card-body p-5 corCard bCor'>
         <ReviewList reviews={course.reviews} />
       </div>
       </div>
 
-      <div>
-      <div className='m-3 p-4' style={{ border: "1px dotted #1a1a1a" }}>
+      <div className="reviewBG">
+      <div className='d-flex justify-content-center m-3 p-4' style={{ border: "1px dotted #1a1a1a" }}>
         <ReviewForm courseId={courseId} />
       </div>
       </div>
