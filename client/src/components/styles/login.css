@@ -13,8 +13,11 @@
   background-image: url("../images/blueLearn.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  
+  
   width: 100vw;
   /* height: 140vh; */
+  
 }
 
 
@@ -120,6 +123,7 @@
   flex-direction: column;
   width: 100%;
   height: -20vh;
+  font-size: 1em !important;
 
 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.504);
@@ -137,7 +141,7 @@ font-size: 1.8em;
 
 .form-control > div{
 font-size: 1.5em;
-  margin-bottom: 12%;
+  margin-bottom: 3%;
 }
 .bling{
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.362);
@@ -153,9 +157,7 @@ font-size: 1.5em;
   width: auto;
 }
 
-.formBG > form > input , input {
-  margin-bottom: 5%;
-}
+
 
 .card-text {
   color: #ffffff;
@@ -173,12 +175,18 @@ font-size: 1.5em;
 }
 
 .courseEm{
-  margin-top: 0% !important;
+  margin-top: 3% !important;
 }
 
 .cR{
   max-height: 70vh;
   display: flex;
+}
+
+.createC{
+  margin-top: 5%;
+  padding: 0%;
+  max-height: fit-content;
 }
 
 /* .logFoot{
