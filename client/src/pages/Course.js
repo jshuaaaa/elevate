@@ -65,7 +65,7 @@ function Course() {
         <ReviewList reviews={course.reviews} />
       </div>
       <div className='m-3 p-4' style={{ border: "1px dotted #1a1a1a" }}>
-        <ReviewForm reviewId={course._id} />
+        <ReviewForm courseId={courseId} />
       </div>
     </div>
   );

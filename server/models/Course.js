@@ -27,10 +27,10 @@ const courseSchema = new Schema({
       ref: "module",
     },
   ],
-  reviews: [
+  review: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Review",
+      ref: "review",
     },
   ],
 });

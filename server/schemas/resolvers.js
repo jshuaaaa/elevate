@@ -137,9 +137,11 @@ const resolvers = {
     },
     addReviewToCourse: async (parent, {courseId, reviewText, reviewAuthor}) => {
       const review = await Review.create({reviewText, reviewAuthor})
+      console.log(review._id)
+
       return Course.findOneAndUpdate(
         {_id: courseId},
-        {$addToSet: {reviews:{review: review._id}}}
+        {$addToSet: { review: review._id } }
       )
     },
     login: async (parent, { email, password }) => {

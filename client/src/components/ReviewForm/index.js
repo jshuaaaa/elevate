@@ -1,50 +1,57 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client"
 
 import { ADD_REVIEW } from "../../utils/mutations";
 import { QUERY_REVIEWS, QUERY_ME } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
 
-const ReviewForm = () => {
+const ReviewForm = ({courseId}) => {
   const [reviewText, setReviewText] = useState("");
 
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addReview, { error }] = useMutation(ADD_REVIEW, {
-    update(cache, { data: { addReview } }) {
-      try {
-        const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
+  const [addReview, { error }] = useMutation(ADD_REVIEW)
+  // , {
+  //   update(cache, { data: { addReview } }) {
+  //     try {
+  //       const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
 
-        cache.writeQuery({
-          query: QUERY_REVIEWS,
-          data: { reviews: [addReview, ...reviews] },
-        });
-      } catch (e) {
-        console.error(e);
-      }
+  //       cache.writeQuery({
+  //         query: QUERY_REVIEWS,
+  //         data: { reviews: [addReview, ...reviews] },
+  //       });
+  //     } catch (e) {
+  //       console.error(e);
+  //     }
 
-      // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, reviews: [...me.reviews, addReview] } },
-      });
-    },
-  });
+  //     // update me object's cache
+  //     const { me } = cache.readQuery({ query: QUERY_ME });
+  //     cache.writeQuery({
+  //       query: QUERY_ME,
+  //       data: { me: { ...me, reviews: [...me.reviews, addReview] } },
+  //     });
+  //   },
+  // });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    console.log(courseId)
+    console.log(Auth.getProfile().data.name)
+    console.log(reviewText)
     try {
       const { data } = await addReview({
         variables: {
-          reviewText,
-          reviewAuthor: Auth.getProfile().data.username,
+          courseId: courseId,
+          reviewText: reviewText,
+          reviewAuthor: Auth.getProfile().data.name,
         },
+        
       });
+      console.log(data)
 
+      
       setReviewText("");
     } catch (err) {
       console.error(err);
