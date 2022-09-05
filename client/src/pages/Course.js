@@ -20,11 +20,12 @@ function Course() {
   const [showModule, setShowModule] = useState(false);
   const handleModuleClose = () => setShowModule(false);
   const handleModuleShow = () => setShowModule(true);
-
+  console.log(data)
   // pass URL parameter
-  const course = data?.coursePage || {};
+  const course = data?.course || {};
   // console.log(courseId);
 
+  console.log(course)
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -62,7 +63,7 @@ function Course() {
 
       <h2 className='card-header bg-dark text-light p-2 m-0'>Reviews</h2>
       <div className='bg-light p-4'>
-        <ReviewList reviews={course.reviews} />
+        <ReviewList reviews={course.review} />
       </div>
       <div className='m-3 p-4' style={{ border: "1px dotted #1a1a1a" }}>
         <ReviewForm courseId={courseId} />

@@ -74,7 +74,7 @@ const typeDefs = gql`
     module(moduleId: ID!): Module
     lecture(id: ID!): Lecture
     activity(id: ID!): Activity
-    review(id: ID!): Review
+    review(reviewId: ID!): Review
   }
 
   type Mutation {
