@@ -42,6 +42,7 @@ function Module() {
 
       {Auth.loggedIn() && (
         <>
+        
           <Button variant='warning' onClick={handleLectureShow}>
             Add Lecture
           </Button>

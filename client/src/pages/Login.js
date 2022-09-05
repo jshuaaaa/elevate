@@ -54,9 +54,9 @@ const Login = (props) => {
   });
 
   return (
-    <main className="flex-row justify-content-center  logBack">
+    <main className="flex-row justify-center  logBack">
       <div class="logE containerr card-text">
-        <div className="logC logE ">
+        <div className="logC logE logP">
           <h4 className="">Login</h4>
           <div className="formBG aone ">
             {data ? (
@@ -74,7 +74,7 @@ const Login = (props) => {
                   onChange={handleChange}
                   value={formState.email}
                 />
-                <div className="">
+                
                   <input
                     className="form-control form-input"
                     placeholder="******"
@@ -83,8 +83,8 @@ const Login = (props) => {
                     onChange={handleChange}
                     value={formState.password}
                   />
-                </div>
-                <div className="d-flex justify-content-center">
+                
+               
                   <button
                     className="btn logBt"
                     style={{ cursor: "pointer" }}
@@ -92,7 +92,7 @@ const Login = (props) => {
                   >
                     Submit
                   </button>
-                </div>
+                
                 <h4 className="noAc">
                   Don't have an account? <a className="upSign" href="signup">Sign Up</a>
                 </h4>
