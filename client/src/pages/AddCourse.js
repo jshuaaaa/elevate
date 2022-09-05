@@ -90,9 +90,9 @@ const CourseForm = () => {
   };
 
   return (
-    <main className="flex-row justify-center   logBack ">
+    <main className="flex-row justify-center logBack ">
       <div class="logE containerr card-text courseEm">
-        <div className="logC LogE d-flex-column"> 
+        <div className="logC LogE createC d-flex-column"> 
           <h1>Add a new course below</h1>
           <div className="formBG aone">
             {Auth.loggedIn() ? (

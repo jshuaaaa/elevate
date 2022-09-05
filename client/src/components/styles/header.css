@@ -42,6 +42,7 @@
 
 .text-dark {
   background-image: url("../images/headerimg.png");
+  background-size: contain;
   border-bottom: solid 3px white;
   background-color: #0087d2;
 

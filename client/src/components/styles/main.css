@@ -26,6 +26,7 @@
   justify-content: center;
   position: relative;
   align-items: center;
+  overflow:visible
 }
 
 .videWS h1{
@@ -124,9 +125,9 @@ video {
 .banner-text button {
   bottom: 10vh;
 }
-body {
+/* body {
   overflow-x: hidden;
-}
+} */
 
 .card{
   
