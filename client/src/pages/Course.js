@@ -30,10 +30,10 @@ function Course() {
     return <div>Loading...</div>;
   }
   return (
-    <main className="d-flex-row justify-center logBack bCor ">
-    <div className="dCourse logE containerr card-text courseEm" >
+    <main className="d-flex-row justify-center logBack ">
+    <div className="dCourse logE containerr cBack card-text courseEm" >
     <div className="logC LogE createC d-flex-column"> 
-      <h2 className='card-header bg-dark text-light p-2 m-0'>
+      <h2 className='card-header bg-dark p-2 m-0'>
         Course title: {course.name}
       </h2>
       <div className='card-body p-5 corCard'>
@@ -57,18 +57,24 @@ function Course() {
           />
         </>
       )}
-
+      <div className="logC LogE createC d-flex-column">
       <h2 className='card-header bg-dark text-light p-2 m-0'>Modules</h2>
-      <div className='bg-light p-4 mb-5'>
+      <div className='card-body p-5 corCard bCor'>
         <ModuleSection modules={course.module} />
       </div>
+      </div>
 
+      <div>
       <h2 className='card-header bg-dark text-light p-2 m-0'>Reviews</h2>
       <div className=' text-black bg-light p-4'>
         <ReviewList reviews={course.reviews} />
       </div>
+      </div>
+
+      <div>
       <div className='m-3 p-4' style={{ border: "1px dotted #1a1a1a" }}>
         <ReviewForm courseId={courseId} />
+      </div>
       </div>
     </div>
     </div>

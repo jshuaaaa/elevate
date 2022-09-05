@@ -6,7 +6,51 @@
 }
 
 .corCard {
-  background-color: rgba(123, 177, 231, 0.795);
+  /* background-color: rgba(123, 177, 231, 0.795); */
+
+  background: rgba(255, 255, 255, 0.582);
+  background-image: url(/static/media/rocketbook.d2b8d762.png);
+  /* background-repeat:no-repeat !important; */
+  background-position:center;
+  background-repeat: space !important;
+  background-size: cover;
+  max-height: fit-content;
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 1.9em;
-  color: blue;
+  background-repeat:repeat;
+  color: rgb(255, 255, 255);
+  
+}
+
+
+.CModSec > p{
+  background-color: rgba(238, 238, 238, 0.671);
+  text-align: left;
+}
+
+
+/* .bCor > *{
+
+  color: rgb(14, 0, 0);
+
+
+} */
+
+.courseH > *{
+  font-size: 1.2em !important;
+}
+
+.cBack{
+  
+
+background: rgba(15, 172, 235, 0.692);
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
