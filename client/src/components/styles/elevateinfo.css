@@ -14,4 +14,7 @@ section .logodiv {
 
 .logodiv p{
     margin: 30px;
+    color: white;
+    font-size: 20px;
 }
+

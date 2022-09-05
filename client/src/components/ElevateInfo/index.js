@@ -5,7 +5,7 @@ const ElevateInfo = () => {
     <section>
         <div className="logodiv">
             <h1>ELEVATE</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae venenatis velit, nec viverra nisi. Phasellus viverra efficitur metus ut blandit. Morbi maximus neque et lorem porta, eget tempus risus pulvinar. Mauris sagittis, turpis vitae commodo feugiat, sem dolor aliquet magna, id lacinia urna eros sit amet dui. Maecenas consequat neque eu venenatis tempor. Aliquam pulvinar, urna vitae mattis convallis, enim felis imperdiet dui, eget cursus libero velit et eros.</p>
+            <p>Here at Elevate we provide users with the opportunity to create a vairty of courses and interact and join other courses created by users </p>
 
           
       <div class="git-icons">
