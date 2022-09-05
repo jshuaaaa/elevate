@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "periqles": "^2.1.3",
-    "react-helmet": "^6.1.0",
-    "react-multi-carousel": "^2.8.2"
+    "react-helmet": "^6.1.0"
   }
 }
