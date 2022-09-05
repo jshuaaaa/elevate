@@ -18,7 +18,7 @@ const LectureName = (props) => {
   return (
     <>
       <h4 {...props} className='card-header bg-info p-1'>
-        View {lecture.name}
+        {lecture.name}
       </h4>
     </>
   );
