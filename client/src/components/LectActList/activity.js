@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ActivityName from "../LectActName/activity";
 // need to query for activity name
 
 const ActivityList = ({ activities }) => {
@@ -11,11 +12,10 @@ const ActivityList = ({ activities }) => {
     <>
       {activities.map((activity) => (
         <div key={activity._id} className='container'>
-          <h4 className='card-header bg-info p-1'>
-            Activity name: {activity.name}
-          </h4>
+          {/* Query for activity name */}
+          <ActivityName activityId={activity._id} />
           <div className='bg-light p-2'>
-            <p className=''>Description: {activity.description}</p>
+            <p className=''>Activity: {activity.description}</p>
           </div>
         </div>
       ))}

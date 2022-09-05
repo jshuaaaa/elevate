@@ -1,13 +1,14 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_SINGLE_MODULE } from "../../utils/queries";
-import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const ModuleName = (props) => {
   const { loading, error, data } = useQuery(QUERY_SINGLE_MODULE, {
     variables: { moduleId: props.moduleId },
   });
+
+  if (loading) return "Loading...";
 
   if (error) return `Error! ${error.message}`;
   // console.log(data);

@@ -151,3 +151,21 @@ export const QUERY_SINGLE_MODULE = gql`
     }
   }
 `;
+
+export const QUERY_SINGLE_LECTURE = gql`
+  query singleLecture($lectureId: ID!) {
+    lecture(id: $lectureId) {
+      _id
+      name
+    }
+  }
+`;
+
+export const QUERY_SINGLE_ACTIVITY = gql`
+  query singleActivity($activityId: ID!) {
+    activity(id: $activityId) {
+      _id
+      name
+    }
+  }
+`;
