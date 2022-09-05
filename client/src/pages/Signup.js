@@ -43,7 +43,7 @@ const Signup = () => {
   return (
     <main className="flex-row justify-center  logBack">
       <div class="logE containerr card-text">
-        <div className="logC logE ">
+        <div className="logC logE logP">
           <h4 className="">Sign Up</h4>
           <div className="formBG aone ">
             {data ? (

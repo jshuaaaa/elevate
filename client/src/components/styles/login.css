@@ -8,6 +8,7 @@
 } */
 
 .logBack {
+  height: 100vh;
   background-color: #0091f800;
   background-image: url("../images/blueLearn.jpg");
   background-repeat: no-repeat;
@@ -25,7 +26,9 @@
   /* margin-top: 15%; */
 
   /* margin: 10%; */
-  padding: 5%;
+  padding: 0% 15% 0% 15%;
+  
+ 
 }
 
 
@@ -34,7 +37,8 @@
   transform: scale(1.0) !important;
   margin-top: 8% !important;
   margin-bottom: 8% !important;
-  max-width: 35vw !important;
+  max-width: 50vw !important;
+  
   
 }
 
@@ -48,11 +52,12 @@
 
 .noAc{
   text-align: center;
+  margin-top: 8%;
 }
 
 .logC > h4 {
   text-align: center;
-  font-size: 2.5em;
+  font-size: 3em;
   text-shadow: 0 10px 5px rgb(0, 0, 0);
 }
 
@@ -61,8 +66,10 @@
 }
 
 .upSign {
-  color: rgba(5, 40, 105, 0.74);
-  text-shadow: 0 10px 12px rgb(0, 0, 0);
+ 
+  color: rgba(0, 0, 0, 0.584);
+  text-shadow: 0 10px 12px rgba(0, 0, 0, 0);
+  text-decoration: underline !important;
 }
 
 .logBt {
@@ -122,7 +129,7 @@
  
   height: 5vh !important;
   text-align: center;
-font-size: 1.5em;
+font-size: 1.8em;
   margin-bottom: 10% !important;
 
  
@@ -160,9 +167,18 @@ font-size: 1.5em;
 
 
 .logP{
-  margin-top: 20.5% !important;
+  margin-top: 8.5% !important;
   font-size: 1.2em;
   
+}
+
+.courseEm{
+  margin-top: 0% !important;
+}
+
+.cR{
+  max-height: 70vh;
+  display: flex;
 }
 
 /* .logFoot{
