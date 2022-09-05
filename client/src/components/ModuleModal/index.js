@@ -16,12 +16,6 @@ function ModuleModal(props) {
 
       {/* Adding a module form component */}
       <ModuleForm course={props.course} />
-
-      {/* <Modal.Footer>
-        <Button variant='primary' onClick={props.onHide}>
-          Save Changes
-        </Button>
-      </Modal.Footer> */}
     </Modal>
   );
 }

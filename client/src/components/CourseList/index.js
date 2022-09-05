@@ -42,9 +42,9 @@ const CourseList = ({ courses, title, showTitle = true }) => {
               <Link className='btn btn-primary' to={`/courses/${course._id}`}>
                 View course
               </Link>
-              <Link className='btn btn-primary' to={`/courses/${course._id}`}>
+              {/* <Link className='btn btn-primary' to={`/courses/${course._id}`}>
                 Register
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div

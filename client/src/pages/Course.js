@@ -31,11 +31,11 @@ function Course() {
   return (
     <div className='my-5'>
       <h2 className='card-header bg-dark text-light p-2 m-0'>
-        Title: {course.name}
+        Course title: {course.name}
       </h2>
       <div className='card-body bg-light p-4'>
         <p>Course Summary: {course.description}</p>
-        <p>${course.price}</p>
+        {/* <p>${course.price}</p> */}
         <p>Category: {course.category}</p>
       </div>
 
