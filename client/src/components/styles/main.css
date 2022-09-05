@@ -269,3 +269,9 @@ a:link {
 border-top: solid 3px #fff;
 }
 
+.cardCont .card-body {
+  background-image: url("../../assets/rocketbook.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  
+}
