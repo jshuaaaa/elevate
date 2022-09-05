@@ -5,7 +5,7 @@ import { QUERY_SINGLE_COURSE_PAGE } from "../utils/queries";
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
 import ModuleModal from "../components/ModuleModal";
-import "../components/styles/course.css";
+ import "../components/styles/course.css";
 import Auth from "../utils/auth";
 import { Button } from "react-bootstrap";
 import ModuleSection from "../components/ModuleSection";
@@ -33,7 +33,7 @@ function Course() {
     <main className="d-flex-row justify-center logBack ">
     <div className="dCourse logE containerr cBack card-text courseEm" >
     <div className="logC LogE createC d-flex-column"> 
-      <h2 className='card-header bg-dark p-2 m-0'>
+      <h2 className='card-header bg-dark p-2 m-0 cHed'>
         Course title: {course.name}
       </h2>
       <div className='card-body p-5 corCard'>
@@ -44,7 +44,7 @@ function Course() {
 
       {Auth.loggedIn() && (
         <>
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center aCBut">
           <Button variant='primary' onClick={handleModuleShow}>
             Add Module
           </Button>
@@ -61,14 +61,14 @@ function Course() {
         
       )}
       <div className="logC LogE createC d-flex-column">
-      <h2 className='card-header bg-dark text-light p-2 m-0'>Modules</h2>
+      <h2 className='card-header bg-dark text-light p-2 m-0 cHed'>Modules</h2>
       <div className='card-body p-5 corCard bCor'>
         <ModuleSection modules={course.module} />
       </div>
       </div>
 
       <div className="logC LogE createC d-flex-column">
-      <h2 className='card-header bg-dark text-light p-2 m-0'>Reviews</h2>
+      <h2 className='card-header bg-dark text-light p-2 m-0 cHed'>Reviews</h2>
       <div className=' card-body p-5 corCard bCor'>
         <ReviewList reviews={course.reviews} />
       </div>

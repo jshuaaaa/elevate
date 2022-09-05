@@ -3,27 +3,27 @@
   justify-content: center;
   
   margin-top: 2% !important;
+  
 }
 
 .corCard {
   /* background-color: rgba(123, 177, 231, 0.795); */
 
-  background: rgba(255, 255, 255, 0.582);
-  background-image: url(/static/media/rocketbook.d2b8d762.png);
-  /* background-repeat:no-repeat !important; */
-  background-position:center;
-  background-repeat: space !important;
-  background-size: cover;
-  max-height: fit-content;
-/* border-radius: 16px; */
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-/* border: 1px solid rgba(255, 255, 255, 0.3); */
-  font-size: 1.9em;
+  background: rgba(5, 46, 68, 0.849);
+
+  border-radius:  0px 0px 16px 16px !important;
+box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.897);
+
+
+  font-size: 1.6em;
   background-repeat:repeat;
   color: rgb(255, 255, 255);
   
+}
+
+.aCBut{
+  margin-top: 5%;
+  transform: scale(1.2);
 }
 
 
@@ -32,11 +32,15 @@ backdrop-filter: blur(5px);
   text-align: left;
 }
 
+.cHed{
+  border-radius: 16px 16px 0px 0px !important;
+}
+
 .reviewBG{
-  /* From https://css.glass */
-background: rgba(255, 255, 255, 0.2);
+ 
+background: rgba(255, 255, 255, 0.24);
 border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.493);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
