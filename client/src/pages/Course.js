@@ -32,8 +32,13 @@ function Course() {
   }
   return (
     <main className='d-flex-row justify-center logBack '>
-      <div className='dCourse logE containerr cBack card-text courseEm'>
-        <div className='logC LogE createC d-flex-column'>
+      <div
+        
+      
+      className='dCourse logE containerr cBack card-text courseEm'>
+        <div 
+        
+        className='logC LogE createC d-flex-column'>
           <h2 className='card-header bg-dark p-2 m-0 cHed'>
             Course title: {course.name}
           </h2>

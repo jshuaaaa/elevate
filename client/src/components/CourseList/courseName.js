@@ -17,7 +17,7 @@ const CourseName = ({ courseId }) => {
 
   return (
     <>
-      <h4 className='card-header bg-info p-1'>{course.name}</h4>
+      <h4 className='card-header bg-info cardHe p-1'>{course.name}</h4>
     </>
   );
 };
