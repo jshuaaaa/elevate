@@ -14,7 +14,7 @@ const ReviewList = ({reviews}) => {
         className='p-5 display-inline-block'
         style={{ borderBottom: "1px dotted #1a1a1a" }}
       >
-        reviews
+        Reviews
       </h3>
       <div className='flex-row my-4'>
           {reviews.map((review) => (

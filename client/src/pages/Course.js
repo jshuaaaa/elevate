@@ -74,7 +74,7 @@ function Course() {
               Reviews
             </h2>
             <div className=' card-body p-5 corCard bCor'>
-              <ReviewList reviews={course.reviews} />
+              <ReviewList reviews={course.review} />
             </div>
           </div>
 
