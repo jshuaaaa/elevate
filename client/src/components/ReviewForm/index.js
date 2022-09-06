@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useMutation } from "@apollo/client"
+import { useMutation } from "@apollo/client";
 
 import { ADD_REVIEW } from "../../utils/mutations";
 import { QUERY_REVIEWS, QUERY_ME } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
 
-const ReviewForm = ({courseId}) => {
+const ReviewForm = ({ courseId }) => {
   const [reviewText, setReviewText] = useState("");
 
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addReview, { error }] = useMutation(ADD_REVIEW)
+  const [addReview, { error }] = useMutation(ADD_REVIEW);
   // , {
   //   update(cache, { data: { addReview } }) {
   //     try {
@@ -37,9 +37,9 @@ const ReviewForm = ({courseId}) => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(courseId)
-    console.log(Auth.getProfile().data.name)
-    console.log(reviewText)
+    console.log(courseId);
+    console.log(Auth.getProfile().data.name);
+    console.log(reviewText);
     try {
       const { data } = await addReview({
         variables: {
@@ -47,12 +47,11 @@ const ReviewForm = ({courseId}) => {
           reviewText: reviewText,
           reviewAuthor: Auth.getProfile().data.name,
         },
-        
       });
-      console.log(data)
+      console.log(data);
 
-      
       setReviewText("");
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }
