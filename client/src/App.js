@@ -56,18 +56,24 @@ function App() {
           </Helmet>
           <Header />
           <SideNav />
-
+          
+          
           <div className='videWS'>
+          
             <Routes>
+            
               <Route path='/' element={<Home />} />
               <Route path='/login' element={<Login />} />
               <Route path='/signup' element={<Signup />} />
               <Route path='/me' element={<Profile />} />
               <Route path='/courses/:courseId' element={<Course />} />
               <Route path='/course/search/:name' element={<SearchedCourse />} />
+              
               <Route path='/courses/add' element={<AddCourse />} />
               <Route path='module/:moduleId' element={<Module />} />
             </Routes>
+            
+          
           </div>
           <ElevateInfo />
           <Footer />

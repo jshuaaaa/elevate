@@ -9,17 +9,21 @@ const LectureList = ({ lectures }) => {
   }
 
   return (
+      <ol>
     <>
       {lectures.map((lecture) => (
+        <li>
         <div key={lecture._id} className='container'>
           {/* <h4 className='card-header bg-info p-1'>View {lecture.name}</h4> */}
-          <LectureName lectureId={lecture._id} />
-          <div className='bg-light p-2'>
-            <p className=''>Description: {lecture.description}</p>
-          </div>
+          <p><LectureName lectureId={lecture._id} /></p>
+          
+            <p>Description: <em>{lecture.description}</em></p>
+          
         </div>
+        </li>
       ))}
     </>
+    </ol>
   );
 };
 

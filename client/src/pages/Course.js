@@ -5,6 +5,7 @@ import { QUERY_SINGLE_COURSE_PAGE } from "../utils/queries";
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
 import ModuleModal from "../components/ModuleModal";
+import { motion } from "framer-motion";
 import "../components/styles/course.css";
 import Auth from "../utils/auth";
 import { Button } from "react-bootstrap";
@@ -31,22 +32,40 @@ function Course() {
   }
   return (
     <main className='d-flex-row justify-center logBack '>
-      <div className='dCourse logE containerr cBack card-text courseEm'>
-        <div className='logC LogE createC d-flex-column'>
+      <div
+        
+      
+      className='dCourse logE containerr cBack card-text courseEm'>
+        <div 
+        
+        className='logC LogE createC d-flex-column'>
           <h2 className='card-header bg-dark p-2 m-0 cHed'>
             Course title: {course.name}
           </h2>
           <div className='card-body p-5 corCard'>
-            <p>Course Summary: {course.description}</p>
+            <p><u>Course Summary:</u> <em>{course.description}</em></p>
             {/* <p>${course.price}</p> */}
-            <p>Category: {course.category}</p>
+            <p><u>Category:</u> <em>{course.category}</em></p>
             <p className='text-secondary'>Created by: {course.courseAuthor}</p>
           </div>
 
-          {Auth.loggedIn() && (
+          
+          <div className='logC LogE createC d-flex-column'>
+            <h2 className='card-header bg-dark text-light p-2 m-0 cHed'>
+              Modules
+            </h2>
+            <div className='card-body p-5 corCard bCor'>
+            
+              <ModuleSection modules={course.module} />
+
+              {Auth.loggedIn() && (
             <>
-              <div className='d-flex justify-content-center aCBut'>
-                <Button variant='primary' onClick={handleModuleShow}>
+              <div className='d-flex justify-content-center aCBut cModButt'>
+                <Button
+                 
+                 
+                 variant='primary' 
+                 onClick={handleModuleShow}>
                   Add Module
                 </Button>
                 <ModuleModal
@@ -59,13 +78,7 @@ function Course() {
                 />
               </div>
             </>
-          )}
-          <div className='logC LogE createC d-flex-column'>
-            <h2 className='card-header bg-dark text-light p-2 m-0 cHed'>
-              Modules
-            </h2>
-            <div className='card-body p-5 corCard bCor'>
-              <ModuleSection modules={course.module} />
+            )}
             </div>
           </div>
 
