@@ -9,17 +9,21 @@ const ActivityList = ({ activities }) => {
   }
 
   return (
+    <ol>
     <>
       {activities.map((activity) => (
+        <li>
         <div key={activity._id} className='container'>
           {/* Query for activity name */}
-          <ActivityName activityId={activity._id} />
-          <div className='bg-light p-2'>
-            <p className=''>Description {activity.description}</p>
+          <p><ActivityName activityId={activity._id} /></p>
+          <div className=''>
+            <p className=''>Description: {activity.description}</p>
           </div>
         </div>
+        </li>
       ))}
     </>
+    </ol>
   );
 };
 
