@@ -33,10 +33,10 @@ const CourseCarousel = () => {
               <div className='cardCont'>
                 <motion.div
                 whileHover={{
-                  scale: 1.2,
+                  scale: 1.09,
                  
                 }}
-                whileTap={{ scale: 1.1 }}
+                
                   key={course._id}
                   className='card cardo'
                   style={{ width: "25rem", height: "20rem" }}
