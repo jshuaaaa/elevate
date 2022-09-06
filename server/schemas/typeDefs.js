@@ -32,6 +32,7 @@ const typeDefs = gql`
   type Lecture {
     _id: ID
     name: String
+    url: String
   }
 
   type Activity {

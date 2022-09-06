@@ -20,6 +20,7 @@ const LectureName = (props) => {
       <h4 {...props} className='card-header bg-info p-1'>
         {lecture.name}
       </h4>
+      <iframe src={lecture.url}></iframe>
     </>
   );
 };
