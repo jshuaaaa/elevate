@@ -90,6 +90,8 @@ const CourseForm = () => {
       price: "",
     });
 
+    navigate("/me");
+
     //navigate(`/course/${data[0]._id}`);
     // return (
     //   <>
