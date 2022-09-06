@@ -31,8 +31,6 @@ const CourseList = ({ courses, title, showTitle = true }) => {
             className='card mb-3 cardo'
             style={{ width: "25rem", height: "20rem" }}
           >
-            {/* <h4 className='card-header bg-primary text-light p-2 m-0'>
-            </h4> */}
             <Link className='text-light' to={`/courses/${course._id}`}>
               <CourseName courseId={course._id} />
             </Link>
