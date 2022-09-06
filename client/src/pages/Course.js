@@ -5,7 +5,7 @@ import { QUERY_SINGLE_COURSE_PAGE } from "../utils/queries";
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
 import ModuleModal from "../components/ModuleModal";
- import "../components/styles/course.css";
+import "../components/styles/course.css";
 import Auth from "../utils/auth";
 import { Button } from "react-bootstrap";
 import ModuleSection from "../components/ModuleSection";
@@ -21,67 +21,73 @@ function Course() {
   const [showModule, setShowModule] = useState(false);
   const handleModuleClose = () => setShowModule(false);
   const handleModuleShow = () => setShowModule(true);
-  console.log(data)
+  // console.log(data);
   // pass URL parameter
   const course = data?.course || {};
   // console.log(courseId);
 
-  console.log(course)
   if (loading) {
     return <div>Loading...</div>;
   }
   return (
-    <main className="d-flex-row justify-center logBack ">
-    <div className="dCourse logE containerr cBack card-text courseEm" >
-    <div className="logC LogE createC d-flex-column"> 
-      <h2 className='card-header bg-dark p-2 m-0 cHed'>
-        Course title: {course.name}
-      </h2>
-      <div className='card-body p-5 corCard'>
-        <p>Course Summary: {course.description}</p>
-        {/* <p>${course.price}</p> */}
-        <p>Category: {course.category}</p>
-      </div>
-
-      {Auth.loggedIn() && (
-        <>
-        <div className="d-flex justify-content-center aCBut">
-          <Button variant='primary' onClick={handleModuleShow}>
-            Add Module
-          </Button>
-          <ModuleModal
-            course={courseId}
-            show={showModule}
-            onHide={handleModuleClose}
-            onSubmit={handleModuleClose}
-            backdrop='static'
-            keyboard={false}
-          />
+    <main className='d-flex-row justify-center logBack '>
+      <div className='dCourse logE containerr cBack card-text courseEm'>
+        <div className='logC LogE createC d-flex-column'>
+          <h2 className='card-header bg-dark p-2 m-0 cHed'>
+            Course title: {course.name}
+          </h2>
+          <div className='card-body p-5 corCard'>
+            <p>Course Summary: {course.description}</p>
+            {/* <p>${course.price}</p> */}
+            <p>Category: {course.category}</p>
+            <p className='text-secondary'>Created by: {course.courseAuthor}</p>
           </div>
-        </>
-        
-      )}
-      <div className="logC LogE createC d-flex-column">
-      <h2 className='card-header bg-dark text-light p-2 m-0 cHed'>Modules</h2>
-      <div className='card-body p-5 corCard bCor'>
-        <ModuleSection modules={course.module} />
-      </div>
-      </div>
 
-      <div className="logC LogE createC d-flex-column">
-      <h2 className='card-header bg-dark text-light p-2 m-0 cHed'>Reviews</h2>
-      <div className=' card-body p-5 corCard bCor'>
-        <ReviewList reviews={course.reviews} />
-      </div>
-      </div>
+          {Auth.loggedIn() && (
+            <>
+              <div className='d-flex justify-content-center aCBut'>
+                <Button variant='primary' onClick={handleModuleShow}>
+                  Add Module
+                </Button>
+                <ModuleModal
+                  course={courseId}
+                  show={showModule}
+                  onHide={handleModuleClose}
+                  onSubmit={handleModuleClose}
+                  backdrop='static'
+                  keyboard={false}
+                />
+              </div>
+            </>
+          )}
+          <div className='logC LogE createC d-flex-column'>
+            <h2 className='card-header bg-dark text-light p-2 m-0 cHed'>
+              Modules
+            </h2>
+            <div className='card-body p-5 corCard bCor'>
+              <ModuleSection modules={course.module} />
+            </div>
+          </div>
 
-      <div className="reviewBG">
-      <div className='d-flex justify-content-center m-3 p-4' style={{ border: "1px dotted #1a1a1a" }}>
-        <ReviewForm courseId={courseId} />
+          <div className='logC LogE createC d-flex-column'>
+            <h2 className='card-header bg-dark text-light p-2 m-0 cHed'>
+              Reviews
+            </h2>
+            <div className=' card-body p-5 corCard bCor'>
+              <ReviewList reviews={course.reviews} />
+            </div>
+          </div>
+
+          <div className='reviewBG'>
+            <div
+              className='d-flex justify-content-center m-3 p-4'
+              style={{ border: "1px dotted #1a1a1a" }}
+            >
+              <ReviewForm courseId={courseId} />
+            </div>
+          </div>
+        </div>
       </div>
-      </div>
-    </div>
-    </div>
     </main>
   );
 }

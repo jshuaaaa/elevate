@@ -16,13 +16,8 @@ const QueryReview = (props) => {
 
   return (
     <>
-        <h2>
-        {review.reviewAuthor}
-        </h2>
-        <p>
-          {review.reviewText}
-        </p>
-
+      <h2>{review.reviewAuthor}</h2>
+      <p>{review.reviewText}</p>
     </>
   );
 };
