@@ -3,13 +3,15 @@ import "../styles/elevateinfo.css";
 const ElevateInfo = () => {
   return (
     <section>
+
       <div className='logodiv'>
         <h1>ELEVATE</h1>
         <p>
           Here at Elevate we provide users with the opportunity to create a
-          variety of courses and interact and join other courses created by
+          variety of courses and interact / join other courses created by
           users{" "}
         </p>
+
 
         <div className='git-icons'>
           <a href='https://github.com/rheangocle' target='_blank'>
