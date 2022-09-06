@@ -19,7 +19,19 @@ const LectureSection = (props) => {
     <section>
       {" "}
       <div>
-        {loading ? <div>Loading...</div> : <LectureList lectures={lectures} />}
+        
+        {loading ? <div>Loading...</div> :  <LectureList lectures={lectures} />}
+        <a target="_blank" href="https://drive.google.com/">Upload Video to Google Drive</a>
+        
+
+        <form>
+  <label>
+    Google Drive Url:
+    <input type="text" name="name" />
+  </label>
+  <input type="submit" value="Submit" />
+</form>
+    
       </div>
     </section>
   );
