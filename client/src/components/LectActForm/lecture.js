@@ -92,6 +92,19 @@ function LectureForm(props) {
               </Form.Control.Feedback>
             </Form.Group>
 
+            <Form.Group className='m-0'>
+              <Form.Label htmlFor='description'>
+                Enter a description for the lecture
+              </Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Description'
+                name='description'
+                onChange={handleInputChange}
+                value={lecture.description}
+              />
+            </Form.Group>
+
             <Button
               disabled={!(lecture.name && lecture.url)}
               type='submit'
@@ -101,6 +114,9 @@ function LectureForm(props) {
               Save Changes
             </Button>
           </Form>
+          <a target='_blank' href='https://drive.google.com/'>
+            Upload Video to Google Drive
+          </a>
         </Modal.Body>
       ) : (
         <Modal.Body>

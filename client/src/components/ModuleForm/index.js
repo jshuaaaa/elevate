@@ -60,21 +60,6 @@ function ModuleForm(props) {
               </Alert.Heading>
             </Alert>
 
-            {/* <Form.Group>
-            <Form.Label htmlFor='courseId'>Course ID:</Form.Label>
-            <Form.Control
-              type='text'
-              placeholder={props.course}
-              name='courseId'
-              onChange={handleInputChange}
-              value={props.course}
-              required
-            />
-            <Form.Control.Feedback type='invalid'>
-              Course ID is required!
-            </Form.Control.Feedback>
-          </Form.Group> */}
-
             <Form.Group className='m-0'>
               <Form.Label htmlFor='name'>
                 Enter a name for the module
@@ -90,6 +75,19 @@ function ModuleForm(props) {
               <Form.Control.Feedback type='invalid'>
                 Course name is required!
               </Form.Control.Feedback>
+            </Form.Group>
+
+            <Form.Group className='m-0'>
+              <Form.Label htmlFor='name'>
+                Enter a description for the module
+              </Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='description...'
+                name='description'
+                onChange={handleInputChange}
+                value={module.description}
+              />
             </Form.Group>
 
             <Button

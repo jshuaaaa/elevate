@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CourseName from "./courseName";
-import { motion } from "framer-motion";
 // function shuffleArray(array) {
 //   let i = array.length - 1;
 //   for (; i > 0; i--) {
@@ -28,25 +27,15 @@ const CourseList = ({ courses, title, showTitle = true }) => {
       {courses.map((course) => (
         <div className='cardCont'>
           <div
-          
             key={course._id}
-            className='card mb-3 cardo'
+            className='card cardo'
             style={{ width: "25rem", height: "20rem" }}
           >
-            {/* <h4 className='card-header bg-primary text-light p-2 m-0'>
-            </h4> */}
-            <motion.div
-           whileHover={{
-            scale: 1.1,
-            transition: { duration: 1 },
-          }}
-            whileTap={{ scale: 1.0 }}
-          
-            className='card-body bg-light p-2 fcCard'>
             <Link className='text-light' to={`/courses/${course._id}`}>
               <CourseName courseId={course._id} />
             </Link>
 
+            <div className='card-body bg-light p-2'>
               <p className='card-text'>Category: {course.category}</p>
               {/* <p className='card-text'>${course.price}</p> */}
               <Link className='btn btn-primary' to={`/courses/${course._id}`}>
@@ -55,7 +44,7 @@ const CourseList = ({ courses, title, showTitle = true }) => {
               {/* <Link className='btn btn-primary' to={`/courses/${course._id}`}>
                 Register
               </Link> */}
-            </motion.div>
+            </div>
           </div>
           <div
             id='carouselExampleIndicators'

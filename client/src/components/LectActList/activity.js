@@ -11,16 +11,19 @@ const ActivityList = ({ activities }) => {
   return (
     <ol>
     <>
+    
       {activities.map((activity) => (
-        <li>
+       
+         <li>
         <div key={activity._id} className='container'>
           {/* Query for activity name */}
-          <p><ActivityName activityId={activity._id} /></p>
-          <div>
-            <p >Description: {activity.description}</p>
+          <h4 className='card-header courseH'><ActivityName activityId={activity._id} /></h4>
+          <div className=''>
+            <p className=''>Description: {activity.description}</p>
           </div>
         </div>
         </li>
+        
       ))}
     </>
     </ol>

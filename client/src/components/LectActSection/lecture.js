@@ -19,7 +19,9 @@ const LectureSection = (props) => {
     <section>
       {" "}
       <div>
-        {loading ? <div>Loading...</div> : <LectureList lectures={lectures} />}
+        
+        {loading ? <div>Loading...</div> :  <LectureList lectures={lectures} />}
+  
       </div>
     </section>
   );

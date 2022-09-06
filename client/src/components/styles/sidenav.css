@@ -1,7 +1,20 @@
 
 
+body {
+  background-color: #0089d294;
+  background-image: linear-gradient(#0089d294, rgb(95, 183, 255));
+  
+}
+
 .sideNavCont {
+  
   display: flex;
+  
+}
+
+#sideN{
+  overflow: hidden;
+  
 }
 
 aside {
@@ -13,8 +26,11 @@ border: 1px solid rgba(55, 165, 222, 1);
   width: 16.75rem;
   position: fixed;
   z-index: 1;
-  height: 110%;
+  height: 180vh;
   margin-top: -10%;
+  padding-top: 19%; 
+  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .btn-container {
@@ -39,9 +55,11 @@ border: 1px solid rgba(55, 165, 222, 1);
 }
 
 .navList {
-  padding-top: 150%;
+  /* padding-top: 150%; */
+  height: 50%;
   text-align: center;
-
+  
+  overflow: auto;
   z-index: 5;
 }
 

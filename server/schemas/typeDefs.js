@@ -14,6 +14,7 @@ const typeDefs = gql`
   type Module {
     _id: ID
     name: String
+    description: String
     lecture: [Lecture]
     activity: [Activity]
   }
@@ -32,11 +33,14 @@ const typeDefs = gql`
   type Lecture {
     _id: ID
     name: String
+    url: String
+    description: String
   }
 
   type Activity {
     _id: ID
     name: String
+    description: String
   }
 
   type Review {
@@ -70,6 +74,7 @@ const typeDefs = gql`
     reviews: [Review]
 
     course(courseId: ID!): Course
+    courseName(name: String!): Course
     coursePage(courseId: ID!): Course
     module(moduleId: ID!): Module
     lecture(id: ID!): Lecture
@@ -81,10 +86,23 @@ const typeDefs = gql`
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addCourse(input: newCourse): Course
-    addModuleToCourse(courseId: ID!, name: String!): Module
-    addLectureToModule(moduleId: ID!, name: String!, url: String!): Lecture
-    addActivityToModule(moduleId: ID!, name: String!): Activity
-    addReviewToCourse(courseId: ID!, reviewText: String!, reviewAuthor: String!): Review
+    addModuleToCourse(courseId: ID!, name: String!, description: String): Module
+    addLectureToModule(
+      moduleId: ID!
+      name: String!
+      url: String!
+      description: String
+    ): Lecture
+    addActivityToModule(
+      moduleId: ID!
+      name: String!
+      description: String
+    ): Activity
+    addReviewToCourse(
+      courseId: ID!
+      reviewText: String!
+      reviewAuthor: String!
+    ): Review
     addSkill(profileId: ID!, skill: String!): Profile
     removeSkill(skill: String!): Profile
   }

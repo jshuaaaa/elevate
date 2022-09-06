@@ -45,30 +45,12 @@ export const QUERY_COURSES = gql`
 
 export const QUERY_SINGLE_COURSE = gql`
   query singleCourse($name: String!) {
-    course(name: $name) {
+    courseName(name: $name) {
       _id
       name
       category
       description
       price
-      module {
-        _id
-        name
-        lecture {
-          _id
-          name
-        }
-        activity {
-          _id
-          name
-        }
-      }
-      review {
-        _id
-        reviewText
-        reviewAuthor
-        createdAt
-      }
     }
   }
 `;
@@ -85,6 +67,7 @@ export const QUERY_SINGLE_COURSE_PAGE = gql`
       module {
         _id
         name
+        description
         lecture {
           _id
         }
@@ -115,6 +98,7 @@ export const QUERY_MODULES = gql`
     modules {
       _id
       name
+      description
     }
   }
 `;
@@ -125,6 +109,7 @@ export const QUERY_COURSE_MODULES = gql`
       module {
         _id
         name
+        description
       }
     }
   }
@@ -135,36 +120,39 @@ export const QUERY_SINGLE_MODULE = gql`
     module(moduleId: $moduleId) {
       _id
       name
+      description
       lecture {
         _id
         name
+        description
       }
       activity {
         _id
         name
+        description
       }
     }
   }
 `;
 
-
 export const QUERY_SINGLE_REVIEW = gql`
-query Query($reviewId: ID!) {
-  review(reviewId: $reviewId) {
-    _id
-    reviewText
-    reviewAuthor
-    createdAt
+  query Query($reviewId: ID!) {
+    review(reviewId: $reviewId) {
+      _id
+      reviewText
+      reviewAuthor
+      createdAt
+    }
   }
-}
-
-`
+`;
 
 export const QUERY_SINGLE_LECTURE = gql`
   query singleLecture($lectureId: ID!) {
     lecture(id: $lectureId) {
       _id
       name
+      url
+      description
     }
   }
 `;
@@ -174,7 +162,7 @@ export const QUERY_SINGLE_ACTIVITY = gql`
     activity(id: $activityId) {
       _id
       name
+      description
     }
   }
 `;
-

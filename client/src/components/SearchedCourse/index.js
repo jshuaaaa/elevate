@@ -12,10 +12,10 @@ const SearchedCourse = (props) => {
     console.log(name)
     
     const {loading, data} = useQuery(QUERY_SINGLE_COURSE, {
-        variables: {name: name}
+        variables: {name}
       });
 
-    const courses = data?.course || []
+    const courses = data?.courseName || []
     console.log(data)
     return(
 <div className="row flex">

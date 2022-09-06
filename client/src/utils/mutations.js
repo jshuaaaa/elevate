@@ -37,22 +37,39 @@ export const ADD_COURSE = gql`
 `;
 
 export const ADD_MODULE_TO_COURSE = gql`
-  mutation addModuleToCourse($courseId: ID!, $name: String!) {
-    addModuleToCourse(courseId: $courseId, name: $name) {
+  mutation addModuleToCourse(
+    $courseId: ID!
+    $name: String!
+    $description: String
+  ) {
+    addModuleToCourse(
+      courseId: $courseId
+      name: $name
+      description: $description
+    ) {
       name
+      description
     }
   }
 `;
 
 export const ADD_REVIEW = gql`
-mutation Mutation($courseId: ID!, $reviewText: String!, $reviewAuthor: String!) {
-  addReviewToCourse(courseId: $courseId, reviewText: $reviewText, reviewAuthor: $reviewAuthor) {
-    _id
-    reviewText
-    reviewAuthor
-    createdAt
+  mutation Mutation(
+    $courseId: ID!
+    $reviewText: String!
+    $reviewAuthor: String!
+  ) {
+    addReviewToCourse(
+      courseId: $courseId
+      reviewText: $reviewText
+      reviewAuthor: $reviewAuthor
+    ) {
+      _id
+      reviewText
+      reviewAuthor
+      createdAt
+    }
   }
-}
 `;
 
 export const REMOVE_MODULE = gql`
@@ -83,19 +100,39 @@ export const REMOVE_REVIEW = gql`
 `;
 
 export const ADD_LECTURE_TO_MODULE = gql`
-  mutation addLectureToModule($moduleId: ID!, $name: String!, $url: String!) {
-    addLectureToModule(moduleId: $moduleId, name: $name, url: $url) {
+  mutation addLectureToModule(
+    $moduleId: ID!
+    $name: String!
+    $url: String!
+    $description: String
+  ) {
+    addLectureToModule(
+      moduleId: $moduleId
+      name: $name
+      url: $url
+      description: $description
+    ) {
       _id
       name
+      description
     }
   }
 `;
 
 export const ADD_ACTIVITY_TO_MODULE = gql`
-  mutation addActivityToModule($moduleId: ID!, $name: String!) {
-    addActivityToModule(moduleId: $moduleId, name: $name) {
+  mutation addActivityToModule(
+    $moduleId: ID!
+    $name: String!
+    $description: String
+  ) {
+    addActivityToModule(
+      moduleId: $moduleId
+      name: $name
+      description: $description
+    ) {
       _id
       name
+      description
     }
   }
 `;

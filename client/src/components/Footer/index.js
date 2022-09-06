@@ -7,10 +7,10 @@ const Footer = () => {
   return (
 
     <footer className="w-100 mt-auto text-dark p-4 logFoot ">
-      <div className="container footCons">
+      <div className="container text-center mb-5">
         {location.pathname !== '/' && (
           <button
-            className="btn backBtn "
+            className="btn "
             onClick={() => navigate(-1)}
           >
 
@@ -19,8 +19,6 @@ const Footer = () => {
         )}
         <div className="pwalogo">
         <img src={require('../images/pwa.png')} />
-       
-       
         </div>
       </div>
     </footer>

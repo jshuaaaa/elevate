@@ -10,7 +10,6 @@ const CourseSection = () => {
     return (
       
   <section> <div className="courseMain">
-      
     
   {loading ? (
     <div>Loading...</div>
