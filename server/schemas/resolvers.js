@@ -51,7 +51,7 @@ const resolvers = {
     },
 
     courses: async () => {
-      return Course.find();
+      return Course.find().sort({ _id: -1 });
     },
 
     modules: async () => {

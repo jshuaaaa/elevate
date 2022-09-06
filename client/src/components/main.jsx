@@ -1,7 +1,7 @@
 import React from 'react'
 import videoBg from '../assets/education.mp4'
 import '../components/styles/main.css'
-import CourseSection from '../components/CourseSection'
+import CourseCarousel from './CourseList/courseCarousel';
 import SearchBar from './SearchBar';
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
     </div> 
    </div>
     </div>
-       <CourseSection />
+       <CourseCarousel />
     </div>
     
   )
