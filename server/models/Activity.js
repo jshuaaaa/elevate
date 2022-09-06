@@ -1,5 +1,5 @@
-const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const activitySchema = new Schema({
   name: {
@@ -7,8 +7,12 @@ const activitySchema = new Schema({
     required: true,
     trim: true,
   },
+  description: {
+    type: String,
+    trim: true,
+  },
 });
 
-const Activity = model('activity', activitySchema);
+const Activity = model("activity", activitySchema);
 
 module.exports = Activity;
