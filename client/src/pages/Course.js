@@ -38,17 +38,15 @@ function Course() {
         Course title: {course.name}
       </h2>
       <div className='card-body p-5 corCard'>
-        <p>Course Summary: {course.description}</p>
+        <p><u>Course Summary:</u></p><p><em>{course.description}</em></p>
         {/* <p>${course.price}</p> */}
-        <p>Category: {course.category}</p>
+        <p><u>Category:</u></p><p><em>{course.category}</em></p>
       </div>
 
       {Auth.loggedIn() && (
         <>
         <div className="d-flex justify-content-center aCBut">
-          <Button variant='primary' onClick={handleModuleShow}>
-            Add Module
-          </Button>
+          
           <ModuleModal
             course={courseId}
             show={showModule}
@@ -57,13 +55,18 @@ function Course() {
             backdrop='static'
             keyboard={false}
           />
+         
           </div>
+          
         </>
         
       )}
       <div className="logC LogE createC d-flex-column">
       <h2 className='card-header bg-dark text-light p-2 m-0 cHed'>Modules</h2>
-      <div className='card-body p-5 corCard bCor'>
+      <div className='d-flex flex-column card-body p-5 corCard bCor'>
+      <Button className="cModButt" variant='primary' onClick={handleModuleShow}>
+            Add Module
+          </Button>
         <ModuleSection modules={course.module} />
       </div>
       </div>
