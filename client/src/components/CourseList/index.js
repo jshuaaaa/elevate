@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import CourseName from "./courseName";
 // function shuffleArray(array) {
 //   let i = array.length - 1;
 //   for (; i > 0; i--) {
@@ -19,10 +19,9 @@ const CourseList = ({ courses, title, showTitle = true }) => {
 
   // const shuffledPosts = shuffleArray(courses);
 
-  // console.log(shuffledPosts);
+  // console.log(courses);
 
   return (
-    
     <>
       {showTitle && <h3>{title}</h3>}
       {courses.map((course) => (
@@ -32,14 +31,15 @@ const CourseList = ({ courses, title, showTitle = true }) => {
             className='card mb-3 cardo'
             style={{ width: "25rem", height: "20rem" }}
           >
-            <h4 className='card-header bg-primary text-light p-2 m-0'>
-              <Link className='text-light' to={`/courses/${course._id}`}>
-                {course.name}
-              </Link>
-            </h4>
+            {/* <h4 className='card-header bg-primary text-light p-2 m-0'>
+            </h4> */}
+            <Link className='text-light' to={`/courses/${course._id}`}>
+              <CourseName courseId={course._id} />
+            </Link>
+
             <div className='card-body bg-light p-2'>
-              <p className='card-text'>{course.category}</p>
-              <p className='card-text'>${course.price}</p>
+              <p className='card-text'>Category: {course.category}</p>
+              {/* <p className='card-text'>${course.price}</p> */}
               <Link className='btn btn-primary' to={`/courses/${course._id}`}>
                 View course
               </Link>
@@ -68,7 +68,6 @@ const CourseList = ({ courses, title, showTitle = true }) => {
                 data-slide-to='2'
               ></li>
             </ol>
-       
           </div>
         </div>
       ))}
