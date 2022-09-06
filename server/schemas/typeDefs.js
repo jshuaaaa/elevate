@@ -71,6 +71,7 @@ const typeDefs = gql`
     reviews: [Review]
 
     course(courseId: ID!): Course
+    courseName(name: String!): Course
     coursePage(courseId: ID!): Course
     module(moduleId: ID!): Module
     lecture(id: ID!): Lecture
