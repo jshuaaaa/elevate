@@ -36,13 +36,12 @@ function Module() {
   return (
     <div className='container my-5'>
       <h2 className='bg-dark text-light p-2 m-0'>Module: {module.name}</h2>
-      <div className='card-body  p-4'>
+      <div className='card-body bg-light p-4'>
         <h4>Summary: {module.description}</h4>
       </div>
 
       {Auth.loggedIn() && (
         <>
-        
           <Button variant='warning' onClick={handleLectureShow}>
             Add Lecture
           </Button>

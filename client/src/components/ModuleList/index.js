@@ -14,11 +14,11 @@ const ModuleList = ({ modules }) => {
           <div key={module._id} className='container'>
             {/* Query for module name */}
             <ModuleName moduleId={module._id} />
-
+            {/* 
             <div className=' p-2 CModSec'>
               <p className=''>Lecture: {module.lecture}</p>
               <p className=''>Activity: {module.activity}</p>
-            </div>
+            </div> */}
           </div>
         </li>
       ))}
