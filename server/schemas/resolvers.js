@@ -20,6 +20,10 @@ const resolvers = {
       return Course.findOne({ _id: courseId });
     },
 
+    courseName: async (parent, {name}) => {
+      return Course.findOne({name: name})
+    },
+
     coursePage: async (parent, { id }) => {
       return Course.findOne({ _id: id });
     },
