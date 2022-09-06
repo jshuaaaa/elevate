@@ -7,7 +7,7 @@ const Footer = () => {
   return (
 
     <footer className="w-100 mt-auto text-dark p-4 logFoot ">
-      <div className="container text-center mb-5">
+      <div className="container footCons">
         {location.pathname !== '/' && (
           <button
             className="btn "

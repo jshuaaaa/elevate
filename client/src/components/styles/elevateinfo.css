@@ -14,13 +14,15 @@ section .logodiv {
     margin-bottom: 3%;
     width: 100%;
   padding: 5%;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.267);
+  
   /* word-break: break-all; */
    
 }
 
 .logodiv p{
-   
+  
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 

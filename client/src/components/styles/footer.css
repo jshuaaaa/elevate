@@ -1,6 +1,9 @@
 .pwalogo {
     position: relative;
-  
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
     margin: 0px;
     padding: 0px;
 }

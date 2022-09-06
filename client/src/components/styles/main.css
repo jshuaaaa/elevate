@@ -37,6 +37,7 @@
 }
 .video2 {
   width: 115%;
+  border-top: 0%  ;
   /* border-bottom: solid 3px #fff; */
 
 }
@@ -95,6 +96,8 @@
 
 .p-2 > .card-text {
   text-align: left;
+  padding-left: 4%;
+  font-size: 1.1em;
   
 }
 
@@ -102,34 +105,29 @@
   background-color: rgb(4,37,81) !important;
 }
 
+.footCons{
+  margin-left: 20%;
+  justify-content: center;
+}
+
+
 .git-icons{
   /* padding-top: 1%; */
-  transform: scale(0.8);
+  transform: scale(0.5);
+  align-self: center;
+  align-content: center;
+
+  
   
 }
 
 .git-icons > a > img{
-  background-color: rgba(106, 6, 206, 0.972) !important;
+  background-color: rgba(224, 236, 240, 0.972) !important;
   border-radius: 120px;
   cursor: pointer;
 }
 
-.git-icons > a + a >  img{
-  background-color: rgba(118, 78, 39, 0.972) !important;
-  border-radius: 55%;
-  cursor: pointer;
-}
 
-.git-icons > a + a + a > img{
-  background-color: rgba(15, 238, 22, 0.972) !important;
-  border-radius: 55%;
-  cursor: pointer;
-}
-.git-icons > a + a + a + a > img{
-  background-color: rgba(10, 59, 237, 0.972) !important;
-  border-radius: 55%;
-  cursor: pointer;
-}
 
 body {
   

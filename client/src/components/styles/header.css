@@ -43,7 +43,7 @@
 .text-dark {
   background-image: url("../images/headerimg.png");
   background-size: contain;
-  border-bottom: solid 3px white;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.31);
   background-color: #0087d2;
 
   width: 100vw;
