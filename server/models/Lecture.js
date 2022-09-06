@@ -1,6 +1,6 @@
-const { Schema, model, default: mongoose } = require("mongoose");
+const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
-require('mongoose-type-url');
+
 
 const lectureSchema = new Schema({
   name: {
@@ -9,7 +9,7 @@ const lectureSchema = new Schema({
     trim: true,
   },
   url: {
-    type: mongoose.SchemaTypes.Url,
+    type: String,
     required: true,
   },
   description: {
