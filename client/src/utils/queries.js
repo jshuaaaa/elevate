@@ -165,6 +165,7 @@ export const QUERY_SINGLE_LECTURE = gql`
     lecture(id: $lectureId) {
       _id
       name
+      url
     }
   }
 `;
