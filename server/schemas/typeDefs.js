@@ -77,8 +77,8 @@ const typeDefs = gql`
     courseName(name: String!): Course
     coursePage(courseId: ID!): Course
     module(moduleId: ID!): Module
-    lecture(id: ID!): Lecture
-    activity(id: ID!): Activity
+    lecture(lectureId: ID!): Lecture
+    activity(activityId: ID!): Activity
     review(reviewId: ID!): Review
   }
 

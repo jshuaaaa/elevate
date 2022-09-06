@@ -28,12 +28,12 @@ const resolvers = {
       return Module.findOne({ _id: moduleId });
     },
 
-    lecture: async (parent, { id }) => {
-      return Lecture.findOne({ _id: id });
+    lecture: async (parent, { lectureId }) => {
+      return Lecture.findOne({ _id: lectureId });
     },
 
-    activity: async (parent, { id }) => {
-      return Activity.findOne({ _id: id });
+    activity: async (parent, { activityId }) => {
+      return Activity.findOne({ _id: activityId });
     },
 
     review: async (parent, { reviewId }) => {
