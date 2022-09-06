@@ -17,7 +17,7 @@ const LectureList = ({ lectures }) => {
           {/* <h4 className='card-header bg-info p-1'>View {lecture.name}</h4> */}
           <p><LectureName lectureId={lecture._id} /></p>
           
-            <p className=''>Description: <em>{lecture.description}</em></p>
+            <p>Description: <em>{lecture.description}</em></p>
           
         </div>
         </li>
