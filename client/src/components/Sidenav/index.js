@@ -85,6 +85,8 @@ const SideNav = () => {
                       {name}
                     </motion.a>
                   ))} */}
+
+                  {/* Component for user's courses */}
                   <SideNavCourses />
                 </motion.div>
               </motion.aside>
