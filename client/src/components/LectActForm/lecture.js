@@ -101,6 +101,7 @@ function LectureForm(props) {
               Save Changes
             </Button>
           </Form>
+          <a target="_blank" href="https://drive.google.com/">Upload Video to Google Drive</a>
         </Modal.Body>
       ) : (
         <Modal.Body>
