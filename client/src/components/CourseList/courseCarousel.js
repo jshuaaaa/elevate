@@ -4,24 +4,21 @@ import { QUERY_COURSES } from "../../utils/queries";
 import CourseName from "./courseName";
 import { Link } from "react-router-dom";
 
-function shuffleArray(array) {
-  let i = array.length - 1;
-  for (; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-  return array;
-}
-
 const CourseCarousel = () => {
   const { loading, data } = useQuery(QUERY_COURSES);
   const courses = data?.courses || [];
 
-  // if (courses) {
-  //   shuffleArray(courses);
+  // async function shuffleArray(array) {
+  //   let i = array.length - 1;
+  //   for (; i > 0; i--) {
+  //     const j = Math.floor(Math.random() * (i + 1));
+  //     const temp = array[i];
+  //     array[i] = array[j];
+  //     array[j] = temp;
+  //   }
+  //   return array;
   // }
+  // const newArr = await shuffleArray(courses);
 
   return (
     <section>
