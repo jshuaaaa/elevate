@@ -4,15 +4,15 @@ import Auth from "../../utils/auth";
 import "../styles/sidenav.css";
 import "../styles/header.css";
 import ribbon from "../images/bookmark.png";
-
 import { AnimatePresence, motion, useCycle } from "framer-motion";
+import SideNavCourses from "../CourseList/sideNavCourses";
 
-const links = [
-  { name: "Course 1", to: "#", id: 1 },
-  { name: "Course 2", to: "#", id: 2 },
-  { name: "Course 3", to: "#", id: 3 },
-  { name: "Course 4", to: "#", id: 4 },
-];
+// const links = [
+//   { name: "Course 1", to: "#", id: 1 },
+//   { name: "Course 2", to: "#", id: 2 },
+//   { name: "Course 3", to: "#", id: 3 },
+//   { name: "Course 4", to: "#", id: 4 },
+// ];
 
 const itemVariants = {
   closed: {
@@ -75,7 +75,7 @@ const SideNav = () => {
                   exit='closed'
                   variants={sideVariants}
                 >
-                  {links.map(({ name, to, id }) => (
+                  {/* {links.map(({ name, to, id }) => (
                     <motion.a
                       key={id}
                       href={to}
@@ -84,7 +84,8 @@ const SideNav = () => {
                     >
                       {name}
                     </motion.a>
-                  ))}
+                  ))} */}
+                  <SideNavCourses />
                 </motion.div>
               </motion.aside>
             )}

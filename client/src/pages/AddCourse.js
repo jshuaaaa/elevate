@@ -25,7 +25,16 @@ const categories = [
     name: "Art",
   },
   {
-    name: "Software",
+    name: "Coding",
+  },
+  {
+    name: "History",
+  },
+  {
+    name: "Math",
+  },
+  {
+    name: "Food",
   },
   {
     name: "Other",
@@ -90,14 +99,14 @@ const CourseForm = () => {
   };
 
   return (
-    <main className="flex-row justify-center logBack ">
-      <div class="logE containerr card-text courseEm">
-        <div className="logC LogE createC d-flex-column"> 
+    <main className='flex-row justify-center logBack '>
+      <div className='logE containerr card-text courseEm'>
+        <div className='logC LogE createC d-flex-column'>
           <h1>Add a new course below</h1>
-          <div className="formBG aone">
+          <div className='formBG aone'>
             {Auth.loggedIn() ? (
               <Form
-                className="form-control form-input "
+                className='form-control form-input '
                 noValidate
                 validated={validated}
                 onSubmit={handleFormSubmit}
@@ -107,7 +116,7 @@ const CourseForm = () => {
                   dismissible
                   onClose={() => setShowAlert(false)}
                   show={showAlert}
-                  variant="danger"
+                  variant='danger'
                 >
                   <Alert.Heading>
                     Something went wrong with your course creation!
@@ -115,70 +124,70 @@ const CourseForm = () => {
                 </Alert>
 
                 <Form.Group>
-                  <Form.Label htmlFor="name">Course Name</Form.Label>
+                  <Form.Label htmlFor='name'>Course Name</Form.Label>
                   <Form.Control
-                    type="text"
-                    placeholder="Name"
-                    name="name"
+                    type='text'
+                    placeholder='Name'
+                    name='name'
                     onChange={handleInputChange}
                     value={input.name}
                     required
                     autofocus
                   />
-                  <Form.Control.Feedback type="invalid">
+                  <Form.Control.Feedback type='invalid'>
                     Course name is required!
                   </Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="description">Description</Form.Label>
+                  <Form.Label htmlFor='description'>Description</Form.Label>
                   <Form.Control
-                    type="text"
-                    componentClass="textarea"
-                    placeholder="Description for your course"
-                    name="description"
-                    as="textarea"
+                    type='text'
+                    componentClass='textarea'
+                    placeholder='Description for your course'
+                    name='description'
+                    as='textarea'
                     onChange={handleInputChange}
                     value={input.description}
                     required
                     autofocus
                   />
-                  <Form.Control.Feedback type="invalid">
+                  <Form.Control.Feedback type='invalid'>
                     A description is required!
                   </Form.Control.Feedback>
                 </Form.Group>
 
-                <Form.Group>
-                  <Form.Label htmlFor="Price">Price</Form.Label>
+                {/* <Form.Group>
+                  <Form.Label htmlFor='Price'>Price</Form.Label>
                   <InputGroup>
-                    <InputGroup.Text className="bling">$</InputGroup.Text>
+                    <InputGroup.Text className='bling'>$</InputGroup.Text>
                     <Form.Control
-                      type="number"
-                      placeholder="Set a price"
-                      name="price"
+                      type='number'
+                      placeholder='Set a price'
+                      name='price'
                       onChange={handleInputChange}
                       value={input.price}
                       required
                       autofocus
                     />
-                    <Form.Control.Feedback type="invalid">
+                    <Form.Control.Feedback type='invalid'>
                       Price can be 0. A price is required!
                     </Form.Control.Feedback>
                   </InputGroup>
-                </Form.Group>
+                </Form.Group> */}
 
                 <Form.Group>
-                  <Form.Label htmlFor="Select">Select</Form.Label>
+                  <Form.Label htmlFor='Select'>Select</Form.Label>
                   <Form.Control
-                    name="category"
-                    as="select"
+                    name='category'
+                    as='select'
                     onChange={handleInputChange}
-                    defaultValue="..."
+                    defaultValue='...'
                     required
                     value={input.category}
                     autofocus
                     // requiredcomponentClass='select'
-                    placeholder="Category"
+                    placeholder='Category'
                   >
                     <option>...</option>
                     {categories.map((category) => {
@@ -187,23 +196,23 @@ const CourseForm = () => {
                       );
                     })}
                   </Form.Control>
-                  <Form.Control.Feedback type="invalid">
+                  <Form.Control.Feedback type='invalid'>
                     Please select a category for the input.
                   </Form.Control.Feedback>
                 </Form.Group>
                 <br />
                 <Button
-                  className="btn btn-warning"
+                  className='btn btn-warning'
                   disabled={
                     !(
                       input.name &&
                       input.description &&
-                      input.price &&
+                      // input.price &&
                       input.category
                     )
                   }
-                  type="submit"
-                  variant="success"
+                  type='submit'
+                  variant='success'
                 >
                   Submit
                 </Button>
@@ -211,8 +220,8 @@ const CourseForm = () => {
             ) : (
               <p>
                 You need to be logged in to create a course. Please{" "}
-                <Link to="/login">login</Link> or{" "}
-                <Link to="/signup">signup.</Link>
+                <Link to='/login'>login</Link> or{" "}
+                <Link to='/signup'>signup.</Link>
               </p>
             )}
           </div>
