@@ -5,22 +5,18 @@
     color: white;
 }
 section .logodiv {
-    background-color: rgba(11, 39, 68, 0.303) !important;
-    flex: 1 1 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3%;
-    width: 100%;
-  padding: 5%;
-  /* word-break: break-all; */
+    margin-bottom: 10px;
+    padding-top: 20px;
    
 }
 
 .logodiv p{
-   
+    margin: 30px;
     color: white;
-    font-size: 2em;
+    font-size: 20px;
 }
 

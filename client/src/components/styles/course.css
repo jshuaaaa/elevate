@@ -23,9 +23,9 @@ padding-top: 5% !important;
 }
 
 
-/* .cModButt{
-  
-} */
+.cModButt{
+  margin-bottom: 10%;
+}
 
 .aCBut{
   margin-top: 5%;
@@ -72,7 +72,7 @@ justify-content: center;
 }
 
 .courseH{
-  background: linear-gradient(to right, rgb(24, 190, 202),  rgb(24, 190, 202) 50% ,rgb(255, 255, 255)  50%);
+  background: linear-gradient(to right,  royalblue 50% ,royalblue, rgb(24, 190, 202) 50%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -84,7 +84,6 @@ justify-content: center;
 
 .courseH:hover {
   background-position: 0 100%;
-  transform: scale(1.2);
 }
 
 .cBack{
