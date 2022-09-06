@@ -5,7 +5,7 @@
     color: white;
 }
 section .logodiv {
-    background-color: rgba(11, 39, 68, 0.303) !important;
+    background-color: rgb(1, 124, 255) !important;
     flex: 1 1 100%;
     display: flex;
     justify-content: center;
@@ -18,6 +18,12 @@ section .logodiv {
   
   /* word-break: break-all; */
    
+}
+
+.eInfo{
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
 }
 
 .logodiv p{
