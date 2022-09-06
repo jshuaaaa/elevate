@@ -15,7 +15,7 @@ const ActivityList = ({ activities }) => {
           {/* Query for activity name */}
           <ActivityName activityId={activity._id} />
           <div className='bg-light p-2'>
-            <p className=''>Description {activity.description}</p>
+            <p className=''>Description: {activity.description}</p>
           </div>
         </div>
       ))}

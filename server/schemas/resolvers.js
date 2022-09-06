@@ -20,10 +20,6 @@ const resolvers = {
       return Course.findOne({ _id: courseId });
     },
 
-    courseName: async (parent, {name}) => {
-      return Course.findOne({name: name})
-    },
-
     coursePage: async (parent, { id }) => {
       return Course.findOne({ _id: id });
     },
@@ -118,22 +114,25 @@ const resolvers = {
         return course;
       }
     },
-    addModuleToCourse: async (parent, { courseId, name }) => {
-      const module = await Module.create({ name });
+    addModuleToCourse: async (parent, { courseId, name, description }) => {
+      const module = await Module.create({ name, description });
       return Course.findOneAndUpdate(
         { _id: courseId },
         { $addToSet: { module: { _id: module._id } } }
       );
     },
-    addActivityToModule: async (parent, { moduleId, name }) => {
-      const activity = await Activity.create({ name });
+    addActivityToModule: async (parent, { moduleId, name, description }) => {
+      const activity = await Activity.create({ name, description });
       return Module.findOneAndUpdate(
         { _id: moduleId },
         { $addToSet: { activity: { _id: activity._id } } }
       );
     },
-    addLectureToModule: async (parent, { moduleId, name, url }) => {
-      const lecture = await Lecture.create({ name, url });
+    addLectureToModule: async (
+      parent,
+      { moduleId, name, url, description }
+    ) => {
+      const lecture = await Lecture.create({ name, url, description });
       return Module.findOneAndUpdate(
         { _id: moduleId },
         { $addToSet: { lecture: lecture._id } }

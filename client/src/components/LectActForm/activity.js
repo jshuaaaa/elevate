@@ -79,6 +79,19 @@ function ActivityForm(props) {
               </Form.Control.Feedback>
             </Form.Group>
 
+            <Form.Group className='m-0'>
+              <Form.Label htmlFor='description'>
+                Enter a description for the activity
+              </Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Description'
+                name='description'
+                onChange={handleInputChange}
+                value={activity.description}
+              />
+            </Form.Group>
+
             <Button
               disabled={!activity.name}
               type='submit'
