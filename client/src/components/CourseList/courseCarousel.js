@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_COURSES } from "../../utils/queries";
 import CourseName from "./courseName";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const CourseCarousel = () => {
   const { loading, data } = useQuery(QUERY_COURSES);
@@ -21,7 +22,7 @@ const CourseCarousel = () => {
   // const newArr = await shuffleArray(courses);
 
   return (
-    <section>
+    <section className="caroCards">
       <h1>Featured Courses</h1>
       <div className='courseMain'>
         {loading ? (
@@ -30,9 +31,14 @@ const CourseCarousel = () => {
           <>
             {courses.slice(0, 6).map((course) => (
               <div className='cardCont'>
-                <div
+                <motion.div
+                whileHover={{
+                  scale: 1.09,
+                 
+                }}
+                
                   key={course._id}
-                  className='card mb-3 cardo'
+                  className='card cardo'
                   style={{ width: "25rem", height: "20rem" }}
                 >
                   <Link className='text-light' to={`/courses/${course._id}`}>
@@ -49,7 +55,7 @@ const CourseCarousel = () => {
                       View course
                     </Link>
                   </div>
-                </div>
+                </motion.div>
                 <div
                   id='carouselExampleIndicators'
                   class='carousel slide'

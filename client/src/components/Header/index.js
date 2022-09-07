@@ -25,6 +25,7 @@ const Header = () => {
           <>
             <div>
               <motion.h2
+              className="headerName"
                 initial={{ x: -500 }}
                 animate={{ x: 0 }}
                 transition={{ delay: 0.5, type: "tween" }}
@@ -78,6 +79,7 @@ const Header = () => {
           <>
             <div className="headertext">
               <motion.h2
+              className="headerName"
                 initial={{ x: -500 }}
                 animate={{ x: 0 }}
                 transition={{ delay: 0.5, type: "tween" }}

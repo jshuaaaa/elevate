@@ -34,13 +34,24 @@ function Module() {
     return <div>Loading...</div>;
   }
   return (
-    <div className='container my-5'>
-      <h2 className='bg-dark text-light p-2 m-0'>Module: {module.name}</h2>
-      <div className='card-body bg-light p-4'>
+    <main className='d-flex-row justify-center logBack '>
+      <div className='dCourse logE containerr cBack card-text courseEm'>
+      <div className='logC LogE createC container
+       d-flex-column'>
+      <h2 className='card-header bg-dark text-light p-2 m-0 cHed'>Module: {module.name}</h2>
+      <div className='card-body p-5 corCard bCor'>
         <h4>Summary: {module.description}</h4>
+        
       </div>
 
-      {Auth.loggedIn() && (
+      
+
+       
+<div className='logC LogE createC d-flex-column'>
+      <h2 className='card-header bg-dark text-light p-2 m-0 cHed'>Lectures</h2>
+      <div className='card-body p-5 corCard bCor'>
+        <LectureSection lectures={module.lecture} />
+        {Auth.loggedIn() && (
         <>
           <Button variant='warning' onClick={handleLectureShow}>
             Add Lecture
@@ -53,6 +64,15 @@ function Module() {
             backdrop='static'
             keyboard={false}
           />
+          </>)}
+      </div>
+      
+      <div className='logC LogE createC d-flex-column'></div>
+      <h2 className='card-header bg-dark text-light p-2 m-0 cHed'>Activities</h2>
+      <div className='card-body p-5 corCard bCor'>
+        <ActivitySection activities={module.activity} />
+        {Auth.loggedIn() && (
+        <>
           <Button variant='warning' onClick={handleActivityShow}>
             Add Activity
           </Button>
@@ -66,16 +86,13 @@ function Module() {
           />
         </>
       )}
-
-      <h2 className='card-header bg-dark text-light p-2 m-0'>Lectures</h2>
-      <div className='bg-light p-4 mb-5'>
-        <LectureSection lectures={module.lecture} />
       </div>
-      <h2 className='card-header bg-dark text-light p-2 m-0'>Activities</h2>
-      <div className='bg-light p-4 mb-5'>
-        <ActivitySection activities={module.activity} />
-      </div>
+      
     </div>
+    </div>
+    </div>
+    
+    </main>
   );
 }
 

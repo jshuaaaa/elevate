@@ -17,10 +17,15 @@ const LectureName = (props) => {
 
   return (
     <>
-      <h4 className='card-header bg-info p-1'>
+
+      <li>
+      <h4 {...props} className='card-header courseH'>
         {lecture.name}
       </h4>
+
       <iframe src={lecture.url}></iframe>
+      </li>
+      
     </>
   );
 };
