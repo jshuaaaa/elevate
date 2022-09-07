@@ -14,7 +14,7 @@ const ActivityName = (props) => {
   // console.log(data);
   const activity = data?.activity || [];
   console.log(activity);
-
+  
   return (
     <>
       <h4 className='card-header bg-info p-1'>
