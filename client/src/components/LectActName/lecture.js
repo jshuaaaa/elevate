@@ -19,7 +19,7 @@ const LectureName = (props) => {
     <>
 
       <li>
-      <h4 {...props} className='card-header courseH'>
+      <h4 className='card-header courseH'>
         {lecture.name}
       </h4>
 

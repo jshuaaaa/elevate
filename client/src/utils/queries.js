@@ -148,7 +148,7 @@ export const QUERY_SINGLE_REVIEW = gql`
 
 export const QUERY_SINGLE_LECTURE = gql`
   query singleLecture($lectureId: ID!) {
-    lecture(id: $lectureId) {
+    lecture(lectureId: $lectureId) {
       _id
       name
       url
@@ -159,7 +159,7 @@ export const QUERY_SINGLE_LECTURE = gql`
 
 export const QUERY_SINGLE_ACTIVITY = gql`
   query singleActivity($activityId: ID!) {
-    activity(id: $activityId) {
+    activity(activityId: $activityId) {
       _id
       name
       description

@@ -17,7 +17,7 @@ const ActivityName = (props) => {
   
   return (
     <>
-      <h4 {...props} className='card-header'>
+      <h4 className='card-header'>
         {activity.name}
       </h4>
     </>
