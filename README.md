@@ -26,5 +26,5 @@ Here at Elevate we provide users with the opportunity to create a variety of cou
 
 ![Featured Courses](/client/src/assets/screenshot2.png)
 
-![Course Creation](/client/src/assets/screenshot3.png)
+![Course Creation](/client/src/assets/screenshot3.jpg)
 
