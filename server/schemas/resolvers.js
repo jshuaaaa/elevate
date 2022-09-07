@@ -24,16 +24,20 @@ const resolvers = {
       return Course.findOne({ _id: id });
     },
 
+    courseName: async (parent, { name }) => {
+      return Course.findOne({ name: name });
+    },
+
     module: async (parent, { moduleId }) => {
       return Module.findOne({ _id: moduleId });
     },
 
-    lecture: async (parent, { id }) => {
-      return Lecture.findOne({ _id: id });
+    lecture: async (parent, { lectureId }) => {
+      return Lecture.findOne({ _id: lectureId });
     },
 
-    activity: async (parent, { id }) => {
-      return Activity.findOne({ _id: id });
+    activity: async (parent, { activityId }) => {
+      return Activity.findOne({ _id: activityId });
     },
 
     review: async (parent, { reviewId }) => {

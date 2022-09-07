@@ -12,7 +12,7 @@ const SearchedCourse = (props) => {
     console.log(name)
     
     const {loading, data} = useQuery(QUERY_SINGLE_COURSE, {
-        variables: {name}
+        variables: {name: name}
       });
 
     const courses = data?.courseName || []
